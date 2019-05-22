@@ -3,6 +3,7 @@ class InvitationsController < ApplicationController
 
   def index
     find_account!
+    @user = User.new
   end
 
   private
