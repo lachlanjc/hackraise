@@ -59,7 +59,6 @@ function isMobile() {
 }
 
 function displayDesktop() {
-  new WOW().init()
   positionPages()
   affixNavbar($('.navbar-placeholder'))
   scrollToContentButtons()

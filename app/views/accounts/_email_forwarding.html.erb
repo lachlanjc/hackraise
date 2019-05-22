@@ -26,9 +26,9 @@
         <% if @account.latest_domain_check.present? %>
           <td>
             <% if @account.latest_domain_check.spf_valid? %>
-              <span class="fa fa-check"></span>
+              <span class="geomicon geomicon-check"></span>
             <% else %>
-              <span class="fa fa-times"></span>
+              <span class="geomicon geomicon-delete"></span>
             <% end %>
           </td>
           <td>
