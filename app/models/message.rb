@@ -110,6 +110,6 @@ class Message < ActiveRecord::Base
   private
 
   def generate_message_id
-    self.message_id ||= "<#{SecureRandom.uuid}@helpful.mail>"
+    self.message_id ||= "<#{SecureRandom.uuid}@hackraise.mail>"
   end
 end

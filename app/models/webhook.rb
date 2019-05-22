@@ -27,7 +27,7 @@ class Webhook < ActiveRecord::Base
     {
       body: body,
       headers: {
-        'X-Helpful-Webhook-Signature' => signature
+        'X-Hackraise-Webhook-Signature' => signature
       }
     }
   end

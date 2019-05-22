@@ -2,7 +2,7 @@ class ProtipConversation
   SUBJECT = '3 tips for answering support requests like a boss.'
 
   def self.create(account, user)
-    email = Mail::Address.new('chris@mail.helpful.io')
+    email = Mail::Address.new('chris@mail.hackraise.com')
     email.display_name = 'Chris Lloyd'
 
     author = MessageAuthor.new(account, email)
@@ -16,7 +16,7 @@ class ProtipConversation
   def self.content(account)
     <<END
 Right now you're probably still just settling in, but we want to make sure you
-get the most out of Helpful. Here are a few tips that will come in handy as you
+get the most out of Hackraise. Here are a few tips that will come in handy as you
 become a pro user.
 
 **1. Invite your whole team**
@@ -44,7 +44,7 @@ can come back to them later by using the filtering options in the search
 dropdown.  Try tagging this message and filtering from the search bar in the
 top right corner.
 
-We're always improving Helpful and adding new features. So, you'll probably
+We're always improving Hackraise and adding new features. So, you'll probably
 hear from me again soon with some new tips.
 
 If you ever have a good idea for a new feature that would make your life a lot

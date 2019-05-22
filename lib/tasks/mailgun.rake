@@ -24,27 +24,27 @@ namespace :mailgun do
       :limit => 100
     }
     data = JSON.parse(response)['items']
-    puts "\nHelpful Managed Routes:"
+    puts "\nhackraise Managed Routes:"
 
-    helpful_route_detected = false
+    hackraise_route_detected = false
     data.each do |route|
-      if /\[helpful\]/.match route['description']
+      if /\[hackraise\]/.match route['description']
         puts "\t" + route['id']
         puts "\t" + route['description'] + "\n\n"
-        helpful_route_detected = true
+        hackraise_route_detected = true
       end
     end
 
-    unless helpful_route_detected
-      puts "No Helpful Managed Routes Detected. Run rake mailgun:create_route to add one."
+    unless hackraise_route_detected
+      puts "No Hackraise Managed Routes Detected. Run rake mailgun:create_route to add one."
     end
   end
 
   task :create_route => :before do
     puts "This task will create a new route in your mailgun account to forward
-    messages to helpful via webhook. Check README.md for more instructions."
+    messages to Hackraise via webhook. Check README.md for more instructions."
 
-    print "Domain helpful is running on (http://DOMAIN/webhooks/mailgun):  "
+    print "Domain hackraise is running on (http://DOMAIN/webhooks/mailgun):  "
     domain = STDIN.gets.chomp
     if domain.length < 2
       puts "Invalid Domain"
@@ -53,7 +53,7 @@ namespace :mailgun do
 
     data = Hash.new
     data[:priority] = 1
-    data[:description] = "[helpful] .*@#{ENV['INCOMING_EMAIL_DOMAIN']} ->"\
+    data[:description] = "[hackraise] .*@#{ENV['INCOMING_EMAIL_DOMAIN']} ->"\
     " http://#{domain}/incoming_emails/mailgun (#{Time.now.utc.to_s})"
 
     data[:expression] = "match_recipient('.*@#{ENV['INCOMING_EMAIL_DOMAIN']}')"

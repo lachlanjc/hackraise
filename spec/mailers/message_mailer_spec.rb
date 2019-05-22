@@ -35,7 +35,7 @@ describe MessageMailer, :created do
     end
 
     it "has the correct from address" do
-      expect(subject.from.first).to eq("#{message.account.slug}@helpful.io")
+      expect(subject.from.first).to eq("#{message.account.slug}@hackraise.com")
     end
 
     it "has the correct from display_name" do

@@ -7,7 +7,7 @@ describe "inviting a team member / user" do
     reset_email!
     find('[rel="account.edit.team"]').click
     within "#new_user" do
-      fill_in "user_email", :with => "invite@helpful.io"
+      fill_in "user_email", :with => "invite@hackraise.com"
       click_on "Send"
     end
 
@@ -28,7 +28,7 @@ describe "a new teammember can join via the invitation" do
   it 'allows the new_user to signup' do
     visit accept_user_invitation_url(:invitation_token => new_user.raw_invitation_token)
     fill_in "person_name", :with => "Jess Brown"
-    fill_in "user_email", :with => "helper@helpful.io"
+    fill_in "user_email", :with => "helper@hackraise.com"
     fill_in "user_password", :with => "xxx123423423xxx"
     click_on "Create my account"
     expect(page.current_path).to match("inbox")

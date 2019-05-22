@@ -1,13 +1,13 @@
 # Confy::Config.env(ENV['CONFY_URL']) if ENV['CONFY_URL']
 
-module Helpful
+module Hackraise
   extend self
 
   def incoming_email_domain
-    ENV['INCOMING_EMAIL_DOMAIN'] || 'helpful.io'
+    ENV['INCOMING_EMAIL_DOMAIN'] || 'hackraise.com'
   end
 
   def outgoing_email_domain
-    ENV['OUTGOING_EMAIL_DOMAIN'] || 'helpful.io'
+    ENV['OUTGOING_EMAIL_DOMAIN'] || 'hackraise.com'
   end
 end

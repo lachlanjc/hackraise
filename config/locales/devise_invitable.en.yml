@@ -4,7 +4,7 @@ en:
       send_instructions: 'An invitation email has been sent to %{email}.'
       no_self_invite: "You cannot invite yourself."
       invitation_token_invalid: 'The invitation token provided is not valid!'
-      updated: "You're all set. Welcome to Helpful!"
+      updated: "You're all set. Welcome to Hackraise!"
       invitation_removed: 'Your invitation was removed.'
       new:
         header: "Send invitation"

@@ -1,4 +1,4 @@
-Helpful::Application.configure do
+Hackraise::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.action_controller.asset_host = ENV['ASSET_HOST']
@@ -80,8 +80,8 @@ Helpful::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => 'helpful.io' }
+  config.action_mailer.default_url_options = { :host => 'hackraise.com' }
   config.action_mailer.delivery_method = :mailgun
 
-  config.font_assets.origin = 'https://helpful.io'
+  config.font_assets.origin = 'https://hackraise.com'
 end

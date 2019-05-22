@@ -74,23 +74,23 @@ en:
       notification_setting: 'Email notifications'
       notification_setting_subtext: "Change the frequency of emails you receive on conversation activity"
     new:
-      welcome_to_helpful: "Welcome to Helpful"
+      welcome_to_hackraise: "Welcome to Hackraise"
       sign_up_free_account: "Sign Up for a Free Account"
       get_setup_get_ready: "We'll get your company and personal information setup so you can be ready to answer those support requests and make some customers happy."
       personal_info: "Personal Information"
-      sign_up_helpful: "Sign up for Helpful"
-      already_have_account: "If you already have a Helpful account,"
+      sign_up_hackraise: "Sign up for Hackraise"
+      already_have_account: "If you already have a Hackraise account,"
       please_sign_in: "please sign in"
       password_confirmation: "Password confirmation"
       must_meet_requirements: "Must meet *these requirements*"
       create_account: "Create my account"
-      helpful_email: "Helpful email"
-      helpful_email_help: "This is the email your customers will use to send you support requests."
-      helpful_email_error_is_not_unique: "Sorry, someone else is already using that address."
+      hackraise_email: "Hackraise email"
+      hackraise_email_help: "This is the email your customers will use to send you support requests."
+      hackraise_email_error_is_not_unique: "Sorry, someone else is already using that address."
       full_name: "Your full name"
       your_email: "Your email"
       eight_char: "You must use at least 8 characters."
-      sign_up_start_using: "Sign up and start using Helpful!"
+      sign_up_start_using: "Sign up and start using Hackraise!"
     edit:
       edit: "Edit"
       forwarding_address: "Forwarding address"
@@ -100,7 +100,7 @@ en:
       website: "Website"
       website_placeholder: "https://www.example.com"
       webhook_url: "Webhook URL"
-      webhook_url_placeholder: "https://www.example.com/webhooks/helpful"
+      webhook_url_placeholder: "https://www.example.com/webhooks/hackraise"
       webhook_secret: "Webhook Secret"
       update_account: "Update account settings"
       invitations: "Invitations"
@@ -177,16 +177,16 @@ en:
       header:
         sign_up: "SIGN UP"
         login: "LOGIN"
-        build: "BUILD HELPFUL"
+        build: "BUILD hackraise"
         docs: "DOCUMENTATION"
       hero:
         text_header: "Help that doesn't hurt"
-        text_1: "Helpful is a simple support tool you won't need help using."
+        text_1: "Hackraise is a simple support tool you won't need help using."
         text_2: "Just ask."
       demo:
         text_1: "Even simpler than email"
         text_2: "You shouldn't have to get support for a support tool."
-        text_2_2: "Helpful aims to be a no-brainer to use right out of the box."
+        text_2_2: "Hackraise aims to be a no-brainer to use right out of the box."
       pricing_table:
         great_value: "Great Value!"
         starter_kit: "Starter Kit"
@@ -201,7 +201,7 @@ en:
       pricing_text_end: "There are no contracts and plans can be cancelled at any time."
       conversation-explaination: "A customer conversation is defined as any conversation that's an engagement - not just a customer telling you about their pet turtle."
       in_house: "In-House"
-      in_house_text: "If you prefer to make software your own, you can take Helpful indoors and whitelabel it for your own purposes."
+      in_house_text: "If you prefer to make software your own, you can take Hackraise indoors and whitelabel it for your own purposes."
       contact_us: "Contact Us"
       footer:
         copyright: "All content &copy; Assembly Inc. who loves customers, hates spam, and believes support is naturally human."
@@ -282,12 +282,12 @@ en:
       logout: "Log Out"
     steps:
       sign_up: "Sign Up"
-      start_using_helpful: "Start Using Helpful"
+      start_using_hackraise: "Start Using Hackraise"
 
   technical:
     general:
       technical_header: "Getting Setup and Technical Details"
     setup:
       try_api: "Try our API"
-      try_out_command: "To try out Helpfuls incoming messages API, run this command from your terminal:"
+      try_out_command: "To try out hackraises incoming messages API, run this command from your terminal:"
       other_details: "Other details"

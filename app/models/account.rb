@@ -65,7 +65,7 @@ class Account < ActiveRecord::Base
     email = Mail::Address.new([
       slug,
       '@',
-      Helpful.incoming_email_domain
+      Hackraise.incoming_email_domain
     ].join.to_s)
 
     email.display_name = name
@@ -157,7 +157,7 @@ class Account < ActiveRecord::Base
     addr.address = if forwarding_address?
                      forwarding_address
                    else
-                     "#{slug}@#{Helpful.incoming_email_domain}"
+                     "#{slug}@#{Hackraise.incoming_email_domain}"
       end
     addr
   end

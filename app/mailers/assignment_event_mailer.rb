@@ -7,8 +7,8 @@ class AssignmentEventMailer < ActionMailer::Base
 
     to = @assignee.email
 
-    from = Mail::Address.new("notifications@#{Helpful.incoming_email_domain}")
-    from.display_name = "Helpful"
+    from = Mail::Address.new("notifications@#{Hackraise.incoming_email_domain}")
+    from.display_name = "Hackraise"
 
     subject = "#{@assigner.name} assigned you to a conversation"
 

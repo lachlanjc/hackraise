@@ -12,7 +12,7 @@ describe UsersController do
         id: user.id,
         person: {
           name: 'Jimmy Hoffa',
-          email: 'jimmy@helpful.io',
+          email: 'jimmy@hackraise.com',
           avatar: fixture_file_upload("spongebob.gif", 'image/gif')
         },
         user: {
@@ -25,8 +25,8 @@ describe UsersController do
 
       expect(response).to redirect_to(edit_user_path)
 
-      expect(user.email).to eq('jimmy@helpful.io')
-      expect(user.person.email).to eq('jimmy@helpful.io')
+      expect(user.email).to eq('jimmy@hackraise.com')
+      expect(user.person.email).to eq('jimmy@hackraise.com')
       expect(user.person.name).to eq('Jimmy Hoffa')
       expect(user.person.avatar.file).to_not be_nil
     end

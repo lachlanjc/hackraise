@@ -97,7 +97,7 @@ class Conversation < ActiveRecord::Base
   #
   # Returns the Mail::Address customers should send email replies to.
   def mailbox_email
-    email = Mail::Address.new("#{self.id}@#{Helpful.incoming_email_domain}")
+    email = Mail::Address.new("#{self.id}@#{Hackraise.incoming_email_domain}")
     email.display_name = account.name
     email
   end

@@ -28,7 +28,7 @@ describe Account do
 
     it 'has the correct domain part' do
       account.save
-      expect(account.mailbox_email.domain).to eq(Helpful.incoming_email_domain)
+      expect(account.mailbox_email.domain).to eq(Hackraise.incoming_email_domain)
     end
 
     it 'has the correct display name' do

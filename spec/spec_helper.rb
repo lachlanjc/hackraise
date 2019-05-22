@@ -5,7 +5,7 @@ end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
-ENV["INCOMING_EMAIL_DOMAIN"] = 'helpful.io'
+ENV["INCOMING_EMAIL_DOMAIN"] = 'hackraise.com'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'sidekiq/testing'

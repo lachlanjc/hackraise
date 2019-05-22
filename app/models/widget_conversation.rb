@@ -3,7 +3,7 @@ class WidgetConversation
   SUBJECT = 'Install our handy widget on your website.'
 
   def self.create(account, user)
-    email = Mail::Address.new('wesley@mail.helpful.io')
+    email = Mail::Address.new('wesley@mail.hackraise.com')
     email.display_name = 'Wesley Lancel'
 
     author = MessageAuthor.new(account, email)

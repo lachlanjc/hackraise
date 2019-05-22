@@ -1,8 +1,8 @@
 class WelcomeConversation
-  SUBJECT = 'Welcome to Helpful! Test drive your new Inbox.'
+  SUBJECT = 'Welcome to Hackraise! Test drive your new Inbox.'
 
   def self.create(account, user)
-    email = Mail::Address.new('patrick@mail.helpful.io')
+    email = Mail::Address.new('patrick@mail.hackraise.com')
     email.display_name = 'Patrick Van Stee'
 
     author = MessageAuthor.new(account, email)
@@ -19,7 +19,7 @@ Glad you signed up. You just clicked on your first support request. Cool, huh?
 And this entire page is your Inbox, where all of the messages from your
 customers will show up. You can think of it just like a shared email inbox.
 
-Oh, and here's your new Helpful email address:
+Oh, and here's your new Hackraise email address:
 <a href="mailto:#{account.email}">#{account.email}</a>. Go ahead and try it out by
 sending an email to that address. It will show up right above this
 conversation. You can go ahead and start using this as your support email or

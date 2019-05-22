@@ -2,7 +2,7 @@
   <% if @account.free? %>
     <div class="clearfix mxn4 mb3">
       <div class="col col-6 px4 text-right">
-        <h1 class="mt0 mb0 green text-bold">Helpful Pro</h1>
+        <h1 class="mt0 mb0 green text-bold">Hackraise Pro</h1>
       </div>
       <div class="col col-6 px4 gray">
         <p>Send email from your own domain</p>
@@ -16,20 +16,20 @@
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= ENV.fetch('STRIPE_PUBLISHABLE_KEY') %>"
         data-label="Become a pro"
-        data-name="Helpful"
+        data-name="Hackraise"
         data-email="<%= current_user.email %>"
-        data-description="Helpful Pro ($20.00 per month)"
+        data-description="Hackraise Pro ($20.00 per month)"
         data-amount="3000">
       </script>
     <% end %>
   <% else %>
 
-    <h1 class="text-center">Thank you for subscribing to Helpful Pro.</h1>
+    <h1 class="text-center">Thank you for subscribing to Hackraise Pro.</h1>
 
   <% end %>
 
 </div>
 
 <div class="text-center">
-  <%= mail_to 'helpful@helpful.io', t('.ask_for_help'), data: {helpful: 'helpful', 'helpful-email' => current_user.email, 'helpful-name' => current_user.name} %>
+  <%= mail_to 'help@hackraise.com', t('.ask_for_help') %>
 </div>

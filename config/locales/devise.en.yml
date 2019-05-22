@@ -18,7 +18,7 @@ en:
       no_token: "You'll need to use the entire link from a password reset email to access that."
       send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
       send_paranoid_instructions: "If we already know your email address, you'll get a password reset link in your email shortly."
-      updated: "Your password was changed successfully. You're now back into Helpful!"
+      updated: "Your password was changed successfully. You're now back into Hackraise!"
       updated_not_active: "Your password was changed successfully."
     registrations:
       signed_up: ""

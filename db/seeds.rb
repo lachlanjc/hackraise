@@ -24,5 +24,5 @@ chris = User.create!(email: 'chris@example.com', password: 'password')
 Person.create!(name: 'Chris', email: 'chris@example.com', user: chris, account: account)
 
 conversation = Conversation.create!(account: account)
-conversation.messages.create(content: 'Do you want to grab breakfast to chat about Helpful?', person: chris.person)
+conversation.messages.create(content: 'Do you want to grab breakfast to chat about Hackraise?', person: chris.person)
 conversation.archive!

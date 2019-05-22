@@ -1,115 +1,116 @@
 ---
 http_interactions:
-- request:
-    method: post
-    uri: http://127.0.0.1:9200/messages/message/_bulk?type=message
-    body:
-      encoding: UTF-8
-      string: |
-        {"index":{"_id":"0a3efc74-0245-40cd-bc1b-dc285d28d06e"}}
-        {"id":"0a3efc74-0245-40cd-bc1b-dc285d28d06e","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Quo sed quidem doloremque eaque magnam corporis. Quisquam sit voluptates sed. Id est est unde ducimus assumenda velit maiores. Dolor eligendi dolorum minus facere modi voluptatum.","data":null,"created_at":"2015-03-30T20:59:03.465Z","updated_at":"2015-03-30T20:59:03.465Z","person_id":"1c6ca94c-d4f6-410f-b87a-b95ce205a1df","webhook":null,"message_id":"\u003c70371230-5058-4ec0-8b61-944c25447c75@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"0ba8ff44-c99f-40f0-a244-71378475b09c"}}
-        {"id":"0ba8ff44-c99f-40f0-a244-71378475b09c","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Ipsa et ut ut qui. Quas laboriosam aut facilis eos eveniet veniam. Consequatur et saepe pariatur labore. Fugiat harum tempore iste non.","data":null,"created_at":"2015-03-30T20:59:03.488Z","updated_at":"2015-03-30T20:59:03.488Z","person_id":"9a4e23ac-e981-43eb-b8f8-a7856cd8e574","webhook":null,"message_id":"\u003c2379a038-0a67-41e8-9ec0-471e95b3ed77@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"171ce9b2-d4a9-4e1e-9e6e-a1b56ffdea1a"}}
-        {"id":"171ce9b2-d4a9-4e1e-9e6e-a1b56ffdea1a","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Distinctio soluta itaque doloribus qui. Rem sint voluptates tempora cumque non. Atque distinctio labore ut voluptas libero dolor debitis. Dolore maiores molestiae unde amet quo.","data":null,"created_at":"2015-03-30T20:59:03.521Z","updated_at":"2015-03-30T20:59:03.521Z","person_id":"bc5bd111-8017-46c9-ab46-020e579d4dea","webhook":null,"message_id":"\u003c9fa3109e-23e0-4025-bd3b-8836ea369118@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"1d79af80-bf9a-4a1c-92d3-398085d3757a"}}
-        {"id":"1d79af80-bf9a-4a1c-92d3-398085d3757a","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Non sunt in ab eveniet rerum nihil est. Et laborum ut quia. Vel dicta porro odio. Aut aut totam iure quo voluptatum accusamus.","data":null,"created_at":"2015-03-30T20:59:03.593Z","updated_at":"2015-03-30T20:59:03.593Z","person_id":"73629fde-9b30-4da8-802e-d53b6739dc5a","webhook":null,"message_id":"\u003c2dcd660a-b126-444a-83b9-e2179d50af77@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"2625172b-4d62-42ef-9d79-a0a37bd11544"}}
-        {"id":"2625172b-4d62-42ef-9d79-a0a37bd11544","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Et qui quos sed provident mollitia et ut. Et necessitatibus debitis hic at dolor. Sint labore provident atque non veniam dolore accusamus sed. Corporis et assumenda rerum natus eum totam dignissimos. Et alias non qui similique.","data":null,"created_at":"2015-03-30T20:59:03.477Z","updated_at":"2015-03-30T20:59:03.477Z","person_id":"19b23bea-4ed2-495b-8b0c-d2634ee7fea6","webhook":null,"message_id":"\u003cd37d2928-e3ad-4016-aec0-839e78b30570@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"3d604ba7-3c2a-4228-a053-e2d84e97e27d"}}
-        {"id":"3d604ba7-3c2a-4228-a053-e2d84e97e27d","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Sequi modi ducimus libero temporibus impedit aspernatur cupiditate quisquam. Nihil architecto similique praesentium itaque. Earum omnis qui ullam nulla ducimus vel. Unde ut est eveniet aut itaque aperiam fugit ipsa. Cupiditate qui repellat id sit nam soluta aut.","data":null,"created_at":"2015-03-30T20:59:03.510Z","updated_at":"2015-03-30T20:59:03.510Z","person_id":"5e0f7c98-83a0-4411-b09d-eee7c77a76a9","webhook":null,"message_id":"\u003c6e82cc09-8ca7-469e-9f86-c70e9b47e0ae@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"49ef44f1-557b-415c-86a7-580814aa209f"}}
-        {"id":"49ef44f1-557b-415c-86a7-580814aa209f","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Sed suscipit molestiae in modi id laudantium quia recusandae. Quis occaecati unde voluptas. Natus quo a reiciendis.","data":null,"created_at":"2015-03-30T20:59:03.533Z","updated_at":"2015-03-30T20:59:03.533Z","person_id":"b2182ca0-16fc-499b-90c6-f1ea15e87c94","webhook":null,"message_id":"\u003c70183030-ab85-45c5-bac3-75b4ba4a3beb@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"4b4f2e44-0462-41f1-9861-cedbaf377a99"}}
-        {"id":"4b4f2e44-0462-41f1-9861-cedbaf377a99","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Hi, my name is Ben. I need help","data":null,"created_at":"2015-03-30T20:59:03.674Z","updated_at":"2015-03-30T20:59:03.681Z","person_id":"ebea3d12-09be-46a0-9eb8-8c66d918c659","webhook":null,"message_id":"\u003ca05054f8-ecd1-47cd-83c0-4db7a04da6f5@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"51211522-d128-49a6-a768-59ca8801d991"}}
-        {"id":"51211522-d128-49a6-a768-59ca8801d991","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Ut est impedit et magnam sed laborum. Ducimus praesentium illum a porro est nihil voluptatem. Molestiae quis expedita dolorem consectetur aliquam nesciunt aut. Et rerum vitae delectus et rem.","data":null,"created_at":"2015-03-30T20:59:03.615Z","updated_at":"2015-03-30T20:59:03.615Z","person_id":"634115fa-506e-4fe5-b0cd-9fe3653a49de","webhook":null,"message_id":"\u003cf7f64158-e62d-4524-91b6-9ab6d2e48df6@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"527b2aae-0b9f-4b74-bd6b-e390f19c19b6"}}
-        {"id":"527b2aae-0b9f-4b74-bd6b-e390f19c19b6","conversation_id":"4c0fa614-dcf1-4eb8-a5c2-ba2a59438d25","content":"Where's the espresso machine? Wasn't it supposed to be delivered today?","data":null,"created_at":"2015-03-30T20:59:02.981Z","updated_at":"2015-03-30T20:59:02.981Z","person_id":"9c7dda6d-c7f2-4398-b0d0-d55e2c1795ea","webhook":null,"message_id":"\u003cf65b6ea6-c7ad-45c4-b710-f81ac4b2fc77@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"54e4368d-ed65-453e-a308-b1431674048b"}}
-        {"id":"54e4368d-ed65-453e-a308-b1431674048b","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Iure aperiam laborum mollitia libero illo est. Aut tenetur occaecati dolorum. Qui et rerum ex eum recusandae optio. Odio iste et quia omnis veritatis dolore.","data":null,"created_at":"2015-03-30T20:59:03.452Z","updated_at":"2015-03-30T20:59:03.452Z","person_id":"b559448c-9ef5-402e-8c6b-11116b061526","webhook":null,"message_id":"\u003cf09291c0-1a57-4757-b4ca-f034e795f3df@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"68e48688-f4e6-4944-a61c-771f3a3b529a"}}
-        {"id":"68e48688-f4e6-4944-a61c-771f3a3b529a","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Est magnam omnis voluptas quibusdam voluptatem omnis qui aliquid. Voluptate laudantium consectetur nesciunt itaque voluptatem. Aut fugiat aliquam dolor voluptatem harum hic cum ipsum.","data":null,"created_at":"2015-03-30T20:59:03.572Z","updated_at":"2015-03-30T20:59:03.572Z","person_id":"36a4f743-f4be-4dc3-bdc4-a548deb865fa","webhook":null,"message_id":"\u003cd12c7721-f3f9-4c58-8081-e0edf2ab772b@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"779e5dac-bb0a-491f-a47b-1c1b9b04babb"}}
-        {"id":"779e5dac-bb0a-491f-a47b-1c1b9b04babb","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Minima rem eum qui eius vel debitis voluptatem id. Expedita maiores odio facere fugit. Fugiat laborum voluptatem iste eligendi saepe quia aspernatur ut. Repellat et ipsum dolorem magni eligendi officia veniam. Nam mollitia a voluptate minima.","data":null,"created_at":"2015-03-30T20:59:03.439Z","updated_at":"2015-03-30T20:59:03.439Z","person_id":"1ddd2f34-d2a7-453a-b20a-206d2febd061","webhook":null,"message_id":"\u003c77a2436d-efbc-43cd-8e1f-8660341baa27@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"9975275d-4bd6-483b-987f-329c567b3c65"}}
-        {"id":"9975275d-4bd6-483b-987f-329c567b3c65","conversation_id":"5fd0d038-d69f-45e3-bde0-45707100a64d","content":"The styling seems to be broken on the home page. Could you take a look?","data":null,"created_at":"2015-03-30T20:59:02.924Z","updated_at":"2015-03-30T20:59:02.924Z","person_id":"29b5739e-6af2-4cad-a901-a7d897a72aa0","webhook":null,"message_id":"\u003ca7812e77-00f4-4993-99b0-946d2070a9cb@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"9fca59cb-511a-4f73-a696-012e718d0a92"}}
-        {"id":"9fca59cb-511a-4f73-a696-012e718d0a92","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Ipsam rerum sunt sunt dolor labore architecto. Beatae deserunt amet minus dolor ut officiis id. Excepturi dolores repellat veniam nam et itaque. Est facere fugit nulla porro inventore aut.","data":null,"created_at":"2015-03-30T20:59:03.545Z","updated_at":"2015-03-30T20:59:03.545Z","person_id":"bcf182c6-456e-48ab-ae7c-ce7f301f7ddc","webhook":null,"message_id":"\u003c8e9c7fb7-3e4c-432f-996a-efdb3a5a5a66@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"bdef9669-e208-4910-9845-56ec1dc05bb9"}}
-        {"id":"bdef9669-e208-4910-9845-56ec1dc05bb9","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Quasi ipsum cumque quia explicabo. Adipisci fugit quae aliquam quos. Cumque non voluptas vel soluta consequatur. Consequuntur aut et dolores expedita. Itaque vitae et reprehenderit magnam aut exercitationem.","data":null,"created_at":"2015-03-30T20:59:03.583Z","updated_at":"2015-03-30T20:59:03.583Z","person_id":"f175a70f-21d3-4ef8-84d1-474d6ef96185","webhook":null,"message_id":"\u003c4742577f-61a4-4c1b-ae31-407cb9b96ed9@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"c795dcb6-8f64-4c1d-888d-c0064153f892"}}
-        {"id":"c795dcb6-8f64-4c1d-888d-c0064153f892","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"This is broken","data":null,"created_at":"2015-03-30T20:59:03.665Z","updated_at":"2015-03-30T20:59:03.678Z","person_id":"5b7a72b0-08ac-4236-9221-f6c81e183d69","webhook":null,"message_id":"\u003c5acbe495-4207-4309-bbea-f75bb0f6713b@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"e49c630c-6733-4277-85cf-28b3ba5c55d2"}}
-        {"id":"e49c630c-6733-4277-85cf-28b3ba5c55d2","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Repellat quia voluptatem possimus omnis enim temporibus laborum ratione. Modi atque ad non voluptatem odio. Quidem at architecto eaque. Ab ducimus deserunt facilis numquam est omnis. Pariatur accusamus reiciendis ea omnis quam modi nam repellat.","data":null,"created_at":"2015-03-30T20:59:03.604Z","updated_at":"2015-03-30T20:59:03.604Z","person_id":"6f775e35-3b49-4ef8-90c9-4ec6c1aaee2c","webhook":null,"message_id":"\u003cdcb53919-4dc7-4824-aab0-c8b5924a0057@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"ecd13f93-5efb-43b9-8c30-d1fe77c4c289"}}
-        {"id":"ecd13f93-5efb-43b9-8c30-d1fe77c4c289","conversation_id":"4c0fa614-dcf1-4eb8-a5c2-ba2a59438d25","content":"Oh bummer. They sent it to 15th street for some reason. I'll give them a call and see what's up.","data":null,"created_at":"2015-03-30T20:59:03.020Z","updated_at":"2015-03-30T20:59:03.020Z","person_id":"4c4a3034-843f-498e-aa8a-6d70dbbfffa6","webhook":null,"message_id":"\u003c206c36d0-eb9c-4e80-95a3-4e7f44edf7c1@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"f8c82b4b-abe8-491f-87e4-e01941895340"}}
-        {"id":"f8c82b4b-abe8-491f-87e4-e01941895340","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Sit possimus eum veniam. Quo aut veritatis corporis. Sed sunt aliquid ut minima ab.","data":null,"created_at":"2015-03-30T20:59:03.554Z","updated_at":"2015-03-30T20:59:03.554Z","person_id":"a7688bb4-7183-4bdf-9278-1047410312d5","webhook":null,"message_id":"\u003c76874224-c610-4c41-ad9c-04f11f22288e@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-        {"index":{"_id":"fd87e39e-d988-4b5e-b0d4-9c0081493ea9"}}
-        {"id":"fd87e39e-d988-4b5e-b0d4-9c0081493ea9","conversation_id":"1fe0b950-ed24-4ac3-8539-ec4fb9140e63","content":"Do you want to grab breakfast to chat about Helpful?","data":null,"created_at":"2015-03-30T20:59:03.053Z","updated_at":"2015-03-30T20:59:03.053Z","person_id":"0efbe3b1-872e-4d83-91a2-3851d584ef39","webhook":null,"message_id":"\u003cf89b0d57-f2f6-43d4-bd02-9ab13c272c8f@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '2578'
-    body:
-      encoding: UTF-8
-      string: '{"took":219,"errors":false,"items":[{"index":{"_index":"messages","_type":"message","_id":"0a3efc74-0245-40cd-bc1b-dc285d28d06e","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"0ba8ff44-c99f-40f0-a244-71378475b09c","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"171ce9b2-d4a9-4e1e-9e6e-a1b56ffdea1a","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"1d79af80-bf9a-4a1c-92d3-398085d3757a","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"2625172b-4d62-42ef-9d79-a0a37bd11544","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"3d604ba7-3c2a-4228-a053-e2d84e97e27d","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"49ef44f1-557b-415c-86a7-580814aa209f","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"4b4f2e44-0462-41f1-9861-cedbaf377a99","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"51211522-d128-49a6-a768-59ca8801d991","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"527b2aae-0b9f-4b74-bd6b-e390f19c19b6","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"54e4368d-ed65-453e-a308-b1431674048b","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"68e48688-f4e6-4944-a61c-771f3a3b529a","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"779e5dac-bb0a-491f-a47b-1c1b9b04babb","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"9975275d-4bd6-483b-987f-329c567b3c65","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"9fca59cb-511a-4f73-a696-012e718d0a92","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"bdef9669-e208-4910-9845-56ec1dc05bb9","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"c795dcb6-8f64-4c1d-888d-c0064153f892","_version":2,"status":200}},{"index":{"_index":"messages","_type":"message","_id":"e49c630c-6733-4277-85cf-28b3ba5c55d2","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"ecd13f93-5efb-43b9-8c30-d1fe77c4c289","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"f8c82b4b-abe8-491f-87e4-e01941895340","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"fd87e39e-d988-4b5e-b0d4-9c0081493ea9","_version":1,"status":201}}]}'
-    http_version: 
-  recorded_at: Mon, 30 Mar 2015 20:59:04 GMT
-- request:
-    method: get
-    uri: http://127.0.0.1:9200/messages/message/_search
-    body:
-      encoding: UTF-8
-      string: '{"query":{"match":{"content":"Ben"}}}'
-    headers:
-      User-Agent:
-      - Faraday v0.9.0
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '2191'
-    body:
-      encoding: UTF-8
-      string: '{"took":137,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":1.0565116,"hits":[{"_index":"messages","_type":"message","_id":"c795dcb6-8f64-4c1d-888d-c0064153f892","_score":1.0565116,"_source":{"id":"c795dcb6-8f64-4c1d-888d-c0064153f892","conversation_id":"4ed7a119-733c-4f61-88e5-d257d17be9ba","content":"Hi,\r\nCan
-        you please help me?\r\nI tried to start a WIP on the Helpful project in Assembly,
-        but the \"Start a WIP\" button.\r\nThanks.\r\nSincerely,Mohamed Ben-Salahhttp://about.me/mohamedbs
-        \t\t \t   \t\t  ","data":{"headers":"[[\"Received\", \"by luna.mailgun.net
-        with SMTP mgrt 8791811362361; Wed, 25 Dec 2013 19:49:21 +0000\"], [\"X-Envelope-From\",
-        \"\u003cmohamedbensalah@outlook.com\u003e\"], [\"Received\", \"from dub0-omc4-s23.dub0.hotmail.com
-        (dub0-omc4-s23.dub0.hotmail.com [157.55.2.98]) by mxa.mailgun.org with ESMTP
-        id 52bb36be.7a30c00-in2; Wed, 25 Dec 2013 19:49:18 -0000 (UTC)\"], [\"Received\",
-        \"from DUB125-W53 ([157.55.2.72]) by dub0-omc4-s23.dub0.hotmail.com with Microsoft
-        SMTPSVC(6.0.3790.4675);\\t Wed, 25 Dec 2013 11:49:17 -0800\"], [\"X-Tmn\",
-        \"[54p3AETyCDOvqENeHgJzk2TZ5No0IwwZ]\"], [\"X-Originating-Email\", \"[mohamedbensalah@outlook.com]\"],
-        [\"Message-Id\", \"\u003cDUB125-W5325A9C7DFB008AB9DFAE1A5C30@phx.gbl\u003e\"],
-        [\"Return-Path\", \"mohamedbensalah@outlook.com\"], [\"Content-Type\", \"multipart/alternative;
-        boundary=\\\"_e2e1d5e3-2609-4b08-92f1-c964445d1436_\\\"\"], [\"From\", \"Mohamed
-        Ben-Salah \u003cmohamedbensalah@outlook.com\u003e\"], [\"To\", \"\\\"assembly@helpful.io\\\"
-        \u003cassembly@helpful.io\u003e\"], [\"Subject\", \"A problem on Assembly\"],
-        [\"Date\", \"Wed, 25 Dec 2013 20:49:17 +0100\"], [\"Importance\", \"Normal\"],
-        [\"Mime-Version\", \"1.0\"], [\"X-Originalarrivaltime\", \"25 Dec 2013 19:49:17.0363
-        (UTC) FILETIME=[655C0030:01CF01AA]\"], [\"X-Mailgun-Incoming\", \"Yes\"],
-        [\"X-Mailgun-Sflag\", \"No\"], [\"X-Mailgun-Sscore\", \"1.8\"], [\"X-Mailgun-Spf\",
-        \"Pass\"]]","subject":"A problem on Assembly","recipient":"assembly@helpful.io"},"created_at":"2013-12-25T19:49:23.024Z","updated_at":"2013-12-25T19:49:23.024Z","person_id":"f21fe681-e9db-4010-a83a-5386889787fa"}}]}}'
-    http_version: 
-  recorded_at: Mon, 30 Mar 2015 20:59:04 GMT
+  - request:
+      method: post
+      uri: http://127.0.0.1:9200/messages/message/_bulk?type=message
+      body:
+        encoding: UTF-8
+        string: |
+          {"index":{"_id":"0a3efc74-0245-40cd-bc1b-dc285d28d06e"}}
+          {"id":"0a3efc74-0245-40cd-bc1b-dc285d28d06e","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Quo sed quidem doloremque eaque magnam corporis. Quisquam sit voluptates sed. Id est est unde ducimus assumenda velit maiores. Dolor eligendi dolorum minus facere modi voluptatum.","data":null,"created_at":"2015-03-30T20:59:03.465Z","updated_at":"2015-03-30T20:59:03.465Z","person_id":"1c6ca94c-d4f6-410f-b87a-b95ce205a1df","webhook":null,"message_id":"\u003c70371230-5058-4ec0-8b61-944c25447c75@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"0ba8ff44-c99f-40f0-a244-71378475b09c"}}
+          {"id":"0ba8ff44-c99f-40f0-a244-71378475b09c","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Ipsa et ut ut qui. Quas laboriosam aut facilis eos eveniet veniam. Consequatur et saepe pariatur labore. Fugiat harum tempore iste non.","data":null,"created_at":"2015-03-30T20:59:03.488Z","updated_at":"2015-03-30T20:59:03.488Z","person_id":"9a4e23ac-e981-43eb-b8f8-a7856cd8e574","webhook":null,"message_id":"\u003c2379a038-0a67-41e8-9ec0-471e95b3ed77@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"171ce9b2-d4a9-4e1e-9e6e-a1b56ffdea1a"}}
+          {"id":"171ce9b2-d4a9-4e1e-9e6e-a1b56ffdea1a","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Distinctio soluta itaque doloribus qui. Rem sint voluptates tempora cumque non. Atque distinctio labore ut voluptas libero dolor debitis. Dolore maiores molestiae unde amet quo.","data":null,"created_at":"2015-03-30T20:59:03.521Z","updated_at":"2015-03-30T20:59:03.521Z","person_id":"bc5bd111-8017-46c9-ab46-020e579d4dea","webhook":null,"message_id":"\u003c9fa3109e-23e0-4025-bd3b-8836ea369118@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"1d79af80-bf9a-4a1c-92d3-398085d3757a"}}
+          {"id":"1d79af80-bf9a-4a1c-92d3-398085d3757a","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Non sunt in ab eveniet rerum nihil est. Et laborum ut quia. Vel dicta porro odio. Aut aut totam iure quo voluptatum accusamus.","data":null,"created_at":"2015-03-30T20:59:03.593Z","updated_at":"2015-03-30T20:59:03.593Z","person_id":"73629fde-9b30-4da8-802e-d53b6739dc5a","webhook":null,"message_id":"\u003c2dcd660a-b126-444a-83b9-e2179d50af77@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"2625172b-4d62-42ef-9d79-a0a37bd11544"}}
+          {"id":"2625172b-4d62-42ef-9d79-a0a37bd11544","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Et qui quos sed provident mollitia et ut. Et necessitatibus debitis hic at dolor. Sint labore provident atque non veniam dolore accusamus sed. Corporis et assumenda rerum natus eum totam dignissimos. Et alias non qui similique.","data":null,"created_at":"2015-03-30T20:59:03.477Z","updated_at":"2015-03-30T20:59:03.477Z","person_id":"19b23bea-4ed2-495b-8b0c-d2634ee7fea6","webhook":null,"message_id":"\u003cd37d2928-e3ad-4016-aec0-839e78b30570@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"3d604ba7-3c2a-4228-a053-e2d84e97e27d"}}
+          {"id":"3d604ba7-3c2a-4228-a053-e2d84e97e27d","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Sequi modi ducimus libero temporibus impedit aspernatur cupiditate quisquam. Nihil architecto similique praesentium itaque. Earum omnis qui ullam nulla ducimus vel. Unde ut est eveniet aut itaque aperiam fugit ipsa. Cupiditate qui repellat id sit nam soluta aut.","data":null,"created_at":"2015-03-30T20:59:03.510Z","updated_at":"2015-03-30T20:59:03.510Z","person_id":"5e0f7c98-83a0-4411-b09d-eee7c77a76a9","webhook":null,"message_id":"\u003c6e82cc09-8ca7-469e-9f86-c70e9b47e0ae@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"49ef44f1-557b-415c-86a7-580814aa209f"}}
+          {"id":"49ef44f1-557b-415c-86a7-580814aa209f","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Sed suscipit molestiae in modi id laudantium quia recusandae. Quis occaecati unde voluptas. Natus quo a reiciendis.","data":null,"created_at":"2015-03-30T20:59:03.533Z","updated_at":"2015-03-30T20:59:03.533Z","person_id":"b2182ca0-16fc-499b-90c6-f1ea15e87c94","webhook":null,"message_id":"\u003c70183030-ab85-45c5-bac3-75b4ba4a3beb@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"4b4f2e44-0462-41f1-9861-cedbaf377a99"}}
+          {"id":"4b4f2e44-0462-41f1-9861-cedbaf377a99","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Hi, my name is Ben. I need help","data":null,"created_at":"2015-03-30T20:59:03.674Z","updated_at":"2015-03-30T20:59:03.681Z","person_id":"ebea3d12-09be-46a0-9eb8-8c66d918c659","webhook":null,"message_id":"\u003ca05054f8-ecd1-47cd-83c0-4db7a04da6f5@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"51211522-d128-49a6-a768-59ca8801d991"}}
+          {"id":"51211522-d128-49a6-a768-59ca8801d991","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Ut est impedit et magnam sed laborum. Ducimus praesentium illum a porro est nihil voluptatem. Molestiae quis expedita dolorem consectetur aliquam nesciunt aut. Et rerum vitae delectus et rem.","data":null,"created_at":"2015-03-30T20:59:03.615Z","updated_at":"2015-03-30T20:59:03.615Z","person_id":"634115fa-506e-4fe5-b0cd-9fe3653a49de","webhook":null,"message_id":"\u003cf7f64158-e62d-4524-91b6-9ab6d2e48df6@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"527b2aae-0b9f-4b74-bd6b-e390f19c19b6"}}
+          {"id":"527b2aae-0b9f-4b74-bd6b-e390f19c19b6","conversation_id":"4c0fa614-dcf1-4eb8-a5c2-ba2a59438d25","content":"Where's the espresso machine? Wasn't it supposed to be delivered today?","data":null,"created_at":"2015-03-30T20:59:02.981Z","updated_at":"2015-03-30T20:59:02.981Z","person_id":"9c7dda6d-c7f2-4398-b0d0-d55e2c1795ea","webhook":null,"message_id":"\u003cf65b6ea6-c7ad-45c4-b710-f81ac4b2fc77@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"54e4368d-ed65-453e-a308-b1431674048b"}}
+          {"id":"54e4368d-ed65-453e-a308-b1431674048b","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Iure aperiam laborum mollitia libero illo est. Aut tenetur occaecati dolorum. Qui et rerum ex eum recusandae optio. Odio iste et quia omnis veritatis dolore.","data":null,"created_at":"2015-03-30T20:59:03.452Z","updated_at":"2015-03-30T20:59:03.452Z","person_id":"b559448c-9ef5-402e-8c6b-11116b061526","webhook":null,"message_id":"\u003cf09291c0-1a57-4757-b4ca-f034e795f3df@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"68e48688-f4e6-4944-a61c-771f3a3b529a"}}
+          {"id":"68e48688-f4e6-4944-a61c-771f3a3b529a","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Est magnam omnis voluptas quibusdam voluptatem omnis qui aliquid. Voluptate laudantium consectetur nesciunt itaque voluptatem. Aut fugiat aliquam dolor voluptatem harum hic cum ipsum.","data":null,"created_at":"2015-03-30T20:59:03.572Z","updated_at":"2015-03-30T20:59:03.572Z","person_id":"36a4f743-f4be-4dc3-bdc4-a548deb865fa","webhook":null,"message_id":"\u003cd12c7721-f3f9-4c58-8081-e0edf2ab772b@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"779e5dac-bb0a-491f-a47b-1c1b9b04babb"}}
+          {"id":"779e5dac-bb0a-491f-a47b-1c1b9b04babb","conversation_id":"e150cae5-115d-4972-bade-58891c2c4664","content":"Minima rem eum qui eius vel debitis voluptatem id. Expedita maiores odio facere fugit. Fugiat laborum voluptatem iste eligendi saepe quia aspernatur ut. Repellat et ipsum dolorem magni eligendi officia veniam. Nam mollitia a voluptate minima.","data":null,"created_at":"2015-03-30T20:59:03.439Z","updated_at":"2015-03-30T20:59:03.439Z","person_id":"1ddd2f34-d2a7-453a-b20a-206d2febd061","webhook":null,"message_id":"\u003c77a2436d-efbc-43cd-8e1f-8660341baa27@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"9975275d-4bd6-483b-987f-329c567b3c65"}}
+          {"id":"9975275d-4bd6-483b-987f-329c567b3c65","conversation_id":"5fd0d038-d69f-45e3-bde0-45707100a64d","content":"The styling seems to be broken on the home page. Could you take a look?","data":null,"created_at":"2015-03-30T20:59:02.924Z","updated_at":"2015-03-30T20:59:02.924Z","person_id":"29b5739e-6af2-4cad-a901-a7d897a72aa0","webhook":null,"message_id":"\u003ca7812e77-00f4-4993-99b0-946d2070a9cb@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"9fca59cb-511a-4f73-a696-012e718d0a92"}}
+          {"id":"9fca59cb-511a-4f73-a696-012e718d0a92","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Ipsam rerum sunt sunt dolor labore architecto. Beatae deserunt amet minus dolor ut officiis id. Excepturi dolores repellat veniam nam et itaque. Est facere fugit nulla porro inventore aut.","data":null,"created_at":"2015-03-30T20:59:03.545Z","updated_at":"2015-03-30T20:59:03.545Z","person_id":"bcf182c6-456e-48ab-ae7c-ce7f301f7ddc","webhook":null,"message_id":"\u003c8e9c7fb7-3e4c-432f-996a-efdb3a5a5a66@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"bdef9669-e208-4910-9845-56ec1dc05bb9"}}
+          {"id":"bdef9669-e208-4910-9845-56ec1dc05bb9","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Quasi ipsum cumque quia explicabo. Adipisci fugit quae aliquam quos. Cumque non voluptas vel soluta consequatur. Consequuntur aut et dolores expedita. Itaque vitae et reprehenderit magnam aut exercitationem.","data":null,"created_at":"2015-03-30T20:59:03.583Z","updated_at":"2015-03-30T20:59:03.583Z","person_id":"f175a70f-21d3-4ef8-84d1-474d6ef96185","webhook":null,"message_id":"\u003c4742577f-61a4-4c1b-ae31-407cb9b96ed9@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"c795dcb6-8f64-4c1d-888d-c0064153f892"}}
+          {"id":"c795dcb6-8f64-4c1d-888d-c0064153f892","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"This is broken","data":null,"created_at":"2015-03-30T20:59:03.665Z","updated_at":"2015-03-30T20:59:03.678Z","person_id":"5b7a72b0-08ac-4236-9221-f6c81e183d69","webhook":null,"message_id":"\u003c5acbe495-4207-4309-bbea-f75bb0f6713b@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"e49c630c-6733-4277-85cf-28b3ba5c55d2"}}
+          {"id":"e49c630c-6733-4277-85cf-28b3ba5c55d2","conversation_id":"8594d608-6c3e-4a0b-80ea-85af6f45c63b","content":"Repellat quia voluptatem possimus omnis enim temporibus laborum ratione. Modi atque ad non voluptatem odio. Quidem at architecto eaque. Ab ducimus deserunt facilis numquam est omnis. Pariatur accusamus reiciendis ea omnis quam modi nam repellat.","data":null,"created_at":"2015-03-30T20:59:03.604Z","updated_at":"2015-03-30T20:59:03.604Z","person_id":"6f775e35-3b49-4ef8-90c9-4ec6c1aaee2c","webhook":null,"message_id":"\u003cdcb53919-4dc7-4824-aab0-c8b5924a0057@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"ecd13f93-5efb-43b9-8c30-d1fe77c4c289"}}
+          {"id":"ecd13f93-5efb-43b9-8c30-d1fe77c4c289","conversation_id":"4c0fa614-dcf1-4eb8-a5c2-ba2a59438d25","content":"Oh bummer. They sent it to 15th street for some reason. I'll give them a call and see what's up.","data":null,"created_at":"2015-03-30T20:59:03.020Z","updated_at":"2015-03-30T20:59:03.020Z","person_id":"4c4a3034-843f-498e-aa8a-6d70dbbfffa6","webhook":null,"message_id":"\u003c206c36d0-eb9c-4e80-95a3-4e7f44edf7c1@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"f8c82b4b-abe8-491f-87e4-e01941895340"}}
+          {"id":"f8c82b4b-abe8-491f-87e4-e01941895340","conversation_id":"2908bde0-4a8f-43ff-be42-0f9c58ba2f30","content":"Sit possimus eum veniam. Quo aut veritatis corporis. Sed sunt aliquid ut minima ab.","data":null,"created_at":"2015-03-30T20:59:03.554Z","updated_at":"2015-03-30T20:59:03.554Z","person_id":"a7688bb4-7183-4bdf-9278-1047410312d5","webhook":null,"message_id":"\u003c76874224-c610-4c41-ad9c-04f11f22288e@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+          {"index":{"_id":"fd87e39e-d988-4b5e-b0d4-9c0081493ea9"}}
+          {"id":"fd87e39e-d988-4b5e-b0d4-9c0081493ea9","conversation_id":"1fe0b950-ed24-4ac3-8539-ec4fb9140e63","content":"Do you want to grab breakfast to chat about Hackraise?","data":null,"created_at":"2015-03-30T20:59:03.053Z","updated_at":"2015-03-30T20:59:03.053Z","person_id":"0efbe3b1-872e-4d83-91a2-3851d584ef39","webhook":null,"message_id":"\u003cf89b0d57-f2f6-43d4-bd02-9ab13c272c8f@helpful.mail\u003e","in_reply_to_id":null,"html_content":""}
+      headers:
+        User-Agent:
+          - Faraday v0.9.0
+        Content-Type:
+          - application/x-www-form-urlencoded
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Content-Type:
+          - application/json; charset=UTF-8
+        Content-Length:
+          - '2578'
+      body:
+        encoding: UTF-8
+        string: '{"took":219,"errors":false,"items":[{"index":{"_index":"messages","_type":"message","_id":"0a3efc74-0245-40cd-bc1b-dc285d28d06e","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"0ba8ff44-c99f-40f0-a244-71378475b09c","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"171ce9b2-d4a9-4e1e-9e6e-a1b56ffdea1a","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"1d79af80-bf9a-4a1c-92d3-398085d3757a","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"2625172b-4d62-42ef-9d79-a0a37bd11544","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"3d604ba7-3c2a-4228-a053-e2d84e97e27d","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"49ef44f1-557b-415c-86a7-580814aa209f","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"4b4f2e44-0462-41f1-9861-cedbaf377a99","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"51211522-d128-49a6-a768-59ca8801d991","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"527b2aae-0b9f-4b74-bd6b-e390f19c19b6","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"54e4368d-ed65-453e-a308-b1431674048b","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"68e48688-f4e6-4944-a61c-771f3a3b529a","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"779e5dac-bb0a-491f-a47b-1c1b9b04babb","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"9975275d-4bd6-483b-987f-329c567b3c65","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"9fca59cb-511a-4f73-a696-012e718d0a92","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"bdef9669-e208-4910-9845-56ec1dc05bb9","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"c795dcb6-8f64-4c1d-888d-c0064153f892","_version":2,"status":200}},{"index":{"_index":"messages","_type":"message","_id":"e49c630c-6733-4277-85cf-28b3ba5c55d2","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"ecd13f93-5efb-43b9-8c30-d1fe77c4c289","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"f8c82b4b-abe8-491f-87e4-e01941895340","_version":1,"status":201}},{"index":{"_index":"messages","_type":"message","_id":"fd87e39e-d988-4b5e-b0d4-9c0081493ea9","_version":1,"status":201}}]}'
+      http_version:
+    recorded_at: Mon, 30 Mar 2015 20:59:04 GMT
+  - request:
+      method: get
+      uri: http://127.0.0.1:9200/messages/message/_search
+      body:
+        encoding: UTF-8
+        string: '{"query":{"match":{"content":"Ben"}}}'
+      headers:
+        User-Agent:
+          - Faraday v0.9.0
+        Content-Type:
+          - application/x-www-form-urlencoded
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Content-Type:
+          - application/json; charset=UTF-8
+        Content-Length:
+          - '2191'
+      body:
+        encoding: UTF-8
+        string:
+          '{"took":137,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":1.0565116,"hits":[{"_index":"messages","_type":"message","_id":"c795dcb6-8f64-4c1d-888d-c0064153f892","_score":1.0565116,"_source":{"id":"c795dcb6-8f64-4c1d-888d-c0064153f892","conversation_id":"4ed7a119-733c-4f61-88e5-d257d17be9ba","content":"Hi,\r\nCan
+          you please help me?\r\nI tried to start a WIP on the Hackraise project in Assembly,
+          but the \"Start a WIP\" button.\r\nThanks.\r\nSincerely,Mohamed Ben-Salahhttp://about.me/mohamedbs
+          \t\t \t   \t\t  ","data":{"headers":"[[\"Received\", \"by luna.mailgun.net
+          with SMTP mgrt 8791811362361; Wed, 25 Dec 2013 19:49:21 +0000\"], [\"X-Envelope-From\",
+          \"\u003cmohamedbensalah@outlook.com\u003e\"], [\"Received\", \"from dub0-omc4-s23.dub0.hotmail.com
+          (dub0-omc4-s23.dub0.hotmail.com [157.55.2.98]) by mxa.mailgun.org with ESMTP
+          id 52bb36be.7a30c00-in2; Wed, 25 Dec 2013 19:49:18 -0000 (UTC)\"], [\"Received\",
+          \"from DUB125-W53 ([157.55.2.72]) by dub0-omc4-s23.dub0.hotmail.com with Microsoft
+          SMTPSVC(6.0.3790.4675);\\t Wed, 25 Dec 2013 11:49:17 -0800\"], [\"X-Tmn\",
+          \"[54p3AETyCDOvqENeHgJzk2TZ5No0IwwZ]\"], [\"X-Originating-Email\", \"[mohamedbensalah@outlook.com]\"],
+          [\"Message-Id\", \"\u003cDUB125-W5325A9C7DFB008AB9DFAE1A5C30@phx.gbl\u003e\"],
+          [\"Return-Path\", \"mohamedbensalah@outlook.com\"], [\"Content-Type\", \"multipart/alternative;
+          boundary=\\\"_e2e1d5e3-2609-4b08-92f1-c964445d1436_\\\"\"], [\"From\", \"Mohamed
+          Ben-Salah \u003cmohamedbensalah@outlook.com\u003e\"], [\"To\", \"\\\"assembly@hackraise.com\\\"
+          \u003cassembly@hackraise.com\u003e\"], [\"Subject\", \"A problem on Assembly\"],
+          [\"Date\", \"Wed, 25 Dec 2013 20:49:17 +0100\"], [\"Importance\", \"Normal\"],
+          [\"Mime-Version\", \"1.0\"], [\"X-Originalarrivaltime\", \"25 Dec 2013 19:49:17.0363
+          (UTC) FILETIME=[655C0030:01CF01AA]\"], [\"X-Mailgun-Incoming\", \"Yes\"],
+          [\"X-Mailgun-Sflag\", \"No\"], [\"X-Mailgun-Sscore\", \"1.8\"], [\"X-Mailgun-Spf\",
+          \"Pass\"]]","subject":"A problem on Assembly","recipient":"assembly@hackraise.com"},"created_at":"2013-12-25T19:49:23.024Z","updated_at":"2013-12-25T19:49:23.024Z","person_id":"f21fe681-e9db-4010-a83a-5386889787fa"}}]}}'
+      http_version:
+    recorded_at: Mon, 30 Mar 2015 20:59:04 GMT
 recorded_with: VCR 2.9.3

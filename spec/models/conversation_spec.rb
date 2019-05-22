@@ -81,7 +81,7 @@ describe Conversation do
 
     it "must have the correct domain part" do
       subject.save
-      expect(subject.mailbox_email.domain).to eq(Helpful.incoming_email_domain)
+      expect(subject.mailbox_email.domain).to eq(Hackraise.incoming_email_domain)
     end
 
     it "must have the correct display name" do

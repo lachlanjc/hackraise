@@ -30,7 +30,7 @@ describe Webhooks::MailgunController do
       from: "test@test.com",
       subject: "test email",
       'Message-Id' => "<#{SecureRandom.uuid}@example.mail",
-      recipient: "#{account.slug}@helpful.io",
+      recipient: "#{account.slug}@hackraise.com",
       'body-plain' => "Test email.\n Thanks",
       'stripped-text' => "Test email.\n Thanks",
       'message-headers' => [
@@ -65,8 +65,8 @@ describe Webhooks::MailgunController do
     # maybe its a rspec beta issue. For now it works for testing the
     # seperate email address types
     context "with a valid signature" do
-      context "accountslug@helpful.io type email" do
-        let(:email) { "#{account.slug}@helpful.io" }
+      context "accountslug@hackraise.com type email" do
+        let(:email) { "#{account.slug}@hackraise.com" }
 
         it "is accepted" do
           post_create(recipient: email)
@@ -99,7 +99,7 @@ describe Webhooks::MailgunController do
         end
       end
 
-      context "abc123sha@helpful.io type email" do
+      context "abc123sha@hackraise.com type email" do
         let(:email) { account.address }
 
         it "is accepted" do
@@ -136,7 +136,7 @@ describe Webhooks::MailgunController do
       #   end
 
       #   it "associates the message with the correct account" do
-      #     post_webhook(recipient: "#{account.slug}@helpful.io")
+      #     post_webhook(recipient: "#{account.slug}@hackraise.com")
       #     message = find_message_from_response
       #     assert_equal account, message.account
       #   end
@@ -163,7 +163,7 @@ describe Webhooks::MailgunController do
   end
 
   # describe "#parse_identifiers" do
-  #   context "abc123sha@helpful.io email format" do
+  #   context "abc123sha@hackraise.com email format" do
   #
   #     let(:to_address) { conversation.mailbox_email.to_s }
   #
@@ -180,9 +180,9 @@ describe Webhooks::MailgunController do
   #     end
   #   end
   #
-  #   context "accountslug@helpful.io email format" do
+  #   context "accountslug@hackraise.com email format" do
   #
-  #     let(:to_address) { "#{account.slug}@helpful.io" }
+  #     let(:to_address) { "#{account.slug}@hackraise.com" }
   #
   #     before do
   #       @hash = controller.send(:parse_identifiers, to_address)

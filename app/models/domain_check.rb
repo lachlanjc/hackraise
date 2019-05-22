@@ -1,7 +1,7 @@
 class DomainCheck < ActiveRecord::Base
   class SpfQueryError < StandardError; end
 
-  HELPFUL_DOMAIN = 'helpful.io'
+  HELPFUL_DOMAIN = 'hackraise.com'
 
   def self.check!(domain)
     obj = new(domain: domain)

@@ -12,7 +12,7 @@ class Webhooks::MailgunController < WebhooksController
     ActiveRecord::Base.transaction do
       # Finds Account
       recipient = Mail::Address.new(params.fetch(:recipient).to_ascii)
-      account = if recipient.domain == 'helpful.io'
+      account = if recipient.domain == 'hackraise.com'
                   Account.find_by!(slug: recipient.local)
                 else
                   Account.find_by!(forwarding_address: recipient.address)

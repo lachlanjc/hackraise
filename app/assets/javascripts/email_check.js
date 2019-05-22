@@ -15,7 +15,7 @@ $(function() {
       return
     }
 
-    return [slug, '@', 'helpful.io'].join('')
+    return [slug, '@', 'hackraise.com'].join('')
   }
 
   var generateEmail = function() {
@@ -79,7 +79,7 @@ $(function() {
 
     timer = setTimeout(function() {
       var email = $email.val()
-      var slug = email.toLowerCase().replace('@helpful.io', '')
+      var slug = email.toLowerCase().replace('@hackraise.com', '')
 
       $.get('/account_emails/' + slug + '.json')
         .done(function(data) {

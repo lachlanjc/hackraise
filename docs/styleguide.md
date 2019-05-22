@@ -1,14 +1,14 @@
-# Helpful Front-end Styleguide
+# Hackraise Front-end Styleguide
 
-_Note: this guide is growing as we run into problems or discussions while building Helpful. Feel free to make your own changes._
+_Note: this guide is growing as we run into problems or discussions while building Hackraise. Feel free to make your own changes._
 
 ## Philosophy
 
-Aim to write re-usable, stand-alone modules that can be placed anywhere in the HTML. Helpful is growing fast and your code should be able to adapt to changes.
+Aim to write re-usable, stand-alone modules that can be placed anywhere in the HTML. Hackraise is growing fast and your code should be able to adapt to changes.
 
 ## Technology
 
-Helpful uses Compass (SASS) in the SCSS syntax.
+Hackraise uses Compass (SASS) in the SCSS syntax.
 
 ## Guidelines
 

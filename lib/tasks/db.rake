@@ -3,7 +3,7 @@ namespace :db do
     desc 'Create a production database backup'
     task :create do
       Bundler.with_clean_env do
-        sh 'heroku pgbackups:capture --expire --app helpful-production'
+        sh 'heroku pgbackups:capture --expire --app hackraise-production'
       end
     end
 
@@ -25,7 +25,7 @@ namespace :db do
       end
 
       puts 'Loading Production database locally'
-      sh 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -d helpful_development db/latest.dump'
+      sh 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -d hackraise_development db/latest.dump'
 
       puts '!!!!========= YOU MUST RESTART YOUR SERVER =========!!!!'
     end

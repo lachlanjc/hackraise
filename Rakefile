@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Helpful::Application.load_tasks
+Hackraise::Application.load_tasks

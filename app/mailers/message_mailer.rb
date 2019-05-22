@@ -12,7 +12,7 @@ class MessageMailer < ActionMailer::Base
 
     @message = message
 
-    if person.email_address =~ /.*@helpful.io$/
+    if person.email_address =~ /.*@hackraise.com$/
       Rails.logger.warn "dropping email=#{person.email_address}"
       mail.perform_deliveries = false
     end

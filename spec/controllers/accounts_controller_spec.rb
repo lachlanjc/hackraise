@@ -20,7 +20,7 @@ describe AccountsController do
       post :create, {
         account: {
           name: 'Assembly',
-          email: 'asm@helpful.io',
+          email: 'asm@hackraise.com',
           billing_plan_slug: 'starter-kit'
         },
         person: {
@@ -48,7 +48,7 @@ describe AccountsController do
       post :create, {
         account: {
           name: 'Assembly',
-          email: 'asm@helpful.io',
+          email: 'asm@hackraise.com',
           billing_plan_slug: 'starter-kit'
         },
         person: {

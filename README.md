@@ -1,4 +1,4 @@
-# [Helpful](http://helpful.io)
+# [Hackraise](http://hackraise.com)
 
 Help shouldn't hurt.
 
@@ -6,21 +6,21 @@ Help shouldn't hurt.
 [![Code Climate](https://codeclimate.com/github/support-foo/web.png)](https://codeclimate.com/github/support-foo/web)
 [![Inline docs](http://inch-ci.org/github/asm-helpful/helpful-web.png)](http://inch-ci.org/github/asm-helpful/helpful-web)
 
-Helpful is an open product that's being built by a fantastic group of people on [Assembly](https://assemblymade.com/helpful). Anybody can join in building this product and earn a stake of the profit.
+Hackraise is an open product that's being built by a fantastic group of people on [Assembly](https://assemblymade.com/helpful). Anybody can join in building this product and earn a stake of the profit.
 
 ## Getting Started
 
-[Vagrant](http://vagrantup.com) is the recommended way to run Helpful on your own machine. You need to download and install [Vagrant](http://vagrantup.com/downloads) before you can continue (this will take a while to run so you may want to grab some coffee).
+[Vagrant](http://vagrantup.com) is the recommended way to run Hackraise on your own machine. You need to download and install [Vagrant](http://vagrantup.com/downloads) before you can continue (this will take a while to run so you may want to grab some coffee).
 
     git clone https://github.com/asm-helpful/helpful-web.git helpful-web
     cd helpful-web
     vagrant up
 
-Once it's finished open up [http://localhost:5000](http://localhost:5000) in your web browser to check out Helpful.
+Once it's finished open up [http://localhost:5000](http://localhost:5000) in your web browser to check out Hackraise.
 
 ### Gems Installation and Database Migration
 
-Remember that you are using Vagrant, so if you run `bundle install` or `rake db:migrate` directly in your terminal it will not affect the virtual machine where Helpful is running.
+Remember that you are using Vagrant, so if you run `bundle install` or `rake db:migrate` directly in your terminal it will not affect the virtual machine where Hackraise is running.
 
 In order to run these commands, in the virtual machine, all you have to do is to run `vagrant provision`.
 
@@ -30,9 +30,9 @@ If you need to change any environment variable you have to edit `.env` file prop
 
     vagrant ssh -c "sudo restart helpful"
 
-### Using Helpful
+### Using Hackraise
 
-To create a new account for Helpful, click "Sign Up" on the homepage.
+To create a new account for Hackraise, click "Sign Up" on the homepage.
 
 ## Advanced Email Configuration
 
