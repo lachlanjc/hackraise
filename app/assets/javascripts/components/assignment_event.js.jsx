@@ -1,18 +1,12 @@
-var AssignmentEvent = React.createClass({
-  render: function() {
-    return (
-      <div className="event">
-        <div className="pull-right">{this.timestamp()}</div>
-        <Avatar person={this.props.user.person} size="20" />
-        <Person person={this.props.user.person} />
-        &nbsp;assigned this to&nbsp;
-        <Avatar person={this.props.assignee.person} size="20" />
-        <Person person={this.props.assignee.person} />
-      </div>
-    )
-  },
+const timestamp = dt => moment(dt).format(CONSTANTS.dateFormat)
 
-  timestamp: function() {
-    return moment(this.props.created).format(CONSTANTS.dateFormat)
-  }
-})
+const AssignmentEvent = props => (
+  <div className="event">
+    <div className="pull-right">{timestamp(props.created)}</div>
+    <Avatar person={props.user.person} size="20" />
+    <strong children={props.user.person.name} />
+    &nbsp;assigned this to&nbsp;
+    <Avatar person={props.assignee.person} size="20" />
+    <strong children={props.user.person.name} />
+  </div>
+)

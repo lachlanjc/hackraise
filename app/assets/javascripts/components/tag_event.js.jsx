@@ -1,5 +1,3 @@
-const timestamp = dt => moment(dt).format(CONSTANTS.dateFormat)
-
 const TagEvent = props => (
   <div className="event">
     <div className="pull-right">{timestamp(props.created)}</div>
