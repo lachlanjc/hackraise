@@ -4,8 +4,6 @@
 //= require bootstrap-sprockets
 //= require tabs
 //= require canned_responses
-//= require conversations
-//= require command_bar
 //= require jquery-autosize
 //= require search_bar
 //= require homepage
@@ -23,6 +21,6 @@
 //= require react_ujs
 //= require_tree ./components
 
-var CONSTANTS = {
+const CONSTANTS = {
   dateFormat: 'LT L'
 }

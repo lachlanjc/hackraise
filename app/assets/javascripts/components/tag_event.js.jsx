@@ -1,25 +1,19 @@
 /** @jsx React.DOM */
 
-var TagEvent = React.createClass({
-  render: function() {
-    return (
-      <div className="event">
-        <div className="pull-right">{this.timestamp()}</div>
-        <Avatar person={this.props.user.person} size="20" />
-        <Person person={this.props.user.person} />
-        &nbsp;tagged this with&nbsp;
-        <a href="#" className="label label-default">
-          #{this.props.tag}
-          <span
-            onClick={this.props.removeTagHandler(this.props)}
-            className="geomicon geomicon-delete"
-          />
-        </a>
-      </div>
-    )
-  },
+const timestamp = dt => moment(dt).format(CONSTANTS.dateFormat)
 
-  timestamp: function() {
-    return moment(this.props.created).format(CONSTANTS.dateFormat)
-  }
-})
+const TagEvent = props => (
+  <div className="event">
+    <div className="pull-right">{timestamp(props.created)}</div>
+    <Avatar person={props.user.person} size="20" />
+    <Person person={props.user.person} />
+    &nbsp;tagged this with&nbsp;
+    <a href="#" className="label label-default">
+      #{props.tag}
+      <span
+        onClick={props.removeTagHandler(props)}
+        className="geomicon geomicon-delete"
+      />
+    </a>
+  </div>
+)
