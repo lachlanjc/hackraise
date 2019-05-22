@@ -3,152 +3,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
-      <ul class="nav nav-tabs" role="tablist">
-        <%# <li class="active"><a href="#getting-started" role="tab" data-toggle="tab">Getting Started</a></li> %>
-        <li class="active"><a href="#widget" role="tab" data-toggle="tab">Helpful Widget</a></li>
-        <li><a href="#email-forwarding" role="tab" data-toggle="tab">Set Up Email Forwarding</a></li>
-      </ul>
+      <h1>Email forwarding</h1>
+      <p>Let your customers send support requests to an email from your own domain and then automatically forward them to your Helpful account.</p>
 
-      <div class="sheet">
-        <div class="tab-content">
-          <%# <div class="tab-pane active" id="getting-started"></div> %>
-          <div class="tab-pane active" id="widget">
-            <p>Your Helpful account comes with a Helpful Widget. It's a nifty way for customers to get help from you, right on your website — in the place your customers need it the most.</p>
+      <h3>Forward emails from a Google Apps account</h3>
 
-            <p>Conversations are created from the widget like they would an email, and you reply the the users via an email.</p>
+      <h4>Step 1: Go to your account settings page in Google Apps</h4>
+      <p>Login to your Google Apps account. It's usually something like <a href="https://admin.google.com/your-domain.com">https://admin.google.com/&lt;your-domain.com&gt;</a>.</p>
+      <p>Click on the "Groups" section from the Admin console. <strong>You may need to expand the "More controls" drawer at the bottom of the screen.</strong></p>
 
-            <p>To see the widget in action, click the button below.</p>
+      <span class="thumbnail">
+        <%= image_tag 'docs/click-groups-more-controls.png', class: 'img-responsive' %>
+      </span>
 
-            <script async src="https://assets.helpful.io/assets/widget.js"></script>
-            <% if signed_in? %>
-              <%= mail_to @account.mailbox_email.address, 'Try the Widget', data: {helpful: @account.slug, 'helpful-email' => current_user.email, 'helpful-name' => current_user.name}, class: 'btn btn-primary' %>
-            <% else %>
-              <%= mail_to 'helpful@helpful.io', 'Try the Widget', data: {helpful: @account.slug}, class: 'btn btn-primary' %>
-            <% end %>
+      <h4>Step 2: Create a new group</h4>
+      <p>Click on "Create a group" and enter a name and email address you would like your customers to use for support requests. Make sure you check off the option for "Also allow anyone on the internet to post messages".</p>
 
-            <h3>Setting up Your Widget</h3>
+      <span class="thumbnail">
+        <%= image_tag 'docs/create-group-form.png', class: 'img-responsive' %>
+      </span>
 
-            <p>Installing the Helpful Widget on your website is really easy. First, copy and paste the code below into your HTML:</p>
+      <h4>Step 3: Add your forwarding address to as a member of that group</h4>
+      <p>Type in your Helpful address as a member of the group and click "Add".</p>
+      <p>You can always find your forwarding address in the settings page of your account.</p>
 
-            <pre><code>&lt;script async src="https://assets.helpful.io/assets/widget.js"&gt;&lt;/script&gt;</code></pre>
+      <span class="thumbnail">
+        <%= image_tag 'docs/group-new-member-form.png', class: 'img-responsive' %>
+      </span>
 
-            <p>Then add the <code>data-helpful</code> attribute to any link on your site. The value of the attribute should be the name of your account.</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <h3>Fallback</h3>
-
-            <p>To make sure your link isn't completely broken when the widget fails to load you can add a mailto to the link. The widget prevents any default events when it's properly loaded.</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <h3>Customize</h3>
-
-            <h4>Customer information</h4>
-
-            <p>If you already have information about your customer, you can save them typing by having it pre-filled.</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>" data-helpful-name="Jane Smith" data-helpful-email="jane@icloud.com"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <% if signed_in? %>
-              <%= mail_to 'helpful@helpful.io', 'Example', data: {helpful: 'helpful', 'helpful-email' => current_user.email, 'helpful-name' => current_user.name} %>
-            <% else %>
-              <%= mail_to 'helpful@helpful.io', 'Example', data: {helpful: 'helpful'} %>
-            <% end %>
-
-            <h4>Modal</h4>
-
-            <p>By the default the widget pops up next to the element that was clicked to open it. If you rather have it open in the middle of the screen, you can enable the modal option.</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>" data-helpful-modal="on"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <%= mail_to 'helpful@helpful.io', 'Example', data: {helpful: 'helpful', 'helpful-modal' => 'on'} %>
-
-            <h4>Overlay</h4>
-
-            <p>By the default a 70% transparent overlay is shown behind the widget. Use the overlay option to disable it. (Example is in combination with the modal option.)</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>" data-helpful-modal="on" data-helpful-overlay="off"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <%= mail_to 'helpful@helpful.io', 'Example', data: {helpful: 'helpful', 'helpful-modal' => 'on', 'helpful-overlay' => 'off'} %>
-
-            <h4>Text</h4>
-
-            <p>The texts that are used in the widget can be customized. Every piece of text has been assigned a specific keys. The values of the keys can be overriden in two ways. First, you can include an extra attribute containing the custom text. The example only overrides the title of the widget. You can include as much attributes as you need. For a full list of keys, check out the example file below. Make sure to replace any underscores (_) with a dash (-) in attribute names.</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>" data-helpful-title="Got a question?"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <p><a href="mailto:helpful@helpful.io" data-helpful="helpful" data-helpful-title="Got a question?">Example</a></p>
-
-            <p>Alternatively you can include your own Javascript file containing all your text and reference that from the strings option. The example shows a simple Dutch translation of the widget. First, create your Javascript file (named "helpful-widget-dutch.js" in the example).</p>
-
-            <pre><code>HelpfulStrings = {
-  dutch: {
-    title: 'Hulp nodig?',
-    message_placeholder: 'Stel hier je vraag...',
-    next: 'Volgende',
-    contact_information: 'Uw informatie.',
-    contact_information_info: 'Zodat we op uw vraag kunnen reageren.',
-    name_placeholder: 'Naam',
-    email_placeholder: 'Email',
-    submit: 'Verstuur uw vraag',
-    thanks: 'Bedankt!',
-    thanks_message: 'Fijne dag!',
-    submit_another: 'Nog een vraag stellen?'
-  }
-}</code></pre>
-
-            <p>Then include the script in your page:</p>
-
-            <pre><code>&lt;script async src="helpful-widget-dutch.js"&gt;&lt;/script&gt;</code></pre>
-
-            <p>Then reference the name you gave your custom text in the strings option (the key in the "HelpfulStrings" object):</p>
-
-            <pre><code>&lt;a href="mailto:your-account@helpful.io" data-helpful="<%= @account.slug %>" data-helpful-strings="dutch"&gt;Help!&lt;&#47;a&gt;</code></pre>
-
-            <h3>Need help with the widget?</h3>
-
-            <p>If you need help installing the widget, just ask through the Helpful Widget below.</p>
-
-            <% if signed_in? %>
-              <%= mail_to 'helpful@helpful.io', 'Help!', data: {helpful: 'helpful', 'helpful-email' => current_user.email, 'helpful-name' => current_user.name}, class: 'btn btn-primary' %>
-            <% else %>
-              <%= mail_to 'helpful@helpful.io', 'Help!', data: {helpful: 'helpful'}, class: 'btn btn-primary' %>
-            <% end %>
-          </div>
-          <div class="tab-pane" id="email-forwarding">
-            <p>Let your customers send support requests to an email from your own domain and then automatically forward them to your Helpful account.</p>
-
-            <h3>Forward emails from a Google Apps account</h3>
-
-            <h4>Step 1: Go to your account settings page in Google Apps</h4>
-            <p>Login to your Google Apps account. It's usually something like <a href="https://admin.google.com/your-domain.com">https://admin.google.com/&lt;your-domain.com&gt;</a>.</p>
-            <p>Click on the "Groups" section from the Admin console. <strong>You may need to expand the "More controls" drawer at the bottom of the screen.</strong></p>
-
-            <span class="thumbnail">
-              <%= image_tag 'docs/click-groups-more-controls.png', class: 'img-responsive' %>
-            </span>
-
-            <h4>Step 2: Create a new group</h4>
-            <p>Click on "Create a group" and enter a name and email address you would like your customers to use for support requests. Make sure you check off the option for "Also allow anyone on the internet to post messages".</p>
-
-            <span class="thumbnail">
-              <%= image_tag 'docs/create-group-form.png', class: 'img-responsive' %>
-            </span>
-
-            <h4>Step 3: Add your forwarding address to as a member of that group</h4>
-            <p>Type in your Helpful address as a member of the group and click "Add".</p>
-            <p>You can always find your forwarding address in the settings page of your account.</p>
-
-            <span class="thumbnail">
-              <%= image_tag 'docs/group-new-member-form.png', class: 'img-responsive' %>
-            </span>
-
-            <p>And that's it! Emails sent to your custom support email show automatically show up in Helpful.</p>
-
-          </div>
-        </div>
-      </div>
+      <p>And that's it! Emails sent to your custom support email show automatically show up in Helpful.</p>
     <div>
   </div>
 <div>

@@ -4,30 +4,8 @@
 
 <div class="container">
   <h1 class="page-title">
-    <!-- TODO locale is missing -->
     Getting Setup and Technical Details
   </h1>
-
-  <h2>Widget</h2>
-
-  <p>Adding our widget to your site is very simple. First, include the following script add the end of the body of your page.</p>
-
-  <pre><code>&lt;script src="https://assets.helpful.io/assets/widget.js"&gt;&lt;/script&gt;</code></pre>
-
-  <p>Next, all you need to do is adding an attribute containing your company slug to the element you want to open the widget after clicking it.</p>
-
-  <pre><code>&lt;a href="#" data-helpful="<%= @account.slug %>"&gt;Help!&lt;/a&gt;</code></pre>
-
-  <p>That's it! Clicking the element will open up the widget. Additionally some extra options are available:</p>
-
-  <pre><code>&lt;-- Pre fill user information --&gt;
-&lt;a href="#" data-helpful="<%= @account.slug %>" data-helpful-name="name" data-helpful-email="user@example.com"&gt;Help!&lt;/a&gt;
-
-&lt;-- Show widget as modal instead of above element --&gt;
-&lt;a href="#" data-helpful="<%= @account.slug %>" data-helpful-modal="on"&gt;Help!&lt;/a&gt;
-
-&lt;-- Disable the overlay behind the widget --&gt;
-&lt;a href="#" data-helpful="<%= @account.slug %>" data-helpful-overlay="off"&gt;Help!&lt;/a&gt;</code></pre>
 
   <h2><%= t('.embed_form') %></h2>
 
@@ -58,5 +36,4 @@
       <%= f.text_field :mailbox_email, class: 'form-control', readonly: 'readonly' %>
     </div>
   <% end %>
-
 </div>

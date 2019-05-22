@@ -16,106 +16,57 @@
 
       <h2>1. Send a support request.</h2>
 
-      <p>Pretend to be a customer and send an email or support request with the widget. Then watch it show up in the inbox to the right.</p>
+      <p>Pretend to be a customer and send an email. Then watch it show up in the inbox to the right.</p>
 
       <div class="padding-vertical">
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="active">
-            <a href="#email" role="tab" data-toggle="tab">Email</a>
-          </li>
-          <li>
-            <a href="#widget" role="tab" data-toggle="tab">Widget</a>
-          </li>
-        </ul>
-
         <div class="sheet">
-          <div class="tab-content">
-            <div class="tab-pane active" id="email">
+          <form class="form-horizontal">
+            <div class="form-group">
 
-              <form class="form-horizontal">
-                <div class="form-group">
+              <div class="col-xs-2">
+                <label class="control-label">To</label>
+              </div>
 
-                  <div class="col-xs-2">
-                    <label class="control-label">To</label>
-                  </div>
-
-                  <div class="col-xs-10">
-                    <p class="form-control-static">helpful@helpful.io</p>
-                  </div>
-
+                <div class="col-xs-10">
+                  <p class="form-control-static">helpful@helpful.io</p>
                 </div>
 
-                <div class="form-group">
+              </div>
 
-                  <div class="col-xs-2">
-                    <label class="control-label">From</label>
-                  </div>
+              <div class="form-group">
 
-                  <div class="col-xs-10">
-                    <input name="email[from]" required="required" type="email" class="form-control input-sm" value="<%= current_user.email %>">
-                  </div>
+                <div class="col-xs-2">
+                  <label class="control-label">From</label>
                 </div>
 
-                <div class="form-group">
-
-                  <div class="col-xs-2">
-                    <label class="control-label">Subject</label>
-                  </div>
-
-                  <div class="col-xs-10">
-                    <input name="email[subject]" required="required" type="text" class="form-control input-sm" value="Halp!">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-xs-12">
-                    <textarea name="email[body]" required="required" class="form-control input-sm" rows="3">Everything was going well, until I ran into a problem. Can you help?</textarea>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-xs-12">
-                    <button class="email-send btn btn-primary pull-right">Send</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <div class="tab-pane" id="widget">
-              <div class="helpful-container" style="margin-left: auto; margin-right: auto">
-                <div class="helpful-embed helpful-reset" style="position: relative; width: auto; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3)">
-                  <div class="helpful-question-container">
-                    <div class="helpful-header">
-                      <h1>How may we help you?</h1>
-                    </div>
-                    <textarea name="question" id="helpful-question" required="required" cols="10" rows="3" placeholder="Type your message here..."></textarea>
-                    <button class="helpful-btn helpful-btn-default">Next</button>
-                  </div>
-                  <div class="helpful-details-container">
-                    <div class="helpful-header">
-                      <h1>Your contact information.</h1>
-                      <img src="//assets.helpful.io/assets/widget-arrow.svg" class="helpful-icon helpful-back-button">
-                    </div>
-                    <p>So we can respond to your question.</p>
-                    <input type="text" name="name" id="helpful-name" placeholder="Name" value="<%= current_user.name %>">
-                    <input type="email" name="email" id="helpful-email" placeholder="Email" value="<%= current_user.email %>">
-                    <input type="submit" class="widget-send helpful-btn helpful-btn-primary" value="Submit your Question">
-                  </div>
-                  <div class="helpful-thanks-container">
-                    <div class="helpful-header">
-                      <h1>Thanks!</h1>
-                      <img src="//assets.helpful.io/assets/widget-close.svg" class="helpful-icon helpful-close-button">
-                    </div>
-                    <p>Have a wonderful day.</p>
-                    <button class="helpful-btn helpful-btn-default helpful-btn-return">Submit another question?</button>
-                  </div>
-                  <div class="helpful-footer">
-                    <a href="https://helpful.io/">Helpful.io</a> by <a href="https://assemblymade.com/">Assembly</a>
-                  </div>
+                <div class="col-xs-10">
+                  <input name="email[from]" required="required" type="email" class="form-control input-sm" value="<%= current_user.email %>">
                 </div>
               </div>
-            </div>
-          </div>
+
+              <div class="form-group">
+
+                <div class="col-xs-2">
+                  <label class="control-label">Subject</label>
+                </div>
+
+                <div class="col-xs-10">
+                  <input name="email[subject]" required="required" type="text" class="form-control input-sm" value="Halp!">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <textarea name="email[body]" required="required" class="form-control input-sm" rows="3">Everything was going well, until I ran into a problem. Can you help?</textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <button class="email-send btn btn-primary pull-right">Send</button>
+                </div>
+              </div>
+            </form>
         </div>
       </div>
     </div>
@@ -144,12 +95,6 @@
       <li class="padding-vertical">
         <%= link_to edit_account_path(@account, anchor: 'team'), class: 'btn btn-link' do %>
           Invite the rest of your team
-          <span class="geomicon geomicon-navigateright"></span>
-        <% end %>
-      </li>
-      <li class="padding-vertical">
-        <%= link_to docs_path, class: 'btn btn-link' do %>
-          Add the widget to your site
           <span class="geomicon geomicon-navigateright"></span>
         <% end %>
       </li>

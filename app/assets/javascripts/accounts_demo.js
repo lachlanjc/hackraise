@@ -59,10 +59,6 @@ $(function() {
     $('[name="email[body]"]').val('')
   }
 
-  function sendFromWidget() {
-    console.log('send from widget')
-  }
-
   function addConversation(attributes) {
     var conversation = {
       id: 'conversation-' + new Date().getTime(),
@@ -92,60 +88,6 @@ $(function() {
       '?d=identicon&size=40.png'
     )
   }
-
-  function sendFromWidget() {
-    var email = $('#helpful-email').val()
-
-    var author = {
-      email: email,
-      name: $('#helpful-name').val(),
-      gravatar_url: gravatarUrl(email)
-    }
-
-    var conversation = {
-      author: author,
-      subject: $('#helpful-question').val(),
-      body: $('#helpful-question').val()
-    }
-
-    addConversation(conversation)
-
-    clearWidget()
-  }
-
-  function checkTextarea() {
-    var $widget = $('.helpful-embed')
-    var $textarea = $widget.find('textarea')
-
-    if ($textarea.val()) {
-      $widget.addClass('helpful-textarea-filled')
-    } else {
-      $widget.removeClass('helpful-textarea-filled')
-    }
-  }
-
-  function clearWidget() {
-    $('.helpful-embed textarea').val('')
-    $('.helpful-back-button').click()
-  }
-
-  $('.helpful-embed textarea').keyup(function() {
-    checkTextarea()
-  })
-
-  $('.helpful-question-container button').click(function() {
-    $('.helpful-question-container').hide()
-    $('.helpful-details-container').show()
-    $(this)
-      .closest('.helpful-embed')
-      .removeClass('helpful-textarea-filled')
-  })
-
-  $('.helpful-back-button').click(function() {
-    $('.helpful-details-container').hide()
-    $('.helpful-question-container').show()
-    checkTextarea()
-  })
 
   React.renderComponent(conversationList, $('.react')[0])
 
