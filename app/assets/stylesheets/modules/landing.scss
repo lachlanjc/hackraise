@@ -119,8 +119,7 @@ PRICING
   }
   [data-tooltip].conversation-explaination {
     &:after {
-      @include multiline(300px, center);
-      //border: 2px solid red;
+      // border: 2px solid red;
       text-transform: none;
       font-size: 15px;
       line-height: 1.4;
@@ -129,7 +128,7 @@ PRICING
       box-shadow: 0px 0px 10px 0px #ccc;
       margin-bottom: 30px;
     }
-    @include applyColor(#fff, $gray-dark);
+    // @include applyColor(#fff, $gray-dark);
     &:before {
       margin-bottom: 0px;
       border-top: 26px solid rgb(228, 228, 228);
