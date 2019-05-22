@@ -1,6 +1,6 @@
 const TagEvent = props => (
   <div className="event">
-    <div className="pull-right">{timestamp(props.created)}</div>
+    <div className="pull-right text-muted">{timestamp(props.created)}</div>
     <Avatar person={props.user.person} size="20" />
     <strong children={props.user.person.name} />
     &nbsp;tagged this with&nbsp;
