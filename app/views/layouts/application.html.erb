@@ -7,18 +7,15 @@
     <title>Helpful</title>
   <% end %>
   <%= stylesheet_link_tag "application", media: "all" %>
-  <%= javascript_include_tag "https://checkout.stripe.com/checkout.js" %>
   <%= javascript_include_tag "application" %>
   <%= page_specific_js && javascript_include_tag(page_specific_js) %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="stripe-token" content="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>">
 </head>
 <body>
   <% if @account %>
     <input type="hidden" name="account-slug" value="<%= @account.slug %>">
   <% end %>
-
   <% if @conversation %>
     <input type="hidden" name="conversation-number" value="<%= @conversation.number %>">
   <% end %>
