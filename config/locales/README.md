@@ -5,11 +5,12 @@ A translation for Hackraise can be created by copying config/locales/en.yml and 
 Translate all strings in your newly created file. Be sure to check for context "archive" might mean "to archive" in one place, but "an archive" in another.
 
 ### Devise translations
+
 A large part of the login system uses devise which comes with translations through the devise-i18n gem, you won't have to translate any of those strings and they'll automatically be included.
 
 ### Testing your translation
+
 You can test-drive your translation by adding
-	
-	config.i18n.default_locale = :[your locale]
+config.i18n.default_locale = :[your locale]
 
 in config/application.rb
