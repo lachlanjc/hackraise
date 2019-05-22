@@ -4,11 +4,8 @@
 //= require bootstrap-sprockets
 //= require tabs
 //= require canned_responses
-//= require jquery-autosize
-//= require search_bar
 //= require homepage
 //= require email_check
-//= require handlebars
 //= require medium_init
 //= require jquery.transform2d
 //= require moment

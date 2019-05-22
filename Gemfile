@@ -47,9 +47,7 @@ gem 'unf'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-animate.css',     '~> 3.2'
-  gem 'rails-assets-jquery-autosize', '~> 1'
   gem 'rails-assets-js-md5',          '~> 1'
-  gem 'rails-assets-handlebars',      '~> 3.0'
   gem 'rails-assets-moment',          '~> 2.9'
   gem 'rails-assets-showdown',        '~> 0.3'
 end

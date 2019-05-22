@@ -249,10 +249,6 @@ GEM
       railties (= 4.2.0)
       sprockets-rails
     rails-assets-animate.css (3.2.3)
-    rails-assets-handlebars (3.0.0)
-    rails-assets-jquery (2.1.3)
-    rails-assets-jquery-autosize (1.18.18)
-      rails-assets-jquery (>= 1.7)
     rails-assets-js-md5 (1.1.0)
     rails-assets-moment (2.9.0)
     rails-assets-showdown (0.4.0)
@@ -426,8 +422,6 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.0)
   rails-assets-animate.css (~> 3.2)!
-  rails-assets-handlebars (~> 3.0)!
-  rails-assets-jquery-autosize (~> 1)!
   rails-assets-js-md5 (~> 1)!
   rails-assets-moment (~> 2.9)!
   rails-assets-showdown (~> 0.3)!
