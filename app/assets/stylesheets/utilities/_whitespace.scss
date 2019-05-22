@@ -3,27 +3,35 @@ $breakpoint-md: '(min-width: 52em)';
 $breakpoint-lg: '(min-width: 64em)';
 
 $breakpoints: (
-  "sm": $breakpoint-sm,
-  "md": $breakpoint-md,
-  "lg": $breakpoint-lg,
+  'sm': $breakpoint-sm,
+  'md': $breakpoint-md,
+  'lg': $breakpoint-lg
 );
 
 $scale: (
-  "0": 0,
-  "1": 6px,
-  "2": 12px,
-  "3": 24px,
-  "4": 48px
+  '0': 0,
+  '1': 6px,
+  '2': 12px,
+  '3': 24px,
+  '4': 48px
 );
 
-
 @each $index, $value in $scale {
-
-  .m#{$index} { margin: $value }
-  .mt#{$index} { margin-top: $value }
-  .mr#{$index} { margin-right: $value }
-  .mb#{$index} { margin-bottom: $value }
-  .ml#{$index} { margin-left: $value }
+  .m#{$index} {
+    margin: $value;
+  }
+  .mt#{$index} {
+    margin-top: $value;
+  }
+  .mr#{$index} {
+    margin-right: $value;
+  }
+  .mb#{$index} {
+    margin-bottom: $value;
+  }
+  .ml#{$index} {
+    margin-left: $value;
+  }
 
   .mxn#{$index} {
     margin-right: -$value;
@@ -38,7 +46,7 @@ $scale: (
   // Paddings
 
   .p#{$index} {
-    padding: $value
+    padding: $value;
   }
 
   .px#{$index} {
@@ -53,14 +61,23 @@ $scale: (
 
   @each $prefix, $breakpoint in $breakpoints {
     @media #{$breakpoint} {
-
       // Margins
 
-      .#{$prefix}-m#{$index} { margin: $value }
-      .#{$prefix}-mt#{$index} { margin-top: $value }
-      .#{$prefix}-mr#{$index} { margin-right: $value }
-      .#{$prefix}-mb#{$index} { margin-bottom: $value }
-      .#{$prefix}-ml#{$index} { margin-left: $value }
+      .#{$prefix}-m#{$index} {
+        margin: $value;
+      }
+      .#{$prefix}-mt#{$index} {
+        margin-top: $value;
+      }
+      .#{$prefix}-mr#{$index} {
+        margin-right: $value;
+      }
+      .#{$prefix}-mb#{$index} {
+        margin-bottom: $value;
+      }
+      .#{$prefix}-ml#{$index} {
+        margin-left: $value;
+      }
 
       .#{$prefix}-mxn#{$index} {
         margin-right: -$value;
@@ -70,7 +87,7 @@ $scale: (
       // Paddings
 
       .#{$prefix}-p#{$index} {
-        padding: $value
+        padding: $value;
       }
 
       .#{$prefix}-px#{$index} {

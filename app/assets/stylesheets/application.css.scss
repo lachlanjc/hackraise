@@ -12,9 +12,6 @@
 @import 'medium-editor/medium-editor';
 @import 'medium-editor/themes/default';
 
-@import 'base/*',
-        'utilities/*',
-        'components/*',
-        'modules/*';
+@import 'base/*', 'utilities/*', 'components/*', 'modules/*';
 
 @import 'widget';

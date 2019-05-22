@@ -47,7 +47,7 @@
 
 .navbar-homepage {
   height: 72px;
-  background: #4D5055;
+  background: #4d5055;
 
   .navbar-header {
     height: 72px;
@@ -68,14 +68,14 @@
 
   .navbar-nav {
     li a {
-        -webkit-transition: .6s all;
-      }
-      li > a:hover {
-        color: #e6e6e6;
-        background-color: rgba(0,0,0,.1);
-        -webkit-transition: .3s all;
-      }
+      -webkit-transition: 0.6s all;
     }
+    li > a:hover {
+      color: #e6e6e6;
+      background-color: rgba(0, 0, 0, 0.1);
+      -webkit-transition: 0.3s all;
+    }
+  }
 
   .btn {
     margin-top: 18px;
@@ -100,10 +100,10 @@
     margin-top: 19px;
     border: 0;
     .icon-bar {
-      background: rgba(255,255,255,.8);
+      background: rgba(255, 255, 255, 0.8);
     }
     &:hover {
-      background: rgba(0,0,0,.1);
+      background: rgba(0, 0, 0, 0.1);
     }
   }
 }
@@ -113,6 +113,6 @@
 }
 
 .navbar-tabs {
-  border-bottom: 1px solid #B5CBD0;
+  border-bottom: 1px solid #b5cbd0;
   margin-top: 10px;
 }

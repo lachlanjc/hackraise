@@ -1,18 +1,18 @@
 .demo-image {
   padding-top: 100px;
 
-    .screenshot {
-      // margin: 0 auto;
-      background-image: url(image-path('screenshot.png'));
-      // width: 1161px;
-      // height: 660px;
-    }
+  .screenshot {
+    // margin: 0 auto;
+    background-image: url(image-path('screenshot.png'));
+    // width: 1161px;
+    // height: 660px;
   }
+}
 
 .page-showcase {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 1400px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1400px;
 }
 
 .screenshot-list {
@@ -36,7 +36,7 @@
     width: 78%;
     height: 50px;
     margin: 20px auto;
-    opacity: .3;
+    opacity: 0.3;
     color: white;
     font-size: 18px;
     font-weight: 400;
