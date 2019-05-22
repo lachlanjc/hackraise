@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require pusher
 //= require medium-editor
 //= require bootstrap-sprockets
 //= require tabs

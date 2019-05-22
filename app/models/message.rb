@@ -39,9 +39,6 @@ class Message < ActiveRecord::Base
   after_commit :send_webhook,
                on: [:create]
 
-  after_commit :trigger_pusher_new_message,
-               on: [:create]
-
   after_commit :enqueue_to_update_search_index,
                on: [:create, :update]
 
@@ -100,17 +97,6 @@ class Message < ActiveRecord::Base
 
   def recipients
     ((account.participants + conversation.participants_with_assignee) - [person]).compact
-  end
-
-  def trigger_pusher_new_message
-    # TODO: Perhaps we should mock Pusher call
-    return unless Rails.env.production?
-
-    begin
-      Pusher[self.account.slug].trigger('new_message', {})
-    rescue Pusher::Error => e
-      logger.error e.message
-    end
   end
 
   def track_analytics
