@@ -1,20 +1,23 @@
 # Helpful Front-end Styleguide
 
-*Note: this guide is growing as we run into problems or discussions while building Helpful. Feel free to make your own changes.*
+_Note: this guide is growing as we run into problems or discussions while building Helpful. Feel free to make your own changes._
 
 ## Philosophy
+
 Aim to write re-usable, stand-alone modules that can be placed anywhere in the HTML. Helpful is growing fast and your code should be able to adapt to changes.
 
 ## Technology
+
 Helpful uses Compass (SASS) in the SCSS syntax.
 
 ## Guidelines
 
 ### Readability
-* Use soft indent of 2 spaces
-* Opening bracket goes on the same line as the selector
-* One space between selector and opening bracket
-* Closing bracket has its own line
+
+- Use soft indent of 2 spaces
+- Opening bracket goes on the same line as the selector
+- One space between selector and opening bracket
+- Closing bracket has its own line
 
 ```
 .example {
@@ -23,9 +26,9 @@ Helpful uses Compass (SASS) in the SCSS syntax.
 ```
 
 ### Modules
-* All elements are called modules and go in `modules/`
-* If a module is reusable, add it to the styleguide found in `app/views/pages/styleguide.html.erb`
 
+- All elements are called modules and go in `modules/`
+- If a module is reusable, add it to the styleguide found in `app/views/pages/styleguide.html.erb`
 
 ```
   <div class="example-container">
@@ -40,8 +43,9 @@ Helpful uses Compass (SASS) in the SCSS syntax.
 ```
 
 ### Layouts
-* When styling element positioning on a page, consider using a layout
-* All layout classes have a `l-` prefix
+
+- When styling element positioning on a page, consider using a layout
+- All layout classes have a `l-` prefix
 
 ```
   <div class="l-example-container">
@@ -51,15 +55,17 @@ Helpful uses Compass (SASS) in the SCSS syntax.
 ```
 
 ### Naming
-* All lowercase
-* Separate words with a hypen `-`
-* Namespace all elements with the name of the module
-* Don't use id's for styling
-* Avoid using HTML elements for styling
+
+- All lowercase
+- Separate words with a hypen `-`
+- Namespace all elements with the name of the module
+- Don't use id's for styling
+- Avoid using HTML elements for styling
 
 ### SCSS Specifics
-* All `@extend` or `@include` go first
+
+- All `@extend` or `@include` go first
 
 ### CSS
-* Everything uses `box-sizing: border-box`
 
+- Everything uses `box-sizing: border-box`
