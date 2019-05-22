@@ -1,6 +1,0 @@
-{
-  "name": "helpful",
-  "dependencies": {
-    "normalize-css": "~2.1.3"
-  }
-}
