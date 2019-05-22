@@ -2,30 +2,30 @@
 
 var ConversationParticipantList = React.createClass({
   render: function() {
-    var creatorName = null;
-    var creatorEmail = null;
-    var participants = null;
+    var creatorName = null
+    var creatorEmail = null
+    var participants = null
 
-    if(this.props.creator.name) {
+    if (this.props.creator.name) {
       creatorName = (
         <div className="conversation-creator-name">
           {this.props.creator.name}
         </div>
-      );
+      )
     }
 
     creatorEmail = (
       <div className="conversation-creator-email">
         {this.props.creator.email}
       </div>
-    );
+    )
 
-    if(this.props.participants.length > 1) {
+    if (this.props.participants.length > 1) {
       participants = (
         <div className="conversation-participants-count">
           + {this.props.participants.length - 1} more
         </div>
-      );
+      )
     }
 
     return (
@@ -34,6 +34,6 @@ var ConversationParticipantList = React.createClass({
         {creatorEmail}
         {participants}
       </div>
-    );
+    )
   }
-});
+})

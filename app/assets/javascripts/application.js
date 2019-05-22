@@ -26,5 +26,5 @@
 //= require_tree ./components
 
 var CONSTANTS = {
-  dateFormat: "LT L"
+  dateFormat: 'LT L'
 }

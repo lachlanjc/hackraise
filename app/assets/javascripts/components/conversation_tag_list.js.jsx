@@ -14,6 +14,6 @@ var ConversationTagList = React.createClass({
       <div className="tag-label-list">
         {this.props.tags.map(renderTagLabel)}
       </div>
-    );
+    )
   }
-});
+})

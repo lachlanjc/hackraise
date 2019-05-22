@@ -5,51 +5,56 @@ var ConversationView = React.createClass({
     return {
       conversation: null,
       archived: false
-    };
+    }
   },
 
   componentDidMount: function() {
-    this.getConversation();
+    this.getConversation()
   },
 
   getConversation: function() {
-    $.getJSON(this.conversationPath(), function(response) {
-      var conversation = response.conversation;
-      conversation.expanded = true;
-      this.setState({ conversation: conversation, archived: conversation.archived });
-    }.bind(this));
+    $.getJSON(
+      this.conversationPath(),
+      function(response) {
+        var conversation = response.conversation
+        conversation.expanded = true
+        this.setState({
+          conversation: conversation,
+          archived: conversation.archived
+        })
+      }.bind(this)
+    )
   },
 
   // TODO: Clean up duplication on ConversationList
   addStreamItemHandler: function(streamItem) {
-    var conversation = this.state.conversation;
+    var conversation = this.state.conversation
 
-    switch(streamItem.type) {
+    switch (streamItem.type) {
       case 'message':
-        conversation.messages.push(streamItem);
-      break;
+        conversation.messages.push(streamItem)
+        break
       case 'assignmentevent':
-        conversation.assignment_events.push(streamItem);
-      break;
+        conversation.assignment_events.push(streamItem)
+        break
       case 'tagevent':
-        conversation.tag_events.push(streamItem);
-      break;
+        conversation.tag_events.push(streamItem)
+        break
     }
 
-    this.setState({ conversation: conversation });
+    this.setState({ conversation: conversation })
   },
-
 
   // TODO: Clean up duplication on ConversationList
   archiveHandler: function(event) {
-    event.stopPropagation();
-    event.preventDefault();
+    event.stopPropagation()
+    event.preventDefault()
 
     var data = {
       conversation: {
         archive: true
       }
-    };
+    }
 
     $.ajax({
       type: 'PUT',
@@ -59,22 +64,22 @@ var ConversationView = React.createClass({
       contentType: 'application/json',
       accepts: { json: 'application/json' },
       success: function(response) {
-        var conversation = this.state.conversation;
-        conversation.archived = true;
-        this.setState({ conversation: conversation });
+        var conversation = this.state.conversation
+        conversation.archived = true
+        this.setState({ conversation: conversation })
       }.bind(this)
-    });
+    })
   },
 
   unarchiveHandler: function(event) {
-    event.stopPropagation();
-    event.preventDefault();
+    event.stopPropagation()
+    event.preventDefault()
 
     var data = {
       conversation: {
         unarchive: true
       }
-    };
+    }
 
     $.ajax({
       type: 'PUT',
@@ -84,11 +89,11 @@ var ConversationView = React.createClass({
       contentType: 'application/json',
       accepts: { json: 'application/json' },
       success: function(response) {
-        var conversation = this.state.conversation;
-        conversation.archived = false;
-        this.setState({ conversation: conversation });
+        var conversation = this.state.conversation
+        conversation.archived = false
+        this.setState({ conversation: conversation })
       }.bind(this)
-    });
+    })
   },
 
   renderConversation: function() {
@@ -99,49 +104,56 @@ var ConversationView = React.createClass({
       archiveHandler: this.archiveHandler,
       unarchiveHandler: this.unarchiveHandler,
       key: this.state.conversation.id
-    });
+    })
   },
 
   renderMailboxLink: function() {
-    if(this.state.archived) {
+    if (this.state.archived) {
       return (
         <a href={this.archivePath()} className="text-muted">
           Back to Archive
         </a>
-      );
+      )
     } else {
       return (
         <a href={this.inboxPath()} className="text-muted">
           Back to Inbox
         </a>
-      );
+      )
     }
   },
 
   render: function() {
-    if(this.state.conversation && this.state.conversation.messages.length > 0) {
+    if (
+      this.state.conversation &&
+      this.state.conversation.messages.length > 0
+    ) {
       return (
         <div>
-          <div className="link-bar">
-            {this.renderMailboxLink()}
-          </div>
+          <div className="link-bar">{this.renderMailboxLink()}</div>
           {this.renderConversation()}
         </div>
-      );
+      )
     } else {
-      return <div></div>;
+      return <div />
     }
   },
 
   conversationPath: function() {
-    return '/accounts/' + this.props.accountSlug + '/conversations/' + this.props.conversationNumber + '.json';
+    return (
+      '/accounts/' +
+      this.props.accountSlug +
+      '/conversations/' +
+      this.props.conversationNumber +
+      '.json'
+    )
   },
 
   inboxPath: function() {
-    return '/' + this.props.accountSlug + '/inbox';
+    return '/' + this.props.accountSlug + '/inbox'
   },
 
   archivePath: function() {
-    return '/' + this.props.accountSlug + '/archived';
+    return '/' + this.props.accountSlug + '/archived'
   }
-});
+})

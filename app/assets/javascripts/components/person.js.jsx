@@ -2,11 +2,7 @@
 
 var Person = React.createClass({
   render: function() {
-    return (
-      <div className="person">
-        {this.label()}
-      </div>
-    );
+    return <div className="person">{this.label()}</div>
   },
 
   label: function() {
@@ -16,6 +12,6 @@ var Person = React.createClass({
         &nbsp;
         <span className="text-muted">{this.props.person.email}</span>
       </div>
-    );
+    )
   }
-});
+})

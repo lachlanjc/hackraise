@@ -1,111 +1,110 @@
 $(function() {
-  var $name = $('#account_name');
-  var $email = $('#account_email');
-  var $formGroup = $email.closest('.form-group');
+  var $name = $('#account_name')
+  var $email = $('#account_email')
+  var $formGroup = $email.closest('.form-group')
 
   var toSlug = function(name) {
-    return name.toLowerCase().
-      replace(/[^\w ]+/g,'').
-      replace(/ +/g,'-')
-  };
+    return name
+      .toLowerCase()
+      .replace(/[^\w ]+/g, '')
+      .replace(/ +/g, '-')
+  }
 
   var toEmail = function(slug) {
-    if(!slug || slug === '') {
-      return;
+    if (!slug || slug === '') {
+      return
     }
 
-    return [
-      slug,
-      '@',
-      'helpful.io'
-    ].join('');
-  };
+    return [slug, '@', 'helpful.io'].join('')
+  }
 
   var generateEmail = function() {
-    var name = $name.val();
-    var slug = toSlug(name);
-    var email = toEmail(slug);
+    var name = $name.val()
+    var slug = toSlug(name)
+    var email = toEmail(slug)
 
-    if(email !== $email.val()) {
-      $email.val(email);
-      validateEmail();
+    if (email !== $email.val()) {
+      $email.val(email)
+      validateEmail()
     }
-  };
+  }
 
   var feedbackIconClass = function(feedback) {
-    switch(feedback) {
+    switch (feedback) {
       case 'success':
-        return 'geomicon-check';
+        return 'geomicon-check'
       case 'loading':
-        return 'geomicon-sync';
+        return 'geomicon-sync'
       case 'error':
-        return 'geomicon-alert';
+        return 'geomicon-alert'
     }
-  };
+  }
 
   var hideFeedback = function($formGroup) {
-    $formGroup.removeClass('has-feedback');
+    $formGroup.removeClass('has-feedback')
 
-    $formGroup.removeClass('has-success');
-    $formGroup.removeClass('has-loading');
-    $formGroup.removeClass('has-error');
+    $formGroup.removeClass('has-success')
+    $formGroup.removeClass('has-loading')
+    $formGroup.removeClass('has-error')
 
-    $('.form-control-feedback', $formGroup).hide();
-  };
+    $('.form-control-feedback', $formGroup).hide()
+  }
 
   var showFeedback = function($formGroup, feedback) {
-    hideFeedback($formGroup);
-    $formGroup.addClass('has-feedback');
-    $formGroup.addClass('has-' + feedback);
-    $('.' + feedbackIconClass(feedback), $formGroup).show();
-  };
+    hideFeedback($formGroup)
+    $formGroup.addClass('has-feedback')
+    $formGroup.addClass('has-' + feedback)
+    $('.' + feedbackIconClass(feedback), $formGroup).show()
+  }
 
-  var hideErrors = function () {
-    $formGroup.find(".error-message").each(function () {
-      $(this).hide();
-    });
-  };
+  var hideErrors = function() {
+    $formGroup.find('.error-message').each(function() {
+      $(this).hide()
+    })
+  }
 
-  var timer;
+  var timer
 
   var validateEmail = function() {
-    clearTimeout(timer);
+    clearTimeout(timer)
 
-    var $formGroup = $email.closest('.form-group');
+    var $formGroup = $email.closest('.form-group')
 
-    if($email.val() === '') {
-      hideFeedback($formGroup);
-      return;
+    if ($email.val() === '') {
+      hideFeedback($formGroup)
+      return
     }
 
-    showFeedback($formGroup, 'loading');
+    showFeedback($formGroup, 'loading')
 
     timer = setTimeout(function() {
-      var email = $email.val();
-      var slug = email.toLowerCase().replace('@helpful.io', '');
+      var email = $email.val()
+      var slug = email.toLowerCase().replace('@helpful.io', '')
 
-      $.get('/account_emails/' + slug + '.json').done(function (data) {
-        showFeedback($formGroup, 'error');
-        data.account_emails.forEach(function (error) {
-          var errorMessage = $("#email-error-" + error.replace(/ /g, '-'));
-          errorMessage.show();
-        });
-      }).error(function(xhr) {
-        if(xhr.status === 404) {
-          showFeedback($formGroup, 'success');
-        } else {
-          hideFeedback($formGroup);
-        }
-        hideErrors();
-      });
-    }, 600);
-  };
+      $.get('/account_emails/' + slug + '.json')
+        .done(function(data) {
+          showFeedback($formGroup, 'error')
+          data.account_emails.forEach(function(error) {
+            var errorMessage = $('#email-error-' + error.replace(/ /g, '-'))
+            errorMessage.show()
+          })
+        })
+        .error(function(xhr) {
+          if (xhr.status === 404) {
+            showFeedback($formGroup, 'success')
+          } else {
+            hideFeedback($formGroup)
+          }
+          hideErrors()
+        })
+    }, 600)
+  }
 
   $name.keyup(function(event) {
-    generateEmail();
-  });
+    generateEmail()
+  })
 
   $email.keyup(function(event) {
-    validateEmail();
-  });
-});
+    validateEmail()
+  })
+})

@@ -6,43 +6,57 @@ var TagButton = React.createClass({
       tags: [],
       newTag: '',
       filter: ''
-    };
+    }
   },
 
   componentDidMount: function() {
-    this.getTags();
+    this.getTags()
   },
 
   getTags: function() {
-    $.getJSON(this.props.conversation.tags_path, function(response) {
-      var tags = response.tags.filter(function(tag) {
-        return this.props.conversation.tags.indexOf(tag) < 0;
-      }.bind(this));
+    $.getJSON(
+      this.props.conversation.tags_path,
+      function(response) {
+        var tags = response.tags.filter(
+          function(tag) {
+            return this.props.conversation.tags.indexOf(tag) < 0
+          }.bind(this)
+        )
 
-      this.setState({ tags: tags });
-    }.bind(this));
+        this.setState({ tags: tags })
+      }.bind(this)
+    )
   },
 
   ignore: function(event) {
-    $(event.target).parents('.command-bar-action').addClass('open');
+    $(event.target)
+      .parents('.command-bar-action')
+      .addClass('open')
   },
 
   focusInput: function(event) {
-    var $input = $('input', $(event.target).closest('button').siblings('.dropdown-menu'));
-    setTimeout(function() { $input.focus() }, 0);
+    var $input = $(
+      'input',
+      $(event.target)
+        .closest('button')
+        .siblings('.dropdown-menu')
+    )
+    setTimeout(function() {
+      $input.focus()
+    }, 0)
   },
 
   filterTags: function(event) {
-    this.setState({ filter: event.target.value });
+    this.setState({ filter: event.target.value })
   },
 
   tagConversationHandler: function(tag) {
     return function(event) {
-      event.stopPropagation();
-      event.preventDefault();
+      event.stopPropagation()
+      event.preventDefault()
 
-      var tagsPath = this.props.conversation.tags_path;
-      var data = { tag: tag };
+      var tagsPath = this.props.conversation.tags_path
+      var data = { tag: tag }
 
       $.ajax({
         type: 'POST',
@@ -52,92 +66,111 @@ var TagButton = React.createClass({
         contentType: 'application/json',
         accepts: { json: 'application/json' },
         success: function(response) {
-          this.addStreamItem(response.tag_event);
-          this.removeTag(tag);
-          this.clearTagFilter(event);
+          this.addStreamItem(response.tag_event)
+          this.removeTag(tag)
+          this.clearTagFilter(event)
         }.bind(this)
-      });
-    }.bind(this);
+      })
+    }.bind(this)
   },
 
   addStreamItem: function(streamItem) {
-    this.props.addStreamItemHandler(streamItem);
+    this.props.addStreamItemHandler(streamItem)
   },
 
   clearTagFilter: function(event) {
-    $dropdown = $(event.target).closest('.dropdown-menu').removeClass('open');
+    $dropdown = $(event.target)
+      .closest('.dropdown-menu')
+      .removeClass('open')
 
-    this.setState({ newTag: '', filter: '' });
+    this.setState({ newTag: '', filter: '' })
   },
 
   removeTag: function(tagToRemove) {
     var tags = this.state.tags.filter(function(tag) {
-      return tag != tagToRemove;
-    });
+      return tag != tagToRemove
+    })
 
-    this.setState({ tags: tags });
+    this.setState({ tags: tags })
   },
 
   updateNewTag: function(event) {
     this.setState({
       newTag: event.target.value,
       filter: event.target.value
-    });
+    })
   },
 
   showNewTag: function() {
-    return this.state.newTag !== '' && this.state.tags.indexOf(this.state.newTag) < 0;
+    return (
+      this.state.newTag !== '' && this.state.tags.indexOf(this.state.newTag) < 0
+    )
   },
 
   renderNewTag: function() {
-    if(this.showNewTag()) {
+    if (this.showNewTag()) {
       return (
         <li>
           <a href="#" onClick={this.tagConversationHandler(this.state.newTag)}>
             {this.state.newTag}
           </a>
         </li>
-      );
+      )
     }
   },
 
   renderFilteredTags: function() {
-    return this.state.tags.map(function(tag) {
-      var useFilter = this.state.filter !== '';
-      var regexp = new RegExp(this.state.filter, 'gi');
-      var applyFilter = useFilter && !tag.match(regexp);
+    return this.state.tags.map(
+      function(tag) {
+        var useFilter = this.state.filter !== ''
+        var regexp = new RegExp(this.state.filter, 'gi')
+        var applyFilter = useFilter && !tag.match(regexp)
 
-      if(!applyFilter) {
-        return (
-          <li key={tag}>
-            <a href="#" onClick={this.tagConversationHandler(tag)}>
-              {tag}
-            </a>
-          </li>
-        );
-      }
-    }.bind(this));
+        if (!applyFilter) {
+          return (
+            <li key={tag}>
+              <a href="#" onClick={this.tagConversationHandler(tag)}>
+                {tag}
+              </a>
+            </li>
+          )
+        }
+      }.bind(this)
+    )
   },
 
   render: function() {
     return (
       <div className="btn-group command-bar-action">
-        <button className="btn btn-default dropdown-toggle" data-search="tags" data-toggle="dropdown" onClick={this.focusInput}>
-          Tag {' '}
-          <span className="caret"></span>
+        <button
+          className="btn btn-default dropdown-toggle"
+          data-search="tags"
+          data-toggle="dropdown"
+          onClick={this.focusInput}
+        >
+          Tag <span className="caret" />
         </button>
         <ul className="dropdown-menu" role="menu">
           <li>
-            <input type="text" className="form-control" placeholder="Search by tag" onClick={this.ignore} onChange={this.updateNewTag} value={this.state.newTag} />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by tag"
+              onClick={this.ignore}
+              onChange={this.updateNewTag}
+              value={this.state.newTag}
+            />
           </li>
-          <li className="divider"></li>
+          <li className="divider" />
           {this.renderNewTag()}
           {this.renderFilteredTags()}
-          {(this.state.tags.length === 0) ?
-            <li className="text-muted blankslate">No tags yet! Type above to create your first.</li>
-          : null}
+          {this.state.tags.length === 0 ? (
+            <li className="text-muted blankslate">
+              No tags yet! Type above to create your first.
+            </li>
+          ) : null}
         </ul>
       </div>
-    );
+    )
   }
-});
+})

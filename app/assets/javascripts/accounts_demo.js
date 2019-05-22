@@ -1,18 +1,20 @@
 $(function() {
-  var conversationList = ConversationList({ demo: true, conversations: [] });
+  var conversationList = ConversationList({ demo: true, conversations: [] })
 
   // TODO: This is so terrible. Wrap everything up in a React component to avoid this
   function updateConversationList(conversation) {
-    var conversations = conversationList.state.conversations.concat(conversation);
-    conversationList.setState({ conversations: conversations });
+    var conversations = conversationList.state.conversations.concat(
+      conversation
+    )
+    conversationList.setState({ conversations: conversations })
   }
 
   function sendFromEmail() {
-    if(!validateEmail()) {
+    if (!validateEmail()) {
       return
     }
 
-    var email = $('[name="email[from]"]').val();
+    var email = $('[name="email[from]"]').val()
 
     var author = {
       email: email,
@@ -25,127 +27,135 @@ $(function() {
       body: $('[name="email[body]"]').val()
     }
 
-    addConversation(conversation);
+    addConversation(conversation)
 
-    clearEmail();
+    clearEmail()
   }
 
   function validateEmail() {
-    var $subject = $('[name="email[subject]"]');
-    var $body = $('[name="email[body]"]');
-    var valid = true;
+    var $subject = $('[name="email[subject]"]')
+    var $body = $('[name="email[body]"]')
+    var valid = true
 
-    if($subject.val()) {
-      $subject.closest('.form-group').removeClass('has-error');
+    if ($subject.val()) {
+      $subject.closest('.form-group').removeClass('has-error')
     } else {
-      $subject.closest('.form-group').addClass('has-error');
-      valid = false;
+      $subject.closest('.form-group').addClass('has-error')
+      valid = false
     }
 
-    if($body.val()) {
-      $body.closest('.form-group').removeClass('has-error');
+    if ($body.val()) {
+      $body.closest('.form-group').removeClass('has-error')
     } else {
-      $body.closest('.form-group').addClass('has-error');
-      valid = false;
+      $body.closest('.form-group').addClass('has-error')
+      valid = false
     }
 
-    return valid;
+    return valid
   }
 
   function clearEmail() {
-    $('[name="email[subject]"]').val('');
-    $('[name="email[body]"]').val('');
+    $('[name="email[subject]"]').val('')
+    $('[name="email[body]"]').val('')
   }
 
   function sendFromWidget() {
-    console.log('send from widget');
+    console.log('send from widget')
   }
 
   function addConversation(attributes) {
     var conversation = {
-      id: 'conversation-' + (new Date()).getTime(),
+      id: 'conversation-' + new Date().getTime(),
       archived: false,
       subject: attributes.subject,
       creator_person: attributes.author,
-      messages: [{
-        id: 'message-' + (new Date()).getTime(),
-        content: attributes.body,
-        type: 'message',
-        person: attributes.author
-      }],
-      assignment_events:[],
-      tag_events:[]
-    };
+      messages: [
+        {
+          id: 'message-' + new Date().getTime(),
+          content: attributes.body,
+          type: 'message',
+          person: attributes.author
+        }
+      ],
+      assignment_events: [],
+      tag_events: []
+    }
 
-    updateConversationList(conversation);
+    updateConversationList(conversation)
   }
 
   function gravatarUrl(email) {
-    var digest = md5(email);
-    return 'https://secure.gravatar.com/avatar/' + digest + '?d=identicon&size=40.png';
+    var digest = md5(email)
+    return (
+      'https://secure.gravatar.com/avatar/' +
+      digest +
+      '?d=identicon&size=40.png'
+    )
   }
 
   function sendFromWidget() {
-    var email = $('#helpful-email').val();
+    var email = $('#helpful-email').val()
 
     var author = {
       email: email,
       name: $('#helpful-name').val(),
       gravatar_url: gravatarUrl(email)
-    };
+    }
 
     var conversation = {
       author: author,
       subject: $('#helpful-question').val(),
       body: $('#helpful-question').val()
-    };
+    }
 
-    addConversation(conversation);
+    addConversation(conversation)
 
-    clearWidget();
+    clearWidget()
   }
 
   function checkTextarea() {
-    var $widget = $('.helpful-embed');
-    var $textarea = $widget.find('textarea');
+    var $widget = $('.helpful-embed')
+    var $textarea = $widget.find('textarea')
 
-    if($textarea.val()) {
-      $widget.addClass('helpful-textarea-filled');
+    if ($textarea.val()) {
+      $widget.addClass('helpful-textarea-filled')
     } else {
-      $widget.removeClass('helpful-textarea-filled');
+      $widget.removeClass('helpful-textarea-filled')
     }
   }
 
   function clearWidget() {
-    $('.helpful-embed textarea').val('');
-    $('.helpful-back-button').click();
+    $('.helpful-embed textarea').val('')
+    $('.helpful-back-button').click()
   }
 
   $('.helpful-embed textarea').keyup(function() {
-    checkTextarea();
-  });
+    checkTextarea()
+  })
 
   $('.helpful-question-container button').click(function() {
-    $('.helpful-question-container').hide();
-    $('.helpful-details-container').show();
-    $(this).closest('.helpful-embed').removeClass('helpful-textarea-filled');
-  });
+    $('.helpful-question-container').hide()
+    $('.helpful-details-container').show()
+    $(this)
+      .closest('.helpful-embed')
+      .removeClass('helpful-textarea-filled')
+  })
 
   $('.helpful-back-button').click(function() {
-    $('.helpful-details-container').hide();
-    $('.helpful-question-container').show();
-    checkTextarea();
-  });
+    $('.helpful-details-container').hide()
+    $('.helpful-question-container').show()
+    checkTextarea()
+  })
 
-  React.renderComponent(conversationList, $('.react')[0]);
+  React.renderComponent(conversationList, $('.react')[0])
 
   $('.email-send').click(function(e) {
-    e.preventDefault();
-    sendFromEmail();
-  });
+    e.preventDefault()
+    sendFromEmail()
+  })
 
   $('.helpful-embed input[type=submit]').click(function(e) {
-    e.preventDefault();
-    sendFromWidget();
-  });
-});
+    e.preventDefault()
+    sendFromWidget()
+  })
+})

@@ -1,5 +1,6 @@
-helpful_embed.htmlLoaded(
-  { html: '\
+helpful_embed.htmlLoaded({
+  html:
+    '\
     <div class="helpful-embed helpful-reset">\
         <div class="helpful-pointer"></div>\
         <div class="helpful-question-container">\
@@ -34,5 +35,4 @@ helpful_embed.htmlLoaded(
         </div>\
     </div>\
   '
-  }
-)
+})

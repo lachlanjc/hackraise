@@ -5,84 +5,121 @@ var CannedResponseButton = React.createClass({
     return {
       cannedResponses: [],
       filter: ''
-    };
+    }
   },
 
   componentDidMount: function() {
-    this.getCannedResponses();
+    this.getCannedResponses()
   },
 
   getCannedResponses: function() {
-    $.getJSON(this.props.conversation.canned_responses_path, function(response) {
-      this.setState({ cannedResponses: response.canned_responses });
-    }.bind(this));
+    $.getJSON(
+      this.props.conversation.canned_responses_path,
+      function(response) {
+        this.setState({ cannedResponses: response.canned_responses })
+      }.bind(this)
+    )
   },
 
   ignore: function(event) {
-    $(event.target).parents('.command-bar-action').addClass('open');
+    $(event.target)
+      .parents('.command-bar-action')
+      .addClass('open')
   },
 
   focusInput: function(event) {
-    var $input = $('input', $(event.target).parent().parent());
-    setTimeout(function() { $input.focus() }, 0);
+    var $input = $(
+      'input',
+      $(event.target)
+        .parent()
+        .parent()
+    )
+    setTimeout(function() {
+      $input.focus()
+    }, 0)
   },
 
   filterCannedResponses: function(event) {
-    this.setState({ filter: event.target.value });
+    this.setState({ filter: event.target.value })
   },
 
   useCannedResponse: function(cannedResponse) {
     return function(event) {
-      event.stopPropagation();
-      event.preventDefault();
+      event.stopPropagation()
+      event.preventDefault()
 
       this.props.useCannedResponseHandler(cannedResponse)
-      this.clearCannedResponseFilter(event);
-    }.bind(this);
+      this.clearCannedResponseFilter(event)
+    }.bind(this)
   },
 
   clearCannedResponseFilter: function(event) {
-    $dropdown = $(event.target).closest('.dropdown-menu').removeClass('open');
-    this.setState({ filter: '' });
+    $dropdown = $(event.target)
+      .closest('.dropdown-menu')
+      .removeClass('open')
+    this.setState({ filter: '' })
   },
 
   renderFilteredCannedResponses: function() {
-    return this.state.cannedResponses.map(function(cannedResponse) {
-      var useFilter = this.state.filter !== '';
-      var regexp = new RegExp(this.state.filter, 'gi');
-      var applyFilter = useFilter && !cannedResponse.key.match(regexp);
+    return this.state.cannedResponses.map(
+      function(cannedResponse) {
+        var useFilter = this.state.filter !== ''
+        var regexp = new RegExp(this.state.filter, 'gi')
+        var applyFilter = useFilter && !cannedResponse.key.match(regexp)
 
-      if(!applyFilter) {
-        return (
-          <li key={cannedResponse.key}>
-            <a href="#" onClick={this.useCannedResponse(cannedResponse)}>
-              {cannedResponse.key}
-            </a>
-          </li>
-        );
-      }
-    }.bind(this));
+        if (!applyFilter) {
+          return (
+            <li key={cannedResponse.key}>
+              <a href="#" onClick={this.useCannedResponse(cannedResponse)}>
+                {cannedResponse.key}
+              </a>
+            </li>
+          )
+        }
+      }.bind(this)
+    )
   },
 
   render: function() {
     return (
       <div className="btn-group command-bar-action">
-        <button className="btn btn-default dropdown-toggle" data-toggle="dropdown" onClick={this.focusInput}>
-          Canned Response <span className="caret"></span>
+        <button
+          className="btn btn-default dropdown-toggle"
+          data-toggle="dropdown"
+          onClick={this.focusInput}
+        >
+          Canned Response <span className="caret" />
         </button>
         <ul className="dropdown-menu" role="menu">
           <li>
-            <input type="text" className="form-control" placeholder="Search by key" onClick={this.ignore} onKeyUp={this.filterCannedResponses} />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by key"
+              onClick={this.ignore}
+              onKeyUp={this.filterCannedResponses}
+            />
           </li>
-          <li className="divider"></li>
+          <li className="divider" />
           {this.renderFilteredCannedResponses()}
-          {(this.state.cannedResponses.length === 0) ?
+          {this.state.cannedResponses.length === 0 ? (
             <li className="text-muted blankslate">
-              <span>No canned responses yet! <a href={"/accounts/" + this.props.conversation.account_slug + "/edit#canned-responses"}>Learn more and create your first.</a></span>
+              <span>
+                No canned responses yet!{' '}
+                <a
+                  href={
+                    '/accounts/' +
+                    this.props.conversation.account_slug +
+                    '/edit#canned-responses'
+                  }
+                >
+                  Learn more and create your first.
+                </a>
+              </span>
             </li>
-          : null}
+          ) : null}
         </ul>
       </div>
-    );
+    )
   }
-});
+})

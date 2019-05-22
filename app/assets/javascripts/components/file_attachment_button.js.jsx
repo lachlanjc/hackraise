@@ -6,9 +6,9 @@ var FileAttachmentButton = React.createClass({
       <div className="btn-group command-bar-action">
         <button className="btn btn-default">
           Attach files
-          <span className="counter"></span>
+          <span className="counter" />
         </button>
       </div>
-    );
+    )
   }
-});
+})

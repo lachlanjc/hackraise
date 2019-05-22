@@ -5,39 +5,51 @@ var AssignmentButton = React.createClass({
     return {
       assignees: [],
       filter: ''
-    };
+    }
   },
 
   componentDidMount: function() {
-    this.getAssignees();
+    this.getAssignees()
   },
 
   getAssignees: function() {
-    $.getJSON(this.props.conversation.assignees_path, function(response) {
-      this.setState({ assignees: response.assignees });
-    }.bind(this));
+    $.getJSON(
+      this.props.conversation.assignees_path,
+      function(response) {
+        this.setState({ assignees: response.assignees })
+      }.bind(this)
+    )
   },
 
   ignore: function(event) {
-    $(event.target).parents('.command-bar-action').addClass('open');
+    $(event.target)
+      .parents('.command-bar-action')
+      .addClass('open')
   },
 
   focusInput: function(event) {
-    var $input = $('input', $(event.target).closest('button').siblings('.dropdown-menu'));
-    setTimeout(function() { $input.focus() }, 0);
+    var $input = $(
+      'input',
+      $(event.target)
+        .closest('button')
+        .siblings('.dropdown-menu')
+    )
+    setTimeout(function() {
+      $input.focus()
+    }, 0)
   },
 
   filterAssignees: function(event) {
-    this.setState({ filter: event.target.value });
+    this.setState({ filter: event.target.value })
   },
 
   assignConversationHandler: function(assignee) {
     return function(event) {
-      event.stopPropagation();
-      event.preventDefault();
+      event.stopPropagation()
+      event.preventDefault()
 
-      var assigneesPath = this.props.conversation.assignees_path;
-      var data = { assignee_id: assignee.id };
+      var assigneesPath = this.props.conversation.assignees_path
+      var data = { assignee_id: assignee.id }
 
       $.ajax({
         type: 'POST',
@@ -47,57 +59,73 @@ var AssignmentButton = React.createClass({
         contentType: 'application/json',
         accepts: { json: 'application/json' },
         success: function(response) {
-          this.addStreamItem(response.assignment_event);
-          this.clearAssignmentFilter(event);
+          this.addStreamItem(response.assignment_event)
+          this.clearAssignmentFilter(event)
         }.bind(this)
-      });
-    }.bind(this);
+      })
+    }.bind(this)
   },
 
   addStreamItem: function(streamItem) {
-    this.props.addStreamItemHandler(streamItem);
+    this.props.addStreamItemHandler(streamItem)
   },
 
   clearAssignmentFilter: function(event) {
-    $dropdown = $(event.target).closest('.dropdown-menu').removeClass('open');
-    this.setState({ filter: '' });
+    $dropdown = $(event.target)
+      .closest('.dropdown-menu')
+      .removeClass('open')
+    this.setState({ filter: '' })
   },
 
   renderFilteredAssignees: function() {
-    return this.state.assignees.map(function(assignee) {
-      var missingPerson = !assignee.person;
-      var useFilter = this.state.filter !== '';
-      var regexp = new RegExp(this.state.filter, 'gi');
-      var applyFilter = missingPerson || (useFilter && !assignee.person.name.match(regexp));
+    return this.state.assignees.map(
+      function(assignee) {
+        var missingPerson = !assignee.person
+        var useFilter = this.state.filter !== ''
+        var regexp = new RegExp(this.state.filter, 'gi')
+        var applyFilter =
+          missingPerson || (useFilter && !assignee.person.name.match(regexp))
 
-      if(!applyFilter) {
-        return (
-          <li key={assignee.id}>
-            <a href="#" onClick={this.assignConversationHandler(assignee)}>
-              <Avatar person={assignee.person} size="20" />
-              <span>{assignee.person.name}</span>
-            </a>
-          </li>
-        );
-      }
-    }.bind(this));
+        if (!applyFilter) {
+          return (
+            <li key={assignee.id}>
+              <a href="#" onClick={this.assignConversationHandler(assignee)}>
+                <Avatar person={assignee.person} size="20" />
+                <span>{assignee.person.name}</span>
+              </a>
+            </li>
+          )
+        }
+      }.bind(this)
+    )
   },
 
   render: function() {
     return (
       <div className="btn-group command-bar-action">
-        <button className="btn btn-default dropdown-toggle" data-search="assignments" data-toggle="dropdown" onClick={this.focusInput}>
-          Assign {' '}
-          <span className="caret"></span>
+        <button
+          className="btn btn-default dropdown-toggle"
+          data-search="assignments"
+          data-toggle="dropdown"
+          onClick={this.focusInput}
+        >
+          Assign <span className="caret" />
         </button>
         <ul className="dropdown-menu" role="menu">
           <li>
-            <input type="text" className="form-control" placeholder="Search by name" value={this.state.filter} onClick={this.ignore} onChange={this.filterAssignees} />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by name"
+              value={this.state.filter}
+              onClick={this.ignore}
+              onChange={this.filterAssignees}
+            />
           </li>
-          <li className="divider"></li>
+          <li className="divider" />
           {this.renderFilteredAssignees()}
         </ul>
       </div>
-    );
+    )
   }
-});
+})
