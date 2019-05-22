@@ -20,13 +20,13 @@ describe CannedResponsesController do
 
   it 'creates a canned response' do
     post :create,
-      {
-        account_id: account.slug,
-        canned_response: {
-          key: 'refund',
-          message: 'You will be refunded for your last month of service.'
-        }
-      }
+         {
+           account_id: account.slug,
+           canned_response: {
+             key: 'refund',
+             message: 'You will be refunded for your last month of service.'
+           }
+         }
 
     canned_response = account.canned_responses.first
 
@@ -38,14 +38,14 @@ describe CannedResponsesController do
     canned_response = create(:canned_response, account: account, key: 'refund', message: 'You will be refunded for your last month of service.')
 
     post :update,
-      {
-        id: canned_response.id,
-        account_id: account.slug,
-        canned_response: {
-          key: 'refund-month',
-          message: 'You will be refunded for your last month of service.'
-        }
-      }
+         {
+           id: canned_response.id,
+           account_id: account.slug,
+           canned_response: {
+             key: 'refund-month',
+             message: 'You will be refunded for your last month of service.'
+           }
+         }
 
     canned_response.reload
 

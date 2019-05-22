@@ -2,7 +2,6 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_account!, except: [:index]
 
-
   respond_to :html, :json
 
   def index
@@ -77,7 +76,6 @@ class ConversationsController < ApplicationController
     rescue
       redirect_to new_user_session_path
     end
-
   end
 
   def conversation_params
@@ -93,5 +91,4 @@ class ConversationsController < ApplicationController
       flash[:notice] = "The conversation has been moved to the inbox."
     end
   end
-
 end

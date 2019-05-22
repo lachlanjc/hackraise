@@ -14,14 +14,14 @@ describe MessagesController do
 
   it 'adds a message to a conversation' do
     post :create,
-      {
-        account_id: account.slug,
-        message: {
-          in_reply_to_id: message.id,
-          subject: 'Help!',
-          content: 'I need help please.'
-        }
-      }
+         {
+           account_id: account.slug,
+           message: {
+             in_reply_to_id: message.id,
+             subject: 'Help!',
+             content: 'I need help please.'
+           }
+         }
 
     reply = message.conversation.messages.last
 
@@ -32,15 +32,15 @@ describe MessagesController do
 
   it "adds a message to the conversation and archives it" do
     post :create,
-      {
-        account_id: account.slug,
-        archive_conversation: true,
-        message: {
-          in_reply_to_id: message.id,
-          subject: 'Help!',
-          content: 'I need help please.',
-        }
-      }
+         {
+           account_id: account.slug,
+           archive_conversation: true,
+           message: {
+             in_reply_to_id: message.id,
+             subject: 'Help!',
+             content: 'I need help please.',
+           }
+         }
 
     reply = message.conversation.messages.last
 

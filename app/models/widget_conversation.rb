@@ -15,7 +15,7 @@ class WidgetConversation
   end
 
   def self.content(account)
-  <<END
+    <<END
 Want to give your users a quicker way to send you feedback? Check out or embeddable widget.
 
 All you have to do is include our script on your site and wire up a new button.

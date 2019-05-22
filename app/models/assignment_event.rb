@@ -4,13 +4,14 @@ class AssignmentEvent < ActiveRecord::Base
   belongs_to :user
 
   belongs_to :assignee,
-    class_name: 'User'
+             class_name: 'User'
 
   after_commit :notify_assignee,
-    on: :create
+               on: :create
 
   def notify_assignee
     return if assignee.never_notify? || user == assignee
+
     AssignmentEventMailer.delay.created(id)
   end
 end

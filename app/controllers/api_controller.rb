@@ -1,5 +1,4 @@
 class ApiController < ApplicationController
-
   respond_to :json
 
   before_action :authenticate_user!
@@ -11,9 +10,8 @@ class ApiController < ApplicationController
 
   def parameter_missing(exception)
     render(
-      json: {error: exception.message},
+      json: { error: exception.message },
       status: :bad_request
     )
   end
-
 end

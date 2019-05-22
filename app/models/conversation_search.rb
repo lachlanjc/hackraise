@@ -30,7 +30,7 @@ class ConversationSearch
   end
 
   def matching_messages
-    Message.search(query: { match: { content: query } }).records.select {|m| m.account.id == account.id }
+    Message.search(query: { match: { content: query } }).records.select { |m| m.account.id == account.id }
   end
 
   def conversations

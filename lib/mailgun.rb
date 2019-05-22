@@ -3,12 +3,10 @@ require "active_support"
 require "curb"
 
 module Mailgun
-
   class DeliveryError < StandardError
   end
 
   class DeliveryMethod
-
     attr_accessor :settings
 
     def initialize(settings)
@@ -24,7 +22,6 @@ module Mailgun
     end
 
     def deliver!(mail)
-
       body              = Curl::PostField.content("message", mail.encoded)
       body.remote_file  = "message"
       body.content_type = "application/octet-stream"
@@ -50,10 +47,6 @@ module Mailgun
 
         raise Mailgun::DeliveryError.new(error)
       end
-
     end
-
-
   end
-
 end

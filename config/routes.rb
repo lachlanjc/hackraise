@@ -1,5 +1,4 @@
 Helpful::Application.routes.draw do
-
   use_doorkeeper do
     controllers :applications => 'oauth/applications'
   end
@@ -9,7 +8,7 @@ Helpful::Application.routes.draw do
     username == ENV["SIDEKIQ_USERNAME"] && password == ENV["SIDEKIQ_PASSWORD"]
   end if Rails.env.production?
   mount Sidekiq::Web, at: "/sidekiq"
-  
+
   get '/embed.js' => 'pages#embed', as: :embed
   get '/styleguide' => 'pages#styleguide', as: :styleguide
   get '/terms' => 'pages#terms', as: :terms
@@ -59,8 +58,8 @@ Helpful::Application.routes.draw do
     resources :users, only: [:update]
 
     resource :current_user,
-      path: '/user',
-      only: [:show]
+             path: '/user',
+             only: [:show]
   end
 
   resource :accounts, only: [:new, :create]

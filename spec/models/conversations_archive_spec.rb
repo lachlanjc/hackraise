@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ConversationsArchive do
-  let!(:test_message){ create(:message, content: 'test message') }
+  let!(:test_message) { create(:message, content: 'test message') }
   let!(:account) { create(:account) }
 
   let!(:conversations) {
@@ -28,7 +28,6 @@ describe ConversationsArchive do
   before { Message.import(force: true, refresh: true) }
 
   describe "search", vcr: true do
-
     context "when requsting messages" do
       let(:archive) { ConversationsArchive.new(account, 'test') }
 

@@ -1,21 +1,19 @@
 require 'spec_helper'
 
 describe Api::MessagesController do
-
   describe "POST #create" do
-
     def post_create(args = {})
       post :create, {
-          conversation_id: conversation.id,
-          person: person.id,
-          subject: 'Help wanted',
-          body: 'Please!',
-          format: :json
-        }.merge(args)
+        conversation_id: conversation.id,
+        person: person.id,
+        subject: 'Help wanted',
+        body: 'Please!',
+        format: :json
+      }.merge(args)
     end
 
     let(:user) { create(:user) }
-    let(:account) { create(:account).tap {|a| a.add_owner(user) } }
+    let(:account) { create(:account).tap { |a| a.add_owner(user) } }
     let(:person)  { create(:person, account: account) }
     let(:conversation) { create(:conversation, account: account) }
 
@@ -41,9 +39,8 @@ describe Api::MessagesController do
         'text/plain'
       )
       expect {
-        post_create(attachments: [{file: file}])
+        post_create(attachments: [{ file: file }])
       }.to change { Attachment.count }.by(1)
     end
-
   end
 end

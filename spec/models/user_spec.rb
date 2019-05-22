@@ -13,5 +13,4 @@ describe User do
     @user.save
     expect(@user.username).to be(@user.person.username)
   end
-
 end

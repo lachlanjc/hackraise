@@ -1,5 +1,4 @@
 class Api::PeopleController < ApiController
-
   def index
     find_account!
     respond_with(@account.people)
@@ -10,5 +9,4 @@ class Api::PeopleController < ApiController
   def find_account!
     @account = Account.find_by!(id: params.fetch(:account_id))
   end
-
 end

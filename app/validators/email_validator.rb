@@ -5,4 +5,3 @@ class EmailValidator < ActiveModel::EachValidator
     end
   end
 end
-

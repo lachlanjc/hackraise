@@ -25,7 +25,7 @@ describe Concierge do
       @conversation_2 = FactoryGirl.create(:conversation)
       params = {
         conversation: @conversation.number,
-        recipient:    @conversation_2.mailbox_email.to_s
+        recipient: @conversation_2.mailbox_email.to_s
       }
       assert_equal @conversation.id, Concierge.new(@account, params).find_conversation.id
     end

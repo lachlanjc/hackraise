@@ -1,5 +1,4 @@
 class MessageFactory
-
   attr_reader :message
   attr_reader :account
 
@@ -23,5 +22,4 @@ class MessageFactory
     end
     @message
   end
-
 end

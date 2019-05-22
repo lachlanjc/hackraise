@@ -17,7 +17,7 @@ class Chargify
   basic_auth api_key, 'x'
 
   def self.subscription_id_from_customer_reference(reference)
-    r = get("/customers/lookup.json", query: {reference: reference} )
+    r = get("/customers/lookup.json", query: { reference: reference })
 
     if r.success?
       customer_id = r.parsed_response['customer']['id']

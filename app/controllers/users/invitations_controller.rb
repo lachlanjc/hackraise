@@ -72,7 +72,7 @@ class Users::InvitationsController < Devise::InvitationsController
       sign_in(resource_name, resource)
       respond_with resource, location: account_path(resource.accounts.first)
     else
-      respond_with_navigational(resource){ render :edit }
+      respond_with_navigational(resource) { render :edit }
     end
   end
 

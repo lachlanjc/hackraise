@@ -8,16 +8,14 @@ describe Person do
   end
 
   context "when using a username" do
-    let(:person2){ create(:person) }
+    let(:person2) { create(:person) }
     it 'must have a unique username per account' do
       person.username = person2.username
       expect(person).to be_invalid
     end
   end
 
-
   describe "Person#parse_email" do
-
     it "handles email addresses without display names" do
       email = "jsmith@example.com"
       person.email = email

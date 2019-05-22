@@ -1,5 +1,4 @@
 class DomainCheck < ActiveRecord::Base
-
   class SpfQueryError < StandardError; end
 
   HELPFUL_DOMAIN = 'helpful.io'
@@ -19,14 +18,14 @@ class DomainCheck < ActiveRecord::Base
     self.spf_valid = self.class.check_spf_of!(domain)
   end
 
-private
+  private
 
   def self.check_spf_of!(domain)
     record = SPF::Query::Record.query(domain)
     raise SpfQueryError if record.nil?
+
     record.mechanisms.any? do |m|
       m.value == HELPFUL_DOMAIN
     end
   end
-
 end

@@ -2,10 +2,9 @@ require 'spec_helper'
 require 'openssl'
 
 describe Webhooks::MailgunController do
-
   let(:account) { create(:account) }
   let(:conversation) { create(:conversation, account: account) }
-    # The Mailgun API only uses timestamp and token as the inputs to HMAC.
+  # The Mailgun API only uses timestamp and token as the inputs to HMAC.
   def mailgun_webhook_signature
     api_key   = "key-bb8ef21a0c161b2f9b0950fee7a52ab1"
     timestamp = Time.now.utc.to_i
@@ -20,26 +19,26 @@ describe Webhooks::MailgunController do
     ENV['MAILGUN_API_KEY'] = api_key
 
     {
-      timestamp:        timestamp,
-      token:            token,
-      signature:        signature
+      timestamp: timestamp,
+      token: token,
+      signature: signature
     }
   end
 
   def post_create(args = {})
     post :create, mailgun_webhook_signature.merge(
-        from:             "test@test.com",
-        subject:          "test email",
-        'Message-Id'      => "<#{SecureRandom.uuid}@example.mail",
-        recipient:        "#{account.slug}@helpful.io",
-        'body-plain'      =>  "Test email.\n Thanks",
-        'stripped-text'   =>  "Test email.\n Thanks",
-        'message-headers' =>  [
-          ["From", "test@test.com"],
-          ["Recieved", "by luna.mailgun.net"],
-          ["Recieved", "from mail.google.com by mxa.mailgun.org"]
-        ],
-      ).merge(args)
+      from: "test@test.com",
+      subject: "test email",
+      'Message-Id' => "<#{SecureRandom.uuid}@example.mail",
+      recipient: "#{account.slug}@helpful.io",
+      'body-plain' => "Test email.\n Thanks",
+      'stripped-text' => "Test email.\n Thanks",
+      'message-headers' => [
+        ["From", "test@test.com"],
+        ["Recieved", "by luna.mailgun.net"],
+        ["Recieved", "from mail.google.com by mxa.mailgun.org"]
+      ],
+    ).merge(args)
   end
 
   # def find_message_from_response
@@ -53,7 +52,6 @@ describe Webhooks::MailgunController do
   # end
 
   describe "POST #create" do
-
     context "with an invalid signature" do
       it "is forbidden" do
         post_create token: 123123123
@@ -68,7 +66,6 @@ describe Webhooks::MailgunController do
     # seperate email address types
     context "with a valid signature" do
       context "accountslug@helpful.io type email" do
-
         let(:email) { "#{account.slug}@helpful.io" }
 
         it "is accepted" do
@@ -130,26 +127,26 @@ describe Webhooks::MailgunController do
         end
       end
 
-    #   it "associates the message with the correct person" do
-    #     email = "test-person@example.com"
-    #     person = FactoryGirl.build(:person, email: email)
-    #     post_webhook(from: person.email)
-    #     message = find_message_from_response
-    #     assert_equal person.email, message.person.email
-    #   end
+      #   it "associates the message with the correct person" do
+      #     email = "test-person@example.com"
+      #     person = FactoryGirl.build(:person, email: email)
+      #     post_webhook(from: person.email)
+      #     message = find_message_from_response
+      #     assert_equal person.email, message.person.email
+      #   end
 
-    #   it "associates the message with the correct account" do
-    #     post_webhook(recipient: "#{account.slug}@helpful.io")
-    #     message = find_message_from_response
-    #     assert_equal account, message.account
-    #   end
+      #   it "associates the message with the correct account" do
+      #     post_webhook(recipient: "#{account.slug}@helpful.io")
+      #     message = find_message_from_response
+      #     assert_equal account, message.account
+      #   end
 
-    #   it "associates the message with the correct conversation" do
-    #     conversation = create(:conversation)
-    #     post_webhook(recipient: conversation.mailbox_email.to_s)
-    #     message = find_message_from_response
-    #     assert_equal conversation, message.conversation
-    #   end
+      #   it "associates the message with the correct conversation" do
+      #     conversation = create(:conversation)
+      #     post_webhook(recipient: conversation.mailbox_email.to_s)
+      #     message = find_message_from_response
+      #     assert_equal conversation, message.conversation
+      #   end
     end
 
     # describe "invalid webhook" do

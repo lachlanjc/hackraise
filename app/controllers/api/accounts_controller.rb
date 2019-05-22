@@ -1,5 +1,4 @@
 class Api::AccountsController < ApiController
-
   def index
     @accounts = current_user.accounts
     respond_with(@accounts)
@@ -26,5 +25,4 @@ class Api::AccountsController < ApiController
   def account_params
     params.permit(:name, :website_url, :webhook_url, :prefers_archiving)
   end
-
 end

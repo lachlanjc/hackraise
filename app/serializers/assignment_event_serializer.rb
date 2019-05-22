@@ -1,7 +1,7 @@
 class AssignmentEventSerializer < BaseSerializer
   has_one :user,
-    serializer: UserSerializer
+          serializer: UserSerializer
 
   has_one :assignee,
-    serializer: UserSerializer
+          serializer: UserSerializer
 end

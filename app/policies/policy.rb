@@ -1,5 +1,4 @@
 class Policy
-
   class NotAuthorized < StandardError
   end
 
@@ -10,5 +9,4 @@ class Policy
   def authorize!
     access? || raise(NotAuthorized)
   end
-
 end

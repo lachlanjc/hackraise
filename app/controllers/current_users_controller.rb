@@ -1,6 +1,6 @@
 class CurrentUsersController < ApplicationController
   before_action :authenticate_user!,
-    only: [:show]
+                only: [:show]
 
   respond_to :json
 

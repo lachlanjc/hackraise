@@ -11,7 +11,7 @@ module ActiveModel
       end
 
       module ClassMethods #:nodoc:
-        def link(rel, options={})
+        def link(rel, options = {})
           if block_given?
             define_method("_generate_#{rel}_link") do
               yield self

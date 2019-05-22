@@ -1,9 +1,8 @@
 # encoding: utf-8
 
 class AttachmentUploader < CarrierWave::Uploader::Base
-
   include CarrierWave::MimeTypes
-  
+
   # include CarrierWave::MiniMagick
 
   # Override the directory where uploaded files will be stored.
@@ -51,5 +50,4 @@ class AttachmentUploader < CarrierWave::Uploader::Base
     model.content_type = file.content_type if file.content_type
     model.file_size = file.size
   end
-
 end

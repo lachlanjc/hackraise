@@ -1,5 +1,4 @@
 class Api::ConversationsController < ApiController
-
   def index
     find_account!
 
@@ -32,5 +31,4 @@ class Api::ConversationsController < ApiController
   def conversation_params
     params.permit(subject: :string, tags: [])
   end
-
 end

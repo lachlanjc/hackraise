@@ -1,7 +1,6 @@
 # Wraps up the information about the person sending a message and provides
 # helper methods for creating a new message.
 class MessageAuthor
-
   def initialize(account, email)
     @account = account
     @email = email
@@ -12,12 +11,12 @@ class MessageAuthor
   # and email passed in when initializing the object.
   #
   # Returns a Message.
-  def compose_message(conversation, content, attrs={})
+  def compose_message(conversation, content, attrs = {})
     Message.new(attrs.merge(
-        conversation: conversation,
-        content: content,
-        person: person_with_updated_name
-      ))
+                  conversation: conversation,
+                  content: content,
+                  person: person_with_updated_name
+                ))
   end
 
   # Public: Finds the relavant person and updates their name based on the email

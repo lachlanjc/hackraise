@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe AccountSerializer do
-
   let(:account) { create(:account) }
   subject { described_class.new(account) }
 
@@ -10,5 +9,4 @@ describe AccountSerializer do
   it "#type is account" do
     expect(subject.type).to eq('account')
   end
-
 end

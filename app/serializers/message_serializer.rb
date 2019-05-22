@@ -18,5 +18,4 @@ class MessageSerializer < BaseSerializer
   def include_attachments?
     object.attachments.any?
   end
-
 end

@@ -1,5 +1,4 @@
 class CreateMessagesAndConversations < ActiveRecord::Migration
-
   def change
     create_table :conversations, id: false do |t|
       t.primary_key :id, :uuid, default: nil
@@ -19,5 +18,4 @@ class CreateMessagesAndConversations < ActiveRecord::Migration
 
     add_index :messages, :conversation_id
   end
-
 end

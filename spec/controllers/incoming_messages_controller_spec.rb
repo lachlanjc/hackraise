@@ -1,12 +1,11 @@
 require 'spec_helper'
 
 describe(IncomingMessagesController, :create) do
-
   def create_post(account, args = {})
-    post :create, :content      => args[:content] || 'test',
-         :account      => args[:account] || account.slug,
-         :email        => args[:email] || 'test@example.com',
-         :format       => :json
+    post :create, :content => args[:content] || 'test',
+                  :account => args[:account] || account.slug,
+                  :email => args[:email] || 'test@example.com',
+                  :format => :json
   end
 
   def parse_json_response(response)
@@ -18,10 +17,9 @@ describe(IncomingMessagesController, :create) do
   end
 
   before do
-    #@controller = MessagesController.new
+    # @controller = MessagesController.new
     @account = create(:account)
   end
-
 
   # Messages
 
@@ -60,6 +58,4 @@ describe(IncomingMessagesController, :create) do
     message = find_message_from_response(@response)
     assert_equal 'Chris', message.person.name
   end
-
-
 end

@@ -10,21 +10,21 @@ class Person < ActiveRecord::Base
   has_many :read_receipts
 
   validates :email,
-    email: true,
-    uniqueness: { :scope => :account}
+            email: true,
+            uniqueness: { :scope => :account }
 
   validates :name,
-    presence: true,
-    if: ->(p) { p.user.present? }
+            presence: true,
+            if: ->(p) { p.user.present? }
 
   validates :username,
-    allow_blank: true,
-    uniqueness: {:scope => :account}
+            allow_blank: true,
+            uniqueness: { :scope => :account }
 
   validates :twitter,
-    allow_blank: true,
-    twitter: true,
-    uniqueness: {:scope => :account}
+            allow_blank: true,
+            twitter: true,
+            uniqueness: { :scope => :account }
 
   before_validation :parse_email, if: :email_changed?
 
@@ -47,7 +47,7 @@ class Person < ActiveRecord::Base
   def self.initialize_by_addr(addr)
     new(
       email: addr.address,
-      name:  addr.display_name
+      name: addr.display_name
     )
   end
 
@@ -88,5 +88,4 @@ class Person < ActiveRecord::Base
     mail = Mail::Address.new(self.email.to_ascii)
     self.email = mail.address
   end
-
 end

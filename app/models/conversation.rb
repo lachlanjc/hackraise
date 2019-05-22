@@ -8,33 +8,33 @@ class Conversation < ActiveRecord::Base
   belongs_to :user
 
   has_many :account_people,
-    through: :account,
-    source: :user_people
+           through: :account,
+           source: :user_people
 
   has_many :messages,
-    -> { order('created_at ASC') },
-    after_add: :message_added_callback,
-    dependent: :destroy
+           -> { order('created_at ASC') },
+           after_add: :message_added_callback,
+           dependent: :destroy
 
   has_one :first_message,
-    -> { order('messages.updated_at ASC').limit(1) },
-    class_name: 'Message'
+          -> { order('messages.updated_at ASC').limit(1) },
+          class_name: 'Message'
 
   has_many :subsequent_messages,
-    -> { order('messages.updated_at ASC').offset(1) },
-    class_name: 'Message'
+           -> { order('messages.updated_at ASC').offset(1) },
+           class_name: 'Message'
 
   has_one :most_recent_message,
-    -> { order('messages.updated_at DESC').limit(1) },
-    class_name: 'Message'
+          -> { order('messages.updated_at DESC').limit(1) },
+          class_name: 'Message'
 
   has_many :participants,
-    -> { uniq },
-    through: :messages,
-    source: :person
+           -> { uniq },
+           through: :messages,
+           source: :person
 
   has_many :read_receipts,
-    through: :messages
+           through: :messages
 
   has_many :assignment_events
 
@@ -44,9 +44,9 @@ class Conversation < ActiveRecord::Base
 
   scope :archived, -> { where(archived: true) }
 
-  scope :assigned_to, -> (user) { where(user_id: user.id) }
+  scope :assigned_to, ->(user) { where(user_id: user.id) }
 
-  scope :unassigned_or_assigned_to, -> (user) { where(user_id: [nil, user.id]) }
+  scope :unassigned_or_assigned_to, ->(user) { where(user_id: [nil, user.id]) }
 
   scope :most_recent, -> { order('updated_at DESC') }
 
@@ -65,7 +65,7 @@ class Conversation < ActiveRecord::Base
   scope :with_messages, -> { where('(SELECT COUNT(messages.id) FROM messages WHERE messages.conversation_id = conversations.id) > 0') }
 
   sequential column: :number,
-    scope: :account_id
+             scope: :account_id
 
   def archive!
     update(archived: true)
@@ -136,5 +136,4 @@ class Conversation < ActiveRecord::Base
   def message_added_callback(message)
     unarchive!
   end
-
 end

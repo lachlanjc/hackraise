@@ -38,8 +38,7 @@ describe MessageAuthor do
       message_author = MessageAuthor.new(@account, @email)
       raw_content = 'raw content'
       message = message_author.compose_message(@conversation, @content,
-          raw: raw_content
-        )
+                                               raw: raw_content)
       assert_equal message.raw, raw_content
     end
   end

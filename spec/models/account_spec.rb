@@ -36,5 +36,4 @@ describe Account do
       expect(account.mailbox_email.display_name).to eq(account.name)
     end
   end
-
 end

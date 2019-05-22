@@ -3,11 +3,11 @@ require 'aws'
 require 'securerandom'
 
 WIDGET_ASSETS = {
-  'widget.js'         => 'application/javascript',
+  'widget.js' => 'application/javascript',
   'widget-content.js' => 'application/javascript',
-  'widget.css'        => 'text/css',
-  'widget-arrow.svg'  => 'image/svg+xml',
-  'widget-close.svg'  => 'image/svg+xml'
+  'widget.css' => 'text/css',
+  'widget-arrow.svg' => 'image/svg+xml',
+  'widget-close.svg' => 'image/svg+xml'
 }
 
 desc 'Compile assets and upload widget assets to S3'
@@ -15,11 +15,10 @@ task 'assets:precompile' do
   manifest = Dir['public/assets/manifest-*.json'].first
   assets = JSON.parse(File.read(manifest))['assets']
 
-
   # Upload the latest widget assets to S3
 
   s3 = AWS::S3.new(
-    access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
   )
 
@@ -39,7 +38,7 @@ task 'assets:precompile' do
   # Invalidate the CloudFront cache for those assets
 
   cf = AWS::CloudFront.new(
-    access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
   ).client
 
@@ -55,5 +54,4 @@ task 'assets:precompile' do
       caller_reference: SecureRandom.uuid
     }
   )
-
 end

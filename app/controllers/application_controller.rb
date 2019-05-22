@@ -51,5 +51,4 @@ class ApplicationController < ActionController::Base
     asset if Rails.application.assets.find_asset(asset)
   end
   helper_method :page_specific_js
-
 end

@@ -13,7 +13,6 @@ describe MessageMailer, :created do
   }
 
   describe "#forward" do
-
     subject { described_class.forward(message, recipient) }
 
     it "delivers" do
@@ -56,6 +55,5 @@ describe MessageMailer, :created do
         expect(subject.body.encoded).to match "<h3>Heading</h3>"
       end
     end
-
   end
 end

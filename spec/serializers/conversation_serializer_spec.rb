@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe ConversationSerializer do
-
   let(:conversation) { create(:conversation) }
   subject { described_class.new(conversation) }
 
@@ -10,5 +9,4 @@ describe ConversationSerializer do
   it "#type is conversation" do
     expect(subject.type).to eq('conversation')
   end
-
 end

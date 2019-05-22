@@ -10,11 +10,11 @@ class Membership < ActiveRecord::Base
   belongs_to :user
 
   validates :account,
-    presence: true
+            presence: true
 
   validates :user,
-    presence: true,
-    uniqueness: { scope: :account_id }
+            presence: true,
+            uniqueness: { scope: :account_id }
 
   ROLES.each do |role_name|
     define_method("#{role_name}?") do

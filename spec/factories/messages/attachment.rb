@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :attachment do
     message
-    file { File.new(Rails.root.join('app', 'assets', 'images', 'logo.png'))}
+    file { File.new(Rails.root.join('app', 'assets', 'images', 'logo.png')) }
   end
 end

@@ -4,5 +4,4 @@ class AttachmentSerializer < BaseSerializer
   def url
     object.file.url
   end
-
 end

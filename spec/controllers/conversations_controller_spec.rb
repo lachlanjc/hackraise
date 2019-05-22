@@ -12,13 +12,13 @@ describe ConversationsController do
   describe '#update' do
     it 'archives a conversation' do
       post :update,
-        {
-          account_id: account.slug,
-          id: conversation.number,
-          conversation: {
-            archive: true
-          }
-        }
+           {
+             account_id: account.slug,
+             id: conversation.number,
+             conversation: {
+               archive: true
+             }
+           }
 
       conversation.reload
 
@@ -30,13 +30,13 @@ describe ConversationsController do
       conversation.archive!
 
       post :update,
-        {
-          account_id: account.slug,
-          id: conversation.number,
-          conversation: {
-            unarchive: true
-          }
-        }
+           {
+             account_id: account.slug,
+             id: conversation.number,
+             conversation: {
+               unarchive: true
+             }
+           }
 
       conversation.reload
 
@@ -71,16 +71,16 @@ describe ConversationsController do
 
     it 'returns search results as json' do
       post :search,
-        {
-          account_id: account.slug,
-          q: 'Ben',
-          format: :json
-        }
+           {
+             account_id: account.slug,
+             q: 'Ben',
+             format: :json
+           }
 
       body = JSON.parse(response.body)
 
       expect(body['conversations']).to_not be_empty
-      expect(body['conversations'][0]['messages'].any? {|m| m['body'].include?('Ben') }).to be_truthy
+      expect(body['conversations'][0]['messages'].any? { |m| m['body'].include?('Ben') }).to be_truthy
     end
   end
 end

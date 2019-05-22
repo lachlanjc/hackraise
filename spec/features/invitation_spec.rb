@@ -16,8 +16,8 @@ describe "inviting a team member / user" do
 end
 
 describe "a new teammember can join via the invitation" do
-  let(:user){ create(:user_with_account) }
-  let(:new_user){ create(:user) }
+  let(:user) { create(:user_with_account) }
+  let(:new_user) { create(:user) }
 
   before do
     account = user.accounts.first

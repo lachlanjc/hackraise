@@ -1,5 +1,5 @@
 require 'activerecord/uuid'
-#require 'digest/sha256'
+# require 'digest/sha256'
 
 class Webhook < ActiveRecord::Base
   include ActiveRecord::UUID
@@ -19,7 +19,7 @@ class Webhook < ActiveRecord::Base
     self.update_attributes(
       response_code: response.code,
       response_body: response.body,
-      response_at:   Time.zone.now.utc
+      response_at: Time.zone.now.utc
     )
   end
 

@@ -18,5 +18,4 @@ class ChangeConversationArchivedToBoolean < ActiveRecord::Migration
     )
     remove_column :conversations, :archived
   end
-
 end

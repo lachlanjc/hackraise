@@ -1,17 +1,15 @@
 class MigrateMessageIdData < ActiveRecord::Migration
   def up
-
     # Give all messages message ids
 
     Message.where(message_id: nil).find_in_batches do |messages|
       messages.each do |m|
         m.update_column(:message_id,
-          if m.webhook? && m.webhook.has_key?('Message-Id')
-            m.webhook.fetch('Message-Id')
-          else
-            "<#{m.id}@helpful.mail>"
-          end
-        )
+                        if m.webhook? && m.webhook.has_key?('Message-Id')
+                          m.webhook.fetch('Message-Id')
+                        else
+                          "<#{m.id}@helpful.mail>"
+                        end)
       end
     end
 
@@ -22,6 +20,7 @@ class MigrateMessageIdData < ActiveRecord::Migration
         msgs = c.messages.order(:created_at)
         msgs.each_with_index do |m, idx|
           next if idx == 0
+
           m.update_column(:in_reply_to_id, msgs[idx - 1].id)
         end
       end
@@ -51,7 +50,6 @@ class MigrateMessageIdData < ActiveRecord::Migration
             m.update_column(:in_reply_to_id, in_reply_to.id)
           end
         end
-
       end
     end
 
@@ -62,7 +60,5 @@ class MigrateMessageIdData < ActiveRecord::Migration
         c.delete if c.messages.empty?
       end
     end
-
-
   end
 end

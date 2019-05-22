@@ -2,12 +2,12 @@ class CannedResponse < ActiveRecord::Base
   belongs_to :account
 
   validates :key,
-    presence: true,
-    uniqueness: { scope: :account_id }
+            presence: true,
+            uniqueness: { scope: :account_id }
 
   validates :message,
-    presence: true
+            presence: true
 
   validates :account_id,
-    presence: true
+            presence: true
 end

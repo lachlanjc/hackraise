@@ -84,9 +84,9 @@ class AccountsController < ApplicationController
 
   def account_params
     params.require(:account).permit([
-      :name, :website_url, :webhook_url, :prefers_archiving, :signature,
-      :email, :stripe_subscription_id, :forwarding_address
-    ])
+                                      :name, :website_url, :webhook_url, :prefers_archiving, :signature,
+                                      :email, :stripe_subscription_id, :forwarding_address
+                                    ])
   end
 
   def user_params

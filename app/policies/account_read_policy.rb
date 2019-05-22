@@ -1,5 +1,4 @@
 class AccountReadPolicy < Policy
-
   def initialize(account, user)
     @account = account
     @user = user
@@ -8,5 +7,4 @@ class AccountReadPolicy < Policy
   def access?
     @account && @account.users.include?(@user)
   end
-
 end

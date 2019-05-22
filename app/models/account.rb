@@ -9,33 +9,33 @@ class Account < ActiveRecord::Base
   attr_accessor :stripe_token
 
   has_many :canned_responses,
-    dependent: :destroy
+           dependent: :destroy
 
   has_many :conversations,
-    dependent: :destroy
+           dependent: :destroy
 
   has_many :messages,
-    through: :conversations
+           through: :conversations
 
   has_many :people,
-    dependent: :destroy
+           dependent: :destroy
 
   has_many :memberships,
-    dependent: :destroy
+           dependent: :destroy
 
   has_many :users,
-    through: :memberships
+           through: :memberships
 
   has_many :user_people,
-    through: :users,
-    source: :person
+           through: :users,
+           source: :person
 
   has_many :webhooks,
-    dependent: :destroy
+           dependent: :destroy
 
   validates :name,
-    presence: true,
-    uniqueness: true
+            presence: true,
+            uniqueness: true
 
   # validates :forwarding_address,
   #   format: /\A\S+@\S+\z/,
@@ -116,16 +116,16 @@ class Account < ActiveRecord::Base
   end
 
   def team
-    memberships.select {|m| m.user.accepted_or_not_invited? }
+    memberships.select { |m| m.user.accepted_or_not_invited? }
   end
 
   def invitations
-    memberships.reject {|m| m.user.accepted_or_not_invited? }
+    memberships.reject { |m| m.user.accepted_or_not_invited? }
   end
 
   def generate_slug
-    self.slug ||= ActiveSupport::Inflector.transliterate(name).
-      downcase.gsub(/[^\w\ ]+/, '').gsub(/\ +/,'-')
+    self.slug ||= ActiveSupport::Inflector.transliterate(name)
+                                          .downcase.gsub(/[^\w\ ]+/, '').gsub(/\ +/, '-')
   end
 
   def email_presence
@@ -148,15 +148,16 @@ class Account < ActiveRecord::Base
 
   def forwarding_domain
     return nil unless forwarding_address?
+
     Mail::Address.new(forwarding_address).domain
   end
 
   def address
     addr = Mail::Address.new
     addr.address = if forwarding_address?
-        forwarding_address
-      else
-        "#{slug}@#{Helpful.incoming_email_domain}"
+                     forwarding_address
+                   else
+                     "#{slug}@#{Helpful.incoming_email_domain}"
       end
     addr
   end
@@ -170,7 +171,7 @@ class Account < ActiveRecord::Base
   end
 
   def participants
-    users.where(notification_setting: 'message').map {|u| u.person }
+    users.where(notification_setting: 'message').map { |u| u.person }
   end
 
   protected
@@ -178,5 +179,4 @@ class Account < ActiveRecord::Base
   def generate_webhook_secret
     self.webhook_secret ||= SecureRandom.hex(16)
   end
-
 end

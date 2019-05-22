@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe AccountReadPolicy do
-
   let(:account) { double('Account') }
   let(:user) { double('User') }
 
@@ -20,5 +19,4 @@ describe AccountReadPolicy do
     )
     expect(subject).to_not be_access
   end
-
 end

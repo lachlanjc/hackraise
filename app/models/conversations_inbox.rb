@@ -40,7 +40,7 @@ class ConversationsInbox
     index = queue_index(conversation)
     open_conversations[index - 1] if index && index > 0
   end
-  
+
   def queue_index(conversation)
     open_conversations.index { |c| c == conversation }
   end

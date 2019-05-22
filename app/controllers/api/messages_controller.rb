@@ -1,5 +1,4 @@
 class Api::MessagesController < ApiController
-
   def index
     find_conversation!
     respond_with(@conversation.messages)
@@ -16,10 +15,10 @@ class Api::MessagesController < ApiController
 
     @message = @conversation.messages.create!(
       person_id: message_params.fetch(:person),
-      content:   message_params.fetch(:body),
-      body:      message_params[:body_html],
-      subject:   message_params[:subject],
-      raw:       message_params[:raw],
+      content: message_params.fetch(:body),
+      body: message_params[:body_html],
+      subject: message_params[:subject],
+      raw: message_params[:raw],
       attachments_attributes: message_params.fetch(:attachments, [])
     )
 
@@ -44,5 +43,4 @@ class Api::MessagesController < ApiController
       attachments: [:file]
     )
   end
-
 end

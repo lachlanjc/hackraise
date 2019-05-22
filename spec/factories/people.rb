@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :person do
     name    { Faker::Name.name }
     email   { Faker::Internet.email }
-    twitter { "helpful#{SecureRandom.uuid.split('-').first }"}
-    username { Faker::Internet.user_name  }
+    twitter { "helpful#{SecureRandom.uuid.split('-').first}" }
+    username { Faker::Internet.user_name }
   end
 end

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Conversation do
-
   subject { build(:conversation) }
 
   let(:message) { build(:message) }

@@ -1,7 +1,7 @@
 class ConversationSerializer < BaseSerializer
   attributes :account_slug, :archived, :create_message_path, :last_activity_at,
-    :message_count, :number, :path, :subject, :summary, :tags, :assignees_path,
-    :tags_path, :canned_responses_path, :unread
+             :message_count, :number, :path, :subject, :summary, :tags, :assignees_path,
+             :tags_path, :canned_responses_path, :unread
 
   has_one :creator_person
   has_many :messages

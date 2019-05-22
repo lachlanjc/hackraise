@@ -1,5 +1,4 @@
 module FeatureMacros
-
   def reset_email!
     ActionMailer::Base.deliveries = []
   end
@@ -19,7 +18,6 @@ module FeatureMacros
 end
 
 module BeforeFeatureMacros
-
   def sign_in_owner
     sign_in_as(:user_with_account)
   end

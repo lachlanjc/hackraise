@@ -99,7 +99,7 @@ describe AccountsController do
 
     it "redirects" do
       sign_in(owner)
-      patch :update, id: account.slug, account: {name: 'Foo'}
+      patch :update, id: account.slug, account: { name: 'Foo' }
       expect(response).to be_redirect
     end
 
@@ -115,5 +115,4 @@ describe AccountsController do
       }.to change { account.attributes }
     end
   end
-
 end

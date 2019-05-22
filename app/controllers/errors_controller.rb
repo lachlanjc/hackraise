@@ -1,5 +1,4 @@
 class ErrorsController < ApplicationController
-
   def not_found
   end
 
@@ -8,5 +7,4 @@ class ErrorsController < ApplicationController
 
   def unprocessable_entity
   end
-
 end

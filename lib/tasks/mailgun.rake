@@ -4,7 +4,6 @@ end
 
 task :mailgun => ['mailgun:before']
 namespace :mailgun do
-
   task :before do
     unless Rails.env.development?
       puts "This rake task is designed to run in development only."

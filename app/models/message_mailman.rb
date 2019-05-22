@@ -21,7 +21,7 @@ class MessageMailman
 
   def recipients_to_notify
     recipients.uniq.select do |person|
-      notify?(person )
+      notify?(person)
     end
   end
 
@@ -32,5 +32,4 @@ class MessageMailman
   def deliver_to(recipient)
     MessageMailer.forward(message, recipient).deliver_later
   end
-
 end

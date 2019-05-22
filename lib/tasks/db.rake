@@ -36,5 +36,4 @@ namespace :db do
 
     task :restore => [:create, :pull, :load, 'db:migrate']
   end
-
 end

@@ -13,9 +13,9 @@ class Webhooks::MailgunController < WebhooksController
       # Finds Account
       recipient = Mail::Address.new(params.fetch(:recipient).to_ascii)
       account = if recipient.domain == 'helpful.io'
-        Account.find_by!(slug: recipient.local)
-      else
-        Account.find_by!(forwarding_address: recipient.address)
+                  Account.find_by!(slug: recipient.local)
+                else
+                  Account.find_by!(forwarding_address: recipient.address)
       end
 
       # Upsert sender
@@ -30,13 +30,13 @@ class Webhooks::MailgunController < WebhooksController
         account: account,
         message_id: params.fetch('Message-Id'),
         in_reply_to: in_reply_to,
-        person:  person,
+        person: person,
         content: params.fetch('stripped-text'),
-        body:    params['stripped-html'],
+        body: params['stripped-html'],
         subject: params['subject'],
-        webhook: Hash[params.reject {|k,_| k.match(/attachment*/) }],
+        webhook: Hash[params.reject { |k, _| k.match(/attachment*/) }],
         attachments_attributes: params.fetch('attachment-count', 0).to_i.times.map do |i|
-          {file: params.fetch("attachment-#{i+1}")}
+          { file: params.fetch("attachment-#{i + 1}") }
         end
       )
 
@@ -88,5 +88,4 @@ class Webhooks::MailgunController < WebhooksController
     params.require(:signature)
     params.require(:timestamp)
   end
-
 end

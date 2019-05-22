@@ -15,10 +15,10 @@ class MessagesController < ApplicationController
 
           if message.conversation.archived?
             redirect_to inbox_account_conversations_path(message.account),
-              notice: 'The conversation has been archived and the message sent.'
+                        notice: 'The conversation has been archived and the message sent.'
           else
             redirect_to account_conversation_path(message.account, message.conversation),
-              notice: 'The message has been sent'
+                        notice: 'The message has been sent'
           end
         end
 
@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
       respond_with message do |format|
         format.html do
           redirect_to account_conversation_path(message.account, message.conversation),
-            alert: "Problem"
+                      alert: "Problem"
         end
 
         format.json
@@ -50,7 +50,7 @@ class MessagesController < ApplicationController
       :attachments_attributes => [:file],
     ).merge(
       person: current_user.person,
-      account:   find_account!
+      account: find_account!
     )
   end
 

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe PersonSerializer do
-
   let(:person) { create(:person) }
   subject { described_class.new(person) }
 
@@ -10,5 +9,4 @@ describe PersonSerializer do
   it "#type is person" do
     expect(subject.type).to eq('person')
   end
-
 end

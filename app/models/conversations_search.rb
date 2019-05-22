@@ -2,7 +2,7 @@ module ConversationsSearch
   # Public: Sorts conversations that have messages matching search results by the order
   # elasticsearch returns them.
   #
-  # Returns an Array of Conversation models.  
+  # Returns an Array of Conversation models.
   def search_conversations
     search_messages.map(&:conversation).uniq
   end
@@ -11,7 +11,7 @@ module ConversationsSearch
   #
   # Returns ids of matching models
   def search_messages
-    Message.search(query: { match: { content: query } }).records.select {|m| m.account.id == account.id }
+    Message.search(query: { match: { content: query } }).records.select { |m| m.account.id == account.id }
   end
 
   def search?

@@ -1,5 +1,5 @@
 class Api::AttachmentsController < ApiController
-  doorkeeper_for :all, except: [ :create ]
+  doorkeeper_for :all, except: [:create]
 
   def index
     message = Message.includes(:attachments).find(params[:message_id])
@@ -31,7 +31,5 @@ class Api::AttachmentsController < ApiController
              :status => :unprocessable_entity,
              :callback => params[:callback]
     end
-
   end
-
 end

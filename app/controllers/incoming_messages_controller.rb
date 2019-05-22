@@ -18,7 +18,7 @@ class IncomingMessagesController < ApplicationController
 
     @message = MessageFactory.build(
       account: account,
-      person:  person,
+      person: person,
       subject: "New message for #{account.email}",
       content: params.fetch(:content)
     )
@@ -27,18 +27,18 @@ class IncomingMessagesController < ApplicationController
       respond_to do |format|
         format.json do
           render json: @message,
-            status: :created,
-            callback: params[:callback],
-            content_type: content_type
+                 status: :created,
+                 callback: params[:callback],
+                 content_type: content_type
         end
       end
     else
       respond_to do |format|
         format.json do
           render json: @message.errors,
-             status: :unprocessable_entity,
-             callback: params[:callback],
-             content_type: content_type
+                 status: :unprocessable_entity,
+                 callback: params[:callback],
+                 content_type: content_type
         end
       end
     end
