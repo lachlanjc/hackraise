@@ -7,14 +7,14 @@ $breakpoint-md: '(min-width: 52em)';
 $breakpoint-lg: '(min-width: 64em)';
 
 $white: #fff;
-$gray-darker: lighten(#000, 13.5%); // #222
-$gray-dark: lighten(#000, 20%); // #333
-$gray: lighten(#000, 33.5%); // #555
-$gray-light: lighten(#000, 46.7%); // #777
-$gray-lighter: lighten(#000, 93.5%); // #eee
-$black: #111;
+$gray-darker: #24292e;
+$gray-dark: #48515b;
+$gray: #6c7989;
+$gray-light: #98a2ae;
+$gray-lighter: #d4d8dd;
+$black: $gray-darker;
 
-$blue: #00b3ed;
-$red: #ff4b4b;
-$green: #82c451;
-$yellow: #edda3b;
+$blue: #51b9db;
+$red: #ef540c;
+$green: #62d962;
+$yellow: #ffde47;
