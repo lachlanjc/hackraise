@@ -14,7 +14,6 @@
 //= require handlebars
 //= require medium_init
 //= require jquery.transform2d
-//= require wow.min.js
 //= require moment
 //= require moment/min/locales
 //= require moment_lang
