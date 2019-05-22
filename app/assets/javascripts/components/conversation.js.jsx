@@ -26,15 +26,6 @@ var Conversation = React.createClass({
           Move to Inbox
         </button>
       )
-    } else {
-      button = (
-        <button
-          className="btn btn-link btn-xs pull-right"
-          onClick={this.props.archiveHandler}
-        >
-          Archive
-        </button>
-      )
     }
 
     return <div className="conversation-actions pull-right">{button}</div>
@@ -43,7 +34,6 @@ var Conversation = React.createClass({
   renderHeader: function() {
     var title = null
     var preview = null
-    var timestamp = null
 
     if (this.props.conversation.subject) {
       title = this.props.conversation.subject
@@ -57,9 +47,6 @@ var Conversation = React.createClass({
           {this.previewText()}
         </div>
       )
-    }
-
-    if (this.props.conversation.expanded) {
     }
 
     var subjectClasses = window.classNames({
@@ -102,7 +89,6 @@ var Conversation = React.createClass({
               removeTagHandler={this.props.removeTagHandler}
             />
           </div>
-
           <div className="conversation-response">
             <Response
               conversation={this.props.conversation}
