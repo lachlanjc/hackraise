@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var ConversationList = React.createClass({
   getInitialState: function() {
     return {
@@ -235,16 +233,18 @@ var ConversationList = React.createClass({
 
   renderConversation: function(conversation) {
     if (conversation.messages.length > 0) {
-      return Conversation({
-        conversation: conversation,
-        toggleHandler: this.toggleHandler(conversation),
-        addStreamItemHandler: this.addStreamItemHandler(conversation),
-        archiveHandler: this.archiveHandler(conversation),
-        unarchiveHandler: this.unarchiveHandler(conversation),
-        removeTagHandler: this.removeTagHandler(conversation),
-        key: conversation.id,
-        demo: this.props.demo
-      })
+      return (
+        <Conversation
+          conversation={conversation}
+          toggleHandler={this.toggleHandler(conversation)}
+          addStreamItemHandler={this.addStreamItemHandler(conversation)}
+          archiveHandler={this.archiveHandler(conversation)}
+          unarchiveHandler={this.unarchiveHandler(conversation)}
+          removeTagHandler={this.removeTagHandler(conversation)}
+          key={conversation.id}
+          demo={this.props.demo}
+        />
+      )
     }
   },
 

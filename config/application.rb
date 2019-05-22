@@ -45,7 +45,6 @@ module Helpful
       Devise::Mailer.layout "email"
     end
 
-    config.react.addons = true
     config.react.variant = :development
 
     config.active_record.raise_in_transactional_callbacks = true

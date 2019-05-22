@@ -1,1 +1,1 @@
-moment.lang(navigator.language)
+moment.locale(navigator.language)

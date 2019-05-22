@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var FileAttachmentButton = React.createClass({
   render: function() {
     return (

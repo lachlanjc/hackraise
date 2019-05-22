@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var ConversationParticipantList = React.createClass({
   render: function() {
     var creatorName = null

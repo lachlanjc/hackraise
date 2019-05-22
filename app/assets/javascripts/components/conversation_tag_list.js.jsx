@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var ConversationTagList = React.createClass({
   render: function() {
     var renderTagLabel = function(tag) {

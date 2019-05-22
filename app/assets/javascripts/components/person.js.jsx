@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Person = React.createClass({
   render: function() {
     return (

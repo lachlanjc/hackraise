@@ -1,12 +1,10 @@
-/** @jsx React.DOM */
-
 var Conversation = React.createClass({
   renderStatus: function() {
     var isUnread = this.isUnread()
     var isStale = this.isStale()
 
     if (isUnread || isStale) {
-      var classes = React.addons.classSet({
+      var classes = window.classNames({
         status: true,
         'status-info': !isStale && isUnread,
         'status-warning': isStale
@@ -64,7 +62,7 @@ var Conversation = React.createClass({
     if (this.props.conversation.expanded) {
     }
 
-    var subjectClasses = React.addons.classSet({
+    var subjectClasses = window.classNames({
       'conversation-subject': true,
       'ellipsis-overflow': !this.props.conversation.expanded
     })
@@ -119,7 +117,7 @@ var Conversation = React.createClass({
   },
 
   render: function() {
-    var classes = React.addons.classSet({
+    var classes = window.classNames({
       conversation: true,
       'is-expanded': this.props.conversation.expanded,
       'is-collapsed': !this.props.conversation.expanded

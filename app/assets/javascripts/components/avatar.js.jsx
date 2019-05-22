@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 /*= require js-md5 */
 
 var gravatarId = function gravatarId(email) {

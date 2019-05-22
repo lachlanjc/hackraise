@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var AssignmentButton = React.createClass({
   getInitialState: function() {
     return {

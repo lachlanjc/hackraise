@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var ConversationTimestamp = React.createClass({
   render: function() {
     var lastActivityAtInWords = this.timeAgoInWords(this.props.lastActivityAt)

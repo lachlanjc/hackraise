@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Response = React.createClass({
   componentDidMount: function() {
     this.initMediumEditor()

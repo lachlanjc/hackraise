@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var ConversationView = React.createClass({
   getInitialState: function() {
     return {

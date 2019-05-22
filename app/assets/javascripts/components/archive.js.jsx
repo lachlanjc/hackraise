@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Archive = React.createClass({
   render: function() {
     return (

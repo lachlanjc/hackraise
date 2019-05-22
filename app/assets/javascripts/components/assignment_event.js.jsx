@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var AssignmentEvent = React.createClass({
   render: function() {
     return (

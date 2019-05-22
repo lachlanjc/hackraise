@@ -19,6 +19,7 @@
 //= require settings
 //= require react
 //= require react_ujs
+//= require classnames
 //= require_tree ./components
 
 const CONSTANTS = {

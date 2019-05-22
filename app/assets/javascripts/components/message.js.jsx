@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Message = React.createClass({
   render: function() {
     return (

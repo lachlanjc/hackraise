@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 const timestamp = dt => moment(dt).format(CONSTANTS.dateFormat)
 
 const TagEvent = props => (

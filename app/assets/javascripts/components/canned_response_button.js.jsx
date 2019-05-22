@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var CannedResponseButton = React.createClass({
   getInitialState: function() {
     return {

@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var TagButton = React.createClass({
   getInitialState: function() {
     return {

@@ -1,19 +1,15 @@
-/** @jsx React.DOM */
-
 var Stream = React.createClass({
   renderStreamItem: function(item) {
-    var componentClass = this.componentForType(item.type)
+    var ComponentClass = this.componentForType(item.type)
     var attributes = item
 
     if (item.type == 'tagevent') {
       attributes.removeTagHandler = this.props.removeTagHandler
     }
 
-    var streamItem = componentClass(attributes)
-
     return (
       <div className="stream-item" key={item.id}>
-        {streamItem}
+        <ComponentClass {...attributes} />
       </div>
     )
   },

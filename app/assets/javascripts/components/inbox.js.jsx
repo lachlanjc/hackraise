@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Inbox = React.createClass({
   render: function() {
     return (
