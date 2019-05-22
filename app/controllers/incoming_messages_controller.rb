@@ -24,10 +24,6 @@ class IncomingMessagesController < ApplicationController
     )
 
     if @message.save
-      if Rails.env.production?
-        Customerio.client.track(account.owner.id, 'received_message')
-      end
-
       respond_to do |format|
         format.json do
           render json: @message,

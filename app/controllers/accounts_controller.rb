@@ -36,15 +36,6 @@ class AccountsController < ApplicationController
 
       sign_in(@user)
 
-      if Rails.env.production?
-        Customerio.client.identify(
-          id: @user.id,
-          created_at: @user.created_at.to_i,
-          name: @user.name,
-          email: @user.email
-        )
-      end
-
       redirect_to inbox_account_conversations_path(@account)
     rescue ActiveRecord::RecordInvalid
       render 'new'

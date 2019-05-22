@@ -41,10 +41,6 @@ class Webhooks::MailgunController < WebhooksController
       )
 
       message.save!
-
-      if Rails.env.production?
-        Customerio.client.track(account.owner.id, 'received_message')
-      end
     end
 
     head :accepted
