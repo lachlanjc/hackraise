@@ -69,8 +69,8 @@ $padding-xs-horizontal: 5px;
 $line-height-large: 1.33;
 $line-height-small: 1.5;
 
-$border-radius-base: 4px;
-$border-radius-large: 6px;
+$border-radius-base: 6px;
+$border-radius-large: 8px;
 $border-radius-small: 3px;
 
 $component-active-color: #fff;
@@ -176,7 +176,7 @@ $dropdown-link-active-bg: $component-active-bg;
 
 $dropdown-link-disabled-color: $gray-light;
 
-$dropdown-header-color: darken($gray-lighter, 10%);
+$dropdown-header-color: $gray-light;
 
 $dropdown-caret-color: #000;
 
@@ -535,7 +535,7 @@ $badge-active-bg: #fff;
 
 $badge-font-weight: bold;
 $badge-line-height: 1;
-$badge-border-radius: 2px;
+$badge-border-radius: 999px;
 
 // Breadcrumbs
 
