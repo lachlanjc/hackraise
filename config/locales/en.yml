@@ -287,10 +287,6 @@ en:
   technical:
     general:
       technical_header: "Getting Setup and Technical Details"
-    widget:
-      widget_is_simple: "Adding our widget to your site is very simple. First, include the following script add the end of the body of your page."
-      widget_next: "Next, all you need to do is adding an attribute containing your company slug to the element you want to open the widget after clicking it."
-      widget_thats_it: "That's it! Clicking the element will open up the widget. Additionally some extra options are available:"
     setup:
       try_api: "Try our API"
       try_out_command: "To try out Helpfuls incoming messages API, run this command from your terminal:"

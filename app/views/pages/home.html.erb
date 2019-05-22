@@ -120,9 +120,3 @@
 </div>
 
 <%= render 'pages/home/footer' %>
-
-<% if Rails.env.development? %>
-  <%= javascript_include_tag 'widget' %>
-<% else %>
-  <script async src="//assets.helpful.io/assets/widget.js"></script>
-<% end %>

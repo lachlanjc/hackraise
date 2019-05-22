@@ -31,6 +31,5 @@
 </div>
 
 <div class="text-center">
-  <script async src="https://assets.helpful.io/assets/widget.js"></script>
   <%= mail_to 'helpful@helpful.io', t('.ask_for_help'), data: {helpful: 'helpful', 'helpful-email' => current_user.email, 'helpful-name' => current_user.name} %>
 </div>

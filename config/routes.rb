@@ -9,7 +9,6 @@ Helpful::Application.routes.draw do
   end if Rails.env.production?
   mount Sidekiq::Web, at: "/sidekiq"
 
-  get '/embed.js' => 'pages#embed', as: :embed
   get '/styleguide' => 'pages#styleguide', as: :styleguide
   get '/terms' => 'pages#terms', as: :terms
   get '/home' => 'pages#home', as: :home

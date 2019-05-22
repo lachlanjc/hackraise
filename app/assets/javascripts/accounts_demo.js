@@ -95,9 +95,4 @@ $(function() {
     e.preventDefault()
     sendFromEmail()
   })
-
-  $('.helpful-embed input[type=submit]').click(function(e) {
-    e.preventDefault()
-    sendFromWidget()
-  })
 })
