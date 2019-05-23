@@ -1,30 +1,33 @@
-var Stream = React.createClass({
-  renderStreamItem: function(item) {
-    var ComponentClass = this.componentForType(item.type)
-    var attributes = item
+const getComponentForType = type =>
+  ({
+    message: Message,
+    assignmentevent: AssignmentEvent,
+    tagevent: TagEvent
+  }[type])
 
-    if (item.type == 'tagevent') {
-      attributes.removeTagHandler = this.props.removeTagHandler
-    }
+const StreamItem = props => {
+  const ComponentClass = getComponentForType(props.item.type)
+  const attrs = props.item
 
-    return (
-      <div className="stream-item" key={item.id}>
-        <ComponentClass {...attributes} />
-      </div>
-    )
-  },
-
-  render: function() {
-    var streamItems = this.props.items.map(this.renderStreamItem)
-
-    return <div className="stream">{streamItems}</div>
-  },
-
-  componentForType: function(type) {
-    return {
-      message: Message,
-      assignmentevent: AssignmentEvent,
-      tagevent: TagEvent
-    }[type]
+  if (props.item.type == 'tagevent') {
+    attrs.removeTagHandler = props.removeTagHandler
   }
-})
+
+  return (
+    <div className="stream-item">
+      <ComponentClass {...attrs} />
+    </div>
+  )
+}
+
+const Stream = props => (
+  <div className="stream">
+    {props.items.map(item => (
+      <StreamItem
+        removeTagHandler={props.removeTagHandler}
+        item={item}
+        key={item.id}
+      />
+    ))}
+  </div>
+)

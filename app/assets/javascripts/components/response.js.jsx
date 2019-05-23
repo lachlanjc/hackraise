@@ -152,7 +152,7 @@ var Response = React.createClass({
       <form className="form">
         <div
           className="form-control form-control-invisible medium-editor"
-          data-placeholder="Write your response..."
+          data-placeholder="Write your response…"
           onKeyDown={this.metaSend}
           onKeyPress={this.ctrlSend}
         />

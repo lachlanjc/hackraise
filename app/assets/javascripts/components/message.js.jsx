@@ -1,27 +1,18 @@
-var Message = React.createClass({
-  render: function() {
-    return (
-      <div className="message">
-        <div className="message-header">
-          <span className="pull-right text-muted">{this.created()}</span>
-          <Avatar person={this.props.person} size="20" />
-          <Person person={this.props.person} />
-        </div>
+const content = body => {
+  const converter = new Showdown.converter()
+  return converter.makeHtml(body)
+}
 
-        <div
-          className="message-content"
-          dangerouslySetInnerHTML={{ __html: this.content() }}
-        />
-      </div>
-    )
-  },
-
-  created: function() {
-    return moment(this.props.created).format(CONSTANTS.dateFormat)
-  },
-
-  content: function() {
-    var converter = new Showdown.converter()
-    return converter.makeHtml(this.props.content)
-  }
-})
+const Message = props => (
+  <div className="message">
+    <div className="message-header">
+      <span className="pull-right text-muted">{timestamp(props.created)}</span>
+      <Avatar person={props.person} size="20" />
+      <Person person={props.person} />
+    </div>
+    <div
+      className="message-content"
+      dangerouslySetInnerHTML={{ __html: content(props.content) }}
+    />
+  </div>
+)

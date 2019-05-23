@@ -1,17 +1,11 @@
-var ConversationTagList = React.createClass({
-  render: function() {
-    var renderTagLabel = function(tag) {
-      return (
-        <span className="tag-label small text-muted" key={tag}>
-          #{tag}
-        </span>
-      )
-    }
+const Tag = ({ tag }) => (
+  <span className="tag-label small text-muted">#{tag}</span>
+)
 
-    return (
-      <div className="tag-label-list">
-        {this.props.tags.map(renderTagLabel)}
-      </div>
-    )
-  }
-})
+const ConversationTagList = props => (
+  <div className="tag-label-list">
+    {props.tags.map(tag => (
+      <Tag tag={tag} key={tag} />
+    ))}
+  </div>
+)

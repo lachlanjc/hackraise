@@ -1,3 +1,14 @@
+const conversationPath = props =>
+  '/accounts/' +
+  props.accountSlug +
+  '/conversations/' +
+  props.conversationNumber +
+  '.json'
+
+const inboxPath = props => '/' + props.accountSlug + '/inbox'
+
+const archivePath = props => '/' + props.accountSlug + '/archived'
+
 var ConversationView = React.createClass({
   getInitialState: function() {
     return {
@@ -13,13 +24,11 @@ var ConversationView = React.createClass({
   getConversation: function() {
     $.getJSON(
       this.conversationPath(),
-      function(response) {
-        var conversation = response.conversation
+      function(res) {
+        var conversation = res.conversation
+        const { archived } = conversation
         conversation.expanded = true
-        this.setState({
-          conversation: conversation,
-          archived: conversation.archived
-        })
+        this.setState({ conversation, archived })
       }.bind(this)
     )
   },
@@ -40,7 +49,7 @@ var ConversationView = React.createClass({
         break
     }
 
-    this.setState({ conversation: conversation })
+    this.setState({ conversation })
   },
 
   // TODO: Clean up duplication on ConversationList
@@ -61,10 +70,10 @@ var ConversationView = React.createClass({
       dataType: 'json',
       contentType: 'application/json',
       accepts: { json: 'application/json' },
-      success: function(response) {
+      success: function() {
         var conversation = this.state.conversation
         conversation.archived = true
-        this.setState({ conversation: conversation })
+        this.setState({ conversation })
       }.bind(this)
     })
   },
@@ -86,35 +95,24 @@ var ConversationView = React.createClass({
       dataType: 'json',
       contentType: 'application/json',
       accepts: { json: 'application/json' },
-      success: function(response) {
+      success: function() {
         var conversation = this.state.conversation
         conversation.archived = false
-        this.setState({ conversation: conversation })
+        this.setState({ conversation })
       }.bind(this)
-    })
-  },
-
-  renderConversation: function() {
-    return Conversation({
-      conversation: this.state.conversation,
-      toggleHandler: function() {},
-      addStreamItemHandler: this.addStreamItemHandler,
-      archiveHandler: this.archiveHandler,
-      unarchiveHandler: this.unarchiveHandler,
-      key: this.state.conversation.id
     })
   },
 
   renderMailboxLink: function() {
     if (this.state.archived) {
       return (
-        <a href={this.archivePath()} className="text-muted">
+        <a href={this.archivePath(this.props)} className="text-muted">
           Back to Archive
         </a>
       )
     } else {
       return (
-        <a href={this.inboxPath()} className="text-muted">
+        <a href={this.inboxPath(this.props)} className="text-muted">
           Back to Inbox
         </a>
       )
@@ -129,29 +127,18 @@ var ConversationView = React.createClass({
       return (
         <div>
           <div className="link-bar">{this.renderMailboxLink()}</div>
-          {this.renderConversation()}
+          <Conversation
+            conversation={this.state.conversation}
+            toggleHandler={() => null}
+            addStreamItemHandler={this.addStreamItemHandler}
+            archiveHandler={this.archiveHandler}
+            unarchiveHandler={this.unarchiveHandler}
+            key={this.state.conversation.id}
+          />
         </div>
       )
     } else {
       return <div />
     }
-  },
-
-  conversationPath: function() {
-    return (
-      '/accounts/' +
-      this.props.accountSlug +
-      '/conversations/' +
-      this.props.conversationNumber +
-      '.json'
-    )
-  },
-
-  inboxPath: function() {
-    return '/' + this.props.accountSlug + '/inbox'
-  },
-
-  archivePath: function() {
-    return '/' + this.props.accountSlug + '/archived'
   }
 })

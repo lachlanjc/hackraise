@@ -21,7 +21,7 @@ var TagButton = React.createClass({
           }.bind(this)
         )
 
-        this.setState({ tags: tags })
+        this.setState({ tags })
       }.bind(this)
     )
   },
@@ -162,11 +162,11 @@ var TagButton = React.createClass({
           <li className="divider" />
           {this.renderNewTag()}
           {this.renderFilteredTags()}
-          {this.state.tags.length === 0 ? (
+          {this.state.tags.length === 0 && (
             <li className="text-muted blankslate">
               No tags yet! Type above to create your first.
             </li>
-          ) : null}
+          )}
         </ul>
       </div>
     )

@@ -64,7 +64,7 @@ var Conversation = React.createClass({
           <Person person={this.props.conversation.creator_person} />
 
           <small className="pull-right text-muted padding-top">
-            {this.created()}
+            {timestamp(this.props.conversation.created)}
           </small>
 
           <div className={subjectClasses}>
@@ -151,9 +151,5 @@ var Conversation = React.createClass({
     return $(
       converter.makeHtml(this.props.conversation.messages[0].content)
     ).text()
-  },
-
-  created: function() {
-    return moment(this.props.conversation.created).format(CONSTANTS.dateFormat)
   }
 })
