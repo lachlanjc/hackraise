@@ -1,14 +1,105 @@
+.heronav {
+  top: 0;
+  left: 0;
+  background-color: #f1f2f4;
+  min-width: 0px;
+  width: 256px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  height: 100%;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.heronav-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .geomicon,
+  .avatar {
+    margin-right: $padding-xs-horizontal;
+  }
+
+  .badge {
+    margin-left: auto;
+  }
+
+  + .container {
+    float: right;
+    padding-top: 48px;
+  }
+}
+
+.heronav-container > ul > li > a,
+.heronav-section {
+  display: flex;
+  align-items: center;
+  width: 256px;
+  height: 48px;
+  padding: $padding-base-vertical $padding-large-horizontal;
+}
+
+.heronav-section-top {
+  background-color: $blue;
+  margin-bottom: 2rem;
+
+  a {
+    color: $white;
+  }
+}
+
+.heronav-section-bottom {
+  background-color: $gray-lighter;
+  margin-top: auto;
+
+  a {
+    color: $gray-darker;
+  }
+
+  .dropdown-menu {
+    bottom: 100%;
+    top: auto;
+  }
+}
+
+.heronav-container > ul > li > a {
+  background-color: transparent;
+  transition: background-color 0.125s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $gray-lighter;
+  }
+}
+
 .nav-tabs {
   border-bottom: none;
 
   > li,
   > li.active {
     margin-bottom: 0;
+  }
 
-    > a,
-    > a:hover,
-    > a:focus {
+  > li > a {
+    border-radius: 999px;
+
+    &:hover,
+    &:focus {
       border: none;
     }
   }
+}
+
+.nav-tabs-sheet {
+  padding: $nav-link-padding;
 }

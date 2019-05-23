@@ -1,88 +1,87 @@
-<div class="navbar navbar-inverse navbar-static-top">
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="<%= root_path %>" class="navbar-brand">
-        <%= image_tag 'logo.png', alt: 'Hackraise', width: 30, height: 30 %>
+  @media all and (min-width: 768px) {
+    body {
+      flex-direction: row;
+    }
+  }
+</style>
+
+<nav class="heronav">
+<div class="heronav-container">
+  <header class="heronav-section heronav-section-top">
+    <a href="<%= root_path %>" class="mr2">
+      <%= image_tag 'logo-white.svg', alt: 'Hackraise', width: 32, height: 32 %>
+    </a>
+    <div class="dropdown bold <%= nav_active_class(:account) %>">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%= @account.name %>
+        <b class="caret"></b>
       </a>
+      <ul class="dropdown-menu">
+        <li><a href="<%= edit_account_path(@account, anchor: 'basic') %>" rel="account.edit">Account</a></li>
+        <li><a href="<%= edit_account_path(@account, anchor: 'team') %>" rel="account.edit.team">Team</a></li>
+        <li><a href="<%= edit_account_path(@account, anchor: 'canned-responses') %>" rel="account.edit.canned-responses">Canned responses</a></li>
+        <li><a href="<%= edit_account_path(@account, anchor: 'email-forwarding') %>" rel="account.edit.email-forwarding">Custom domains</a></li>
+
+        <li><a href="<%= help_account_path(@account) %>">Help</a></li>
+
+        <% if current_user.accounts.size > 1 %>
+          <li class="divider"></li>
+
+          <% current_user.accounts.each do |account| %>
+            <li class="<%= 'active' if @account == account %>">
+
+              <a href="<%= inbox_account_conversations_path(account) %>" class="clearfix" style="white-space:nowrap">
+                <% unless account.inbox_count.zero? %>
+                  <span class="badge pull-right"><%= account.inbox_count %></span>
+                <% end %>
+                <%= account.name %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
+  </header>
 
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown <%= nav_active_class(:account) %>">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <%= @account.name %>
-          <b class="caret"></b>
-        </a>
-
-        <ul class="dropdown-menu">
-
-          <li><a href="<%= edit_account_path(@account, anchor: 'basic') %>" rel="account.edit">Account</a></li>
-          <li><a href="<%= edit_account_path(@account, anchor: 'team') %>" rel="account.edit.team">Team</a></li>
-          <li><a href="<%= edit_account_path(@account, anchor: 'canned-responses') %>" rel="account.edit.canned-responses">Canned responses</a></li>
-          <li><a href="<%= edit_account_path(@account, anchor: 'email-forwarding') %>" rel="account.edit.email-forwarding">Custom domains</a></li>
-
-          <li><a href="<%= help_account_path(@account) %>">Help</a></li>
-
-          <% if current_user.accounts.size > 1 %>
-            <li class="divider"></li>
-
-            <% current_user.accounts.each do |account| %>
-              <li class="<%= 'active' if @account == account %>">
-
-                <a href="<%= inbox_account_conversations_path(account) %>" class="clearfix" style="white-space:nowrap">
-                  <% unless account.inbox_count.zero? %>
-                    <span class="badge pull-right"><%= account.inbox_count %></span>
-                  <% end %>
-                  <%= account.name %>
-                </a>
-              </li>
-            <% end %>
-          <% end %>
-
-        </ul>
-      </li>
-
-      <li class="<%= nav_active_class(:inbox) %>">
-        <%= link_to inbox_account_conversations_path(@account), class: "#{'active' if current_page?(inbox_account_conversations_path(@account)) }" do %>
-          <span class="geomicon geomicon-inbox"></span>
-          <span class=""><%= t('.inbox') %></span>
-          <% unless @account.inbox_count.zero? %>
-            <span class="badge"><%= @account.inbox_count %></span>
-          <% end %>
+  <ul>
+    <li class="<%= nav_active_class(:inbox) %>">
+      <%= link_to inbox_account_conversations_path(@account), class: "#{'active' if current_page?(inbox_account_conversations_path(@account)) }" do %>
+        <span class="geomicon geomicon-inbox"></span>
+        <span class=""><%= t('.inbox') %></span>
+        <% unless @account.inbox_count.zero? %>
+          <span class="badge"><%= @account.inbox_count %></span>
         <% end %>
-      </li>
+      <% end %>
+    </li>
 
-      <li class="<%= nav_active_class(:archive) %>">
-        <%= link_to archived_account_conversations_path(@account), class: "#{'active' if current_page?(archived_account_conversations_path(@account)) }" do %>
-          <span class="geomicon geomicon-storagebox"></span>
-          <span class=""><%= t('.archive') %></span>
-        <% end %>
+    <li class="<%= nav_active_class(:archive) %>">
+      <%= link_to archived_account_conversations_path(@account), class: "#{'active' if current_page?(archived_account_conversations_path(@account)) }" do %>
+        <span class="geomicon geomicon-storagebox"></span>
+        <span class=""><%= t('.archive') %></span>
+      <% end %>
+    </li>
+  </ul>
+
+  <div class="heronav-section heronav-section-bottom dropdown">
+    <a class="dropdown-toggle mr1" href="#" data-toggle="dropdown">
+      <%= avatar(current_user, 24) %>
+      <%= current_user.name %>
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li class="<%= nav_active_class(:personal) %>">
+        <a href="<%= edit_user_path %>"><%= t('.settings') %></a>
+      </li>
+      <li>
+        <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-text' %>
       </li>
     </ul>
-
-        <% end %>
-      </li>
-
-      <li class="dropdown">
-        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-          <%= avatar(current_user, 19) %>
-          <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li class="<%= nav_active_class(:personal) %>">
-            <a href="<%= edit_user_path %>"><%= t('.settings') %></a>
-          </li>
-          <li>
-            <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-text' %>
-          </li>
-        </ul>
-      </li>
-    </ul>
-
-
-  </div><!-- .container -->
-</div><!-- .navbar -->
-
-
   </div>
-</div>
+  </div>
+</nav>
