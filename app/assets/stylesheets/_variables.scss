@@ -221,14 +221,14 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
 
 // Container sizes
 
-$container-tablet: ((720px + $grid-gutter-width));
+$container-tablet: ((738px + $grid-gutter-width));
 $container-sm: $container-tablet;
 
-$container-desktop: ((940px + $grid-gutter-width));
-$container-md: $container-desktop;
+$container-desktop: ((950px + $grid-gutter-width));
+$container-md: $container-tablet;
 
-$container-large-desktop: ((1140px + $grid-gutter-width));
-$container-lg: $container-large-desktop;
+// $container-large-desktop: ((994 + $grid-gutter-width));
+$container-lg: $container-desktop;
 
 //== Navbar
 //
@@ -305,7 +305,7 @@ $nav-tabs-border-color: $brand-border;
 
 $nav-tabs-link-hover-border-color: $gray-lighter;
 
-$nav-tabs-active-link-hover-bg: white;
+$nav-tabs-active-link-hover-bg: $white;
 $nav-tabs-active-link-hover-color: $gray;
 $nav-tabs-active-link-hover-border-color: $brand-border;
 
