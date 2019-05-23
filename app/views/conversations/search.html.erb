@@ -11,5 +11,7 @@
     <h3 class="page-title">Conversations assigned to "<%= User.find(params[:assignee]).name %>"</h3>
   <% end %>
 
+  <%= render 'conversations/search' %>
+
   <%= react_component('ConversationList', 'accountSlug' => @account.slug, 'query' => params[:q], 'tag' => params[:tag], 'assignee' => params[:assignee]) %>
 </div>
