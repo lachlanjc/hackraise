@@ -30,7 +30,7 @@
       white-space: nowrap;
       height: $navbar-height;
 
-      .glyphicon {
+      .geomicon {
         font-size: 10px;
         width: 10px;
         left: 0;
@@ -45,7 +45,7 @@
       &.completed {
         color: $blue-gray;
 
-        .glyphicon {
+        .geomicon {
           display: block;
           color: $blue-gray;
         }

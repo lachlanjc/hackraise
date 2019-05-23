@@ -6,14 +6,14 @@
 
       <li class="<%= 'disabled' if @account.persisted? && (current_page?(account_invitations_path(@account)) || current_page?(demo_account_path(@account))) %>">
         <a href="#" class="<%= 'active' if current_page?(new_accounts_path) %> <%= 'completed' if @account.persisted? && (current_page?(account_invitations_path(@account)) || current_page?(demo_account_path(@account))) %>">
-          <span class="glyphicon glyphicon-ok"></span>
+          <span class="geomicon geomicon-check"></span>
           <%= t('.sign_up') %>
         </a>
       </li>
 
       <li>
         <a href="#" class="<%= 'active' if @account.persisted? && current_page?(demo_account_path(@account)) %>">
-          <span class="glyphicon glyphicon-ok"></span>
+          <span class="geomicon geomicon-check"></span>
           <%= t('.start_using_helpful') %>
         </a>
       </li>
