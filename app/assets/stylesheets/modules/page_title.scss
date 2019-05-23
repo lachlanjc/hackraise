@@ -2,6 +2,12 @@
   border-bottom: 2px solid $brand-border;
   padding-bottom: 20px;
   font-weight: bold;
+  margin-bottom: $padding-xl-vertical;
+
+  .label {
+    font-size: 75%;
+    margin-left: $padding-base-horizontal;
+  }
 }
 
 .section-title {
