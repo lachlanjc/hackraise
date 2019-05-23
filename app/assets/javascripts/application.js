@@ -13,6 +13,7 @@
 //= require moment_lang
 //= require showdown
 //= require underscore
+//= require search_bar
 //= require settings
 //= require react
 //= require react_ujs

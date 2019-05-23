@@ -2,58 +2,53 @@
 <%= render 'shared/navbar' %>
 <%= render 'layouts/flash' %>
 
-<div class="container py4">
+<div class="container">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#basic" role="tab" data-toggle="tab">General</a></li>
+      <li><a href="#team" role="tab" data-toggle="tab">Team</a></li>
+      <li><a href="#canned-responses" role="tab" data-toggle="tab">Canned responses</a></li>
+      <li><a href="#email-forwarding" role="tab" data-toggle="tab">Custom domains</a></li>
+    </ul>
 
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#basic" role="tab" data-toggle="tab"><%= t('shared.navbar.general') %></a></li>
-        <li><a href="#team" role="tab" data-toggle="tab">Team</a></li>
-        <li><a href="#canned-responses" role="tab" data-toggle="tab"><%= t('shared.navbar.canned_responses') %></a></li>
-        <li><a href="#email-forwarding" role="tab" data-toggle="tab">Custom domains</a></li>
-      </ul>
-
-      <!-- Tab panes -->
-      <div class="bg-white p3">
-        <div class="tab-content">
-          <div class="tab-pane active" id="basic">
-
-            <%= form_for @account, method: :patch, html: {class: 'form'} do |f| %>
-
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-md-6">
-                    <%= f.label :name, class: 'control-label' %>
-                    <%= f.text_field :name, autofocus: true, placeholder: t('accounts.general.company_name_placeholder'), class: 'form-control' %>
-                  </div>
+    <!-- Tab panes -->
+    <div class="bg-white nav-tab-sheet">
+      <div class="tab-content">
+        <div class="tab-pane active" id="basic">
+          <h2 class="page-title">Account settings</h2>
+          <%= form_for @account, method: :patch, html: {class: 'form'} do |f| %>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <%= f.label :name, class: 'control-label' %>
+                  <%= f.text_field :name, autofocus: true, placeholder: t('accounts.general.company_name_placeholder'), class: 'form-control' %>
                 </div>
               </div>
+            </div>
 
-              <div class="form-group">
-                <div class="control-label"><%= t('.forwarding_address') %></div>
-                <%= mail_to @account.mailbox_email.address, @account.mailbox_email.address, class: 'form-control-static' %>
-              </code>
-              </div>
+            <div class="form-group">
+              <div class="control-label"><%= t('.forwarding_address') %></div>
+              <%= mail_to @account.mailbox_email.address, @account.mailbox_email.address, class: 'form-control-static' %>
+            </code>
+            </div>
 
-              <div class="form-actions">
-                <%= f.submit t('.update_account'), class: 'btn btn-primary' %>
-              </div>
-            <% end %>
-
-          </div><!-- #basic -->
-
-          <div class="tab-pane" id="team">
-            <%= render 'team' %>
-          </div><!-- #team -->
-
-          <div class="tab-pane" id="canned-responses">
-            <%= render 'canned_responses' %>
-          </div><!-- #canned-responses -->
-
-          <div class="tab-pane" id="email-forwarding">
-            <%= render 'email_forwarding' %>
-          </div><!-- #canned-responses -->
+            <div class="form-actions">
+              <%= f.submit t('.update_account'), class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+        <div class="tab-pane" id="team">
+          <h2 class="page-title">Team</h2>
+          <%= render 'team' %>
+        </div>
+        <div class="tab-pane" id="canned-responses">
+          <h2 class="page-title">Canned responses</h2>
+          <%= render 'canned_responses' %>
+        </div>
+        <div class="tab-pane" id="email-forwarding">
+          <h2 class="page-title">Domain email forwarding</h2>
+          <%= render 'email_forwarding' %>
         </div>
       </div>
     </div>

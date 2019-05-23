@@ -1,8 +1,7 @@
-<div class="clearfix py2">
-  <a class="btn btn-success pull-right" href="<%= new_account_canned_response_path(@account) %>">
-    Create Canned Response
-  </a>
-</div>
+<a class="btn btn-success mb3" href="<%= new_account_canned_response_path(@account) %>">
+  <span class="geomicon geomicon-plus mr1"></span>
+  Create Canned Response
+</a>
 
 <% if @account.canned_responses.empty? %>
   <div class="panel panel-default">
