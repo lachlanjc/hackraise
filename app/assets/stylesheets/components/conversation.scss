@@ -42,6 +42,13 @@
   padding: 20px 40px;
   position: relative;
 
+  .dropdown-menu {
+    left: 40px;
+    margin-top: -20px;
+    width: 32rem;
+    max-width: 100%;
+  }
+
   > .status {
     left: 15px;
     top: 55px;
