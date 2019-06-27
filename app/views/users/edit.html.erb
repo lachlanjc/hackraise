@@ -21,13 +21,13 @@
 
       <%= fields_for current_user.person do |ff| %>
         <div class="form-group">
-          <%= ff.label :name, t('accounts.general.your_name'), class: 'control-label' %>
+          <%= ff.label :name, 'Your name', class: 'control-label' %>
           <%= ff.text_field :name, class: 'form-control' %>
         </div>
 
         <div class="form-group">
-          <%= ff.label :email, t('general.email'), class: 'control-label' %>
-          <%= ff.text_field :email, class: 'form-control' %>
+          <%= ff.label :email, 'Your email', class: 'control-label' %>
+          <%= ff.email_field :email, class: 'form-control' %>
         </div>
 
         <hr>
@@ -37,17 +37,12 @@
           <p class="form-subtext"><%= t('.change_picture_subtext') %></p>
         </div>
 
-        <div class="form-group clearfix">
-          <div class="form-control settings-profile-pic">
-            <%= avatar_upload(current_user, 170) %>
-          </div>
-
-          <div class="form-control settings-change-profile-pic">
-            <span class="fake-input-file">
-              <a href="javascript:;" class="btn btn-default">Choose a new Profile Pic</a>
-              <%= ff.file_field :avatar, onchange: 'avatarPreview()', id: 'avatar-upload' %>
-            </span>
-          </div>
+        <div class="settings-profile-pic">
+          <%= avatar_upload(current_user, 96) %>
+          <span class="fake-input-file">
+            <a href="javascript:;" class="btn btn-default">Choose a new image</a>
+            <%= ff.file_field :avatar, onchange: 'avatarPreview()', id: 'avatar-upload' %>
+          </span>
         </div>
       <% end %>
 
