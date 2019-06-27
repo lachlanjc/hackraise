@@ -7,7 +7,6 @@
 //= require homepage
 //= require email_check
 //= require medium_init
-//= require jquery.transform2d
 //= require moment
 //= require moment/min/locales
 //= require moment_lang
