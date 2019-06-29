@@ -1,10 +1,8 @@
-<div class="dropdown conversation-header">
+<div class="dropdown conversation-header py0 mb2">
   <%= form_tag search_account_conversations_path(@account), method: 'get', class: '', role: 'search' do %>
-    <div class="input-group input-group-invisible navbar-input-group">
-      <span class="input-group-addon" style="padding-left: 0;">
-        <span class="geomicon geomicon-search"></span>
-      </span>
-      <%= search_field_tag :q, @query, autocomplete: 'off', placeholder: 'Search', class: 'form-control form-control-invisible' %>
+    <div class="search">
+      <span class="search__icon geomicon geomicon-search"></span>
+      <%= search_field_tag :q, @query, autocomplete: 'off', placeholder: 'Search…', class: 'search__field form-control form-control-invisible' %>
     </div>
     <button type="submit" class="btn btn-default sr-only">Search</button>
     <button type="button" class="btn btn-default dropdown-toggle sr-only" data-toggle="dropdown" tabindex="-1">

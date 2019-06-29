@@ -23,8 +23,8 @@ $link-hover-color: darken($link-color, 15%);
 
 // Typography
 
-$font-family-sans-serif: 'IBM Plex Sans', system-ui, 'Helvetica Neue', Helvetica,
-  Arial, sans-serif;
+$font-family-sans-serif: system-ui, 'Helvetica Neue', Helvetica, Arial,
+  sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 $font-family-base: $font-family-sans-serif;
@@ -98,28 +98,28 @@ $table-border-color: #ddd;
 $btn-font-weight: normal;
 
 $btn-default-color: $brand-primary;
-$btn-default-bg: white;
+$btn-default-bg: $white;
 $btn-default-border: $brand-border;
 
-$btn-primary-color: white;
-$btn-primary-bg: $blue;
-$btn-primary-border: $blue;
+$btn-primary-color: $white;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
 
-$btn-success-color: $brand-success;
-$btn-success-bg: white;
-$btn-success-border: $brand-border;
+$btn-success-color: $white;
+$btn-success-bg: $brand-success;
+$btn-success-border: $brand-success;
 
-$btn-info-color: $brand-info;
-$btn-info-bg: white;
-$btn-info-border: $brand-border;
+$btn-info-color: $white;
+$btn-info-bg: $brand-info;
+$btn-info-border: $brand-info;
 
-$btn-warning-color: $brand-warning;
-$btn-warning-bg: white;
-$btn-warning-border: $brand-border;
+$btn-warning-color: $white;
+$btn-warning-bg: $brand-warning;
+$btn-warning-border: $brand-warning;
 
-$btn-danger-color: $brand-danger;
-$btn-danger-bg: white;
-$btn-danger-border: $brand-border;
+$btn-danger-color: $white;
+$btn-danger-bg: $brand-danger;
+$btn-danger-border: $brand-danger;
 
 $btn-link-disabled-color: $gray-light;
 
@@ -141,7 +141,7 @@ $input-border: $brand-border;
 $input-border-radius: $border-radius-base;
 $input-border-focus: $brand-primary;
 
-$input-color-placeholder: $gray-light;
+$input-color-placeholder: $gray;
 
 $input-height-base: 48px;
 $input-height-large: 64px;
@@ -153,20 +153,20 @@ $legend-border-color: $brand-border;
 // Dropdowns
 
 $dropdown-bg: #fff;
-$dropdown-border: rgba(0, 0, 0, 0.15);
-$dropdown-fallback-border: #ccc;
-$dropdown-divider-bg: $gray-lighter;
+$dropdown-border: transparent;
+$dropdown-fallback-border: transparent;
+$dropdown-divider-bg: $brand-border;
 
 $dropdown-link-color: $gray-dark;
-$dropdown-link-hover-color: darken($gray-dark, 5%);
-$dropdown-link-hover-bg: #f5f5f5;
+$dropdown-link-hover-color: $gray-darker;
+$dropdown-link-hover-bg: $brand-bg;
 
 $dropdown-link-active-color: $component-active-color;
 $dropdown-link-active-bg: $component-active-bg;
 
-$dropdown-link-disabled-color: $gray-light;
+$dropdown-link-disabled-color: $gray;
 
-$dropdown-header-color: $gray-light;
+$dropdown-header-color: $gray;
 
 $dropdown-caret-color: #000;
 
@@ -223,7 +223,7 @@ $container-lg: $container-desktop;
 // Navs
 
 $nav-link-padding: 10px 15px;
-$nav-link-hover-bg: rgba(black, 0.05);
+$nav-link-hover-bg: $brand-bg;
 
 $nav-disabled-link-color: $gray-light;
 $nav-disabled-link-hover-color: $gray-light;
@@ -233,7 +233,7 @@ $nav-open-link-hover-color: #fff;
 // Tabs
 $nav-tabs-border-color: $brand-border;
 
-$nav-tabs-link-hover-border-color: $gray-lighter;
+$nav-tabs-link-hover-border-color: $brand-border;
 
 $nav-tabs-active-link-hover-bg: $white;
 $nav-tabs-active-link-hover-color: $gray;
@@ -252,20 +252,20 @@ $jumbotron-font-size: ceil(($font-size-base * 1.5));
 
 // Form states and alerts
 
-$state-success-text: #3c763d;
-$state-success-bg: #dff0d8;
+$state-success-text: $brand-success;
+$state-success-bg: $brand-success;
 $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%);
 
-$state-info-text: #31708f;
-$state-info-bg: #d9edf7;
-$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
+$state-info-text: $brand-info;
+$state-info-bg: $brand-info;
+$state-info-border: darken(adjust-hue($state-info-bg, -10), 5%);
 
-$state-warning-text: #8a6d3b;
-$state-warning-bg: #fcf8e3;
+$state-warning-text: $brand-warning;
+$state-warning-bg: $brand-warning;
 $state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%);
 
-$state-danger-text: #a94442;
-$state-danger-bg: #f2dede;
+$state-danger-text: $brand-danger;
+$state-danger-bg: $brand-danger;
 $state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%);
 
 // Tooltips
@@ -428,15 +428,15 @@ $pre-scrollable-max-height: 340px;
 // Type
 
 $component-offset-horizontal: 180px;
-$text-muted: $gray-light;
+$text-muted: $gray;
 $abbr-border-color: $gray-light;
 $headings-small-color: $gray-light;
 $blockquote-small-color: $gray-light;
 $blockquote-font-size: ($font-size-base * 1.25);
-$blockquote-border-color: $gray-lighter;
-$page-header-border-color: $gray-lighter;
+$blockquote-border-color: $brand-border;
+$page-header-border-color: $brand-border;
 $dl-horizontal-offset: $component-offset-horizontal;
-$hr-border: $gray-lighter;
+$hr-border: $brand-border;
 
 // Alert
 

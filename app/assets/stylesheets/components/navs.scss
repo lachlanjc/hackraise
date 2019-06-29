@@ -2,21 +2,28 @@
   top: 0;
   left: 0;
   min-width: 0px;
-  width: 256px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
   height: 100%;
   max-height: 100vh;
+  width: 256px;
   overflow-x: auto;
   overflow-y: auto;
+
+  + .container {
+    float: right;
+    padding-top: $padding-xl-vertical;
+  }
 }
 
 .heronav-container {
   position: fixed;
   display: flex;
   flex-direction: column;
+  padding: $padding-xl-vertical $padding-base-horizontal $padding-base-vertical;
   height: 100%;
+  width: 256px;
 
   > ul {
     margin-bottom: 0;
@@ -25,18 +32,20 @@
   }
 
   .geomicon,
+  .logo,
   .avatar {
-    margin-right: $padding-xs-horizontal;
+    display: inline-block;
+    margin-right: $padding-small-horizontal;
+  }
+
+  .geomicon {
+    font-size: 1.75rem;
   }
 
   .count {
-    color: $gray;
-    float: right;
-  }
-
-  + .container {
-    float: right;
-    padding-top: 48px;
+    color: $gray-lighter;
+    font-size: $font-size-small;
+    margin-left: auto;
   }
 }
 
@@ -44,9 +53,31 @@
 .heronav-section {
   display: flex;
   align-items: center;
-  padding: $padding-small-vertical $padding-base-horizontal;
+  color: $gray;
+  padding: $padding-large-vertical $padding-base-horizontal;
   margin-bottom: $padding-small-vertical;
   border-radius: $border-radius-base;
+  width: 100%;
+
+  &.active,
+  &.active .geomicon,
+  &.active .count {
+    color: $white;
+  }
+
+  &:not(.active) {
+    &:hover,
+    &:focus {
+      background-color: $gray-lighter;
+    }
+  }
+}
+
+.heronav-section-top,
+.heronav-section-bottom {
+  a {
+    color: $gray-dark !important;
+  }
 }
 
 .heronav-section-top {
@@ -54,12 +85,7 @@
 }
 
 .heronav-section-bottom {
-  background-color: $gray-lighter;
   margin-top: auto;
-
-  a {
-    color: $gray-darker;
-  }
 
   .dropdown-menu {
     bottom: 100%;
@@ -67,31 +93,20 @@
   }
 }
 
-.heronav-container > ul > li > a {
-  background-color: transparent;
-  transition: background-color 0.125s ease-in-out;
-
-  &:hover,
-  &:focus {
-    background-color: $gray-lighter;
-  }
-}
-
 .nav-tabs {
   border-bottom: none;
 
-  > li,
-  > li.active {
-    margin-bottom: 0;
+  > li {
+    margin-bottom: 0 !important;
+
+    &.active > a {
+      border-bottom-color: $brand-border !important;
+    }
   }
 
   > li > a {
     border-radius: 999px;
-
-    &:hover,
-    &:focus {
-      border: none;
-    }
+    border-color: transparent;
   }
 }
 

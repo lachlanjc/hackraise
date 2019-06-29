@@ -1,0 +1,15 @@
+.search {
+  display: flex;
+  align-items: center;
+  padding: 0 $padding-small-horizontal;
+  margin-left: -40px;
+  border: 1px solid $brand-border;
+  border-radius: $border-radius-base;
+}
+.search__icon {
+  margin-right: 13px;
+  color: $gray;
+}
+.search__input {
+  flex: 1 1 auto;
+}

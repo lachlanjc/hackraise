@@ -38,7 +38,7 @@ class AccountsController < ApplicationController
 
       redirect_to inbox_account_conversations_path(@account)
     rescue ActiveRecord::RecordInvalid
-      render 'new'
+      render :new
     end
   end
 

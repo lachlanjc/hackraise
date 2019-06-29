@@ -14,16 +14,16 @@
 <nav class="heronav">
 <div class="heronav-container">
   <header class="heronav-section heronav-section-top">
-    <a href="<%= root_path %>" class="mr2">
-      <%= image_tag 'logo-white.svg', alt: 'Hackraise', width: 32, height: 32 %>
+    <a href="<%= root_path %>" class="logo">
+      <%= image_tag 'logo.svg', alt: 'Hackraise logo', width: 28, height: 28 %>
     </a>
-    <div class="dropdown bold <%= nav_active_class(:account) %>">
+    <div class="dropdown <%= nav_active_class(:account) %>">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <%= @account.name %>
+        <strong><%= @account.name %></strong>
         <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
-        <li><a href="<%= edit_account_path(@account, anchor: 'basic') %>" rel="account.edit">Account</a></li>
+        <li><a href="<%= edit_account_path(@account, anchor: 'basic') %>" rel="account.edit">Account</a><k/li>
         <li><a href="<%= edit_account_path(@account, anchor: 'team') %>" rel="account.edit.team">Team</a></li>
         <li><a href="<%= edit_account_path(@account, anchor: 'canned-responses') %>" rel="account.edit.canned-responses">Canned responses</a></li>
         <li><a href="<%= edit_account_path(@account, anchor: 'email-forwarding') %>" rel="account.edit.email-forwarding">Custom domains</a></li>
@@ -51,19 +51,19 @@
 
   <ul>
     <li class="<%= nav_active_class(:inbox) %>">
-      <%= link_to inbox_account_conversations_path(@account), class: "#{'active' if current_page?(inbox_account_conversations_path(@account)) }" do %>
-        <span class="geomicon geomicon-inbox"></span>
-        <span class=""><%= t('.inbox') %></span>
+      <%= link_to inbox_account_conversations_path(@account), class: "#{'active bg-primary' if current_page?(inbox_account_conversations_path(@account)) }" do %>
+        <span class="geomicon geomicon-inbox text-primary"></span>
+        <span class="">Inbox</span>
         <% unless @account.inbox_count.zero? %>
-          <span class="badge"><%= @account.inbox_count %></span>
+          <span class="count"><%= @account.inbox_count %></span>
         <% end %>
       <% end %>
     </li>
 
     <li class="<%= nav_active_class(:archive) %>">
-      <%= link_to archived_account_conversations_path(@account), class: "#{'active' if current_page?(archived_account_conversations_path(@account)) }" do %>
-        <span class="geomicon geomicon-storagebox"></span>
-        <span class=""><%= t('.archive') %></span>
+      <%= link_to archived_account_conversations_path(@account), class: "#{'active bg-success' if current_page?(archived_account_conversations_path(@account)) }" do %>
+        <span class="geomicon geomicon-check text-success"></span>
+        <span class="">Archive</span>
       <% end %>
     </li>
   </ul>
@@ -76,10 +76,10 @@
     </a>
     <ul class="dropdown-menu">
       <li class="<%= nav_active_class(:personal) %>">
-        <a href="<%= edit_user_path %>"><%= t('.settings') %></a>
+        <a href="<%= edit_user_path %>">Settings</a>
       </li>
       <li>
-        <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-text' %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-text' %>
       </li>
     </ul>
   </div>

@@ -3,8 +3,8 @@ $breakpoint-md: '(min-width: 48em)';
 $breakpoint-lg: '(min-width: 64em)';
 
 $breakpoints: (
-  'sm': $breakpoint-sm,
-  'md': $breakpoint-md,
+  // 'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
   'lg': $breakpoint-lg
 );
 
@@ -15,6 +15,11 @@ $scale: (
   '3': 24px,
   '4': 48px
 );
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 @each $index, $value in $scale {
   .m#{$index} {
@@ -33,15 +38,10 @@ $scale: (
     margin-left: $value;
   }
 
-  .mxn#{$index} {
-    margin-right: -$value;
-    margin-left: -$value;
-  }
-
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  // .mxn#{$index} {
+  //   margin-right: -$value;
+  //   margin-left: -$value;
+  // }
 
   // Paddings
 
@@ -79,10 +79,10 @@ $scale: (
         margin-left: $value;
       }
 
-      .#{$prefix}-mxn#{$index} {
-        margin-right: -$value;
-        margin-left: -$value;
-      }
+      // .#{$prefix}-mxn#{$index} {
+      //   margin-right: -$value;
+      //   margin-left: -$value;
+      // }
 
       // Paddings
 

@@ -43,10 +43,9 @@
   position: relative;
 
   .dropdown-menu {
-    left: 40px;
-    margin-top: -20px;
+    left: 24px;
     width: 32rem;
-    max-width: 100%;
+    margin: 0;
   }
 
   > .status {
@@ -63,6 +62,14 @@
 
   > .person {
     color: $gray-dark;
+  }
+
+  &.dropdown ~ .list-conversations {
+    transition: opacity 0.125s ease-in-out;
+  }
+
+  &.dropdown.open ~ .list-conversations {
+    opacity: 0.75;
   }
 
   .tag-label {
