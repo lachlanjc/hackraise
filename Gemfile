@@ -11,7 +11,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers', br
 gem 'analytics-ruby', '~> 2.0.0', require: 'segment/analytics'
 gem 'awesome_print'
 gem 'aws-sdk'
-gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bourbon'
 gem 'bugsnag'
 gem 'bundler', '~> 1.17'

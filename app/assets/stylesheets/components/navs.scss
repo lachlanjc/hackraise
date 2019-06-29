@@ -1,7 +1,6 @@
 .heronav {
   top: 0;
   left: 0;
-  background-color: #f1f2f4;
   min-width: 0px;
   width: 256px;
   flex-grow: 0;
@@ -30,8 +29,9 @@
     margin-right: $padding-xs-horizontal;
   }
 
-  .badge {
-    margin-left: auto;
+  .count {
+    color: $gray;
+    float: right;
   }
 
   + .container {
@@ -44,18 +44,13 @@
 .heronav-section {
   display: flex;
   align-items: center;
-  width: 256px;
-  height: 48px;
-  padding: $padding-base-vertical $padding-large-horizontal;
+  padding: $padding-small-vertical $padding-base-horizontal;
+  margin-bottom: $padding-small-vertical;
+  border-radius: $border-radius-base;
 }
 
 .heronav-section-top {
-  background-color: $blue;
   margin-bottom: 2rem;
-
-  a {
-    color: $white;
-  }
 }
 
 .heronav-section-bottom {

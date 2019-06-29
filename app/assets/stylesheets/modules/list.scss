@@ -11,33 +11,11 @@
   }
 }
 
-.list-no-bullets {
-  list-style-type: none;
-  padding: 0;
-
-  > li {
-    margin-bottom: 0.35rem;
-  }
-}
-
 .list-conversations {
   padding-top: $padding-base-vertical;
   overflow-y: visible;
 
   > .list-item {
     border: none;
-  }
-}
-
-.list-timeline {
-  display: block;
-  @include clearfix;
-  border-left: 2px solid #f2f2f2;
-  margin-left: ((45px - 2px) * 0.5);
-
-  > .list-item {
-    border-bottom: none;
-    margin-left: -((45px - 2px) * 0.5);
-    margin-bottom: 30px;
   }
 }

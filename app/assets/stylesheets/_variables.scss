@@ -143,22 +143,12 @@ $input-border-focus: $brand-primary;
 
 $input-color-placeholder: $gray-light;
 
-$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2) *
-  1.3;
-$input-height-large: (
-    ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) +
-      2
-  ) * 1.3;
-$input-height-small: (
-    floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) +
-      2
-  ) * 1.3;
+$input-height-base: 48px;
+$input-height-large: 64px;
+$input-height-small: 32px;
 
 $legend-color: darken($brand-primary, 25%);
 $legend-border-color: $brand-border;
-
-$input-group-addon-bg: $gray-lighter;
-$input-group-addon-border-color: $input-border;
 
 // Dropdowns
 
@@ -230,66 +220,6 @@ $container-md: $container-tablet;
 // $container-large-desktop: ((994 + $grid-gutter-width));
 $container-lg: $container-desktop;
 
-//== Navbar
-//
-//##
-
-// Basics of a navbar
-$navbar-height: 50px;
-$navbar-margin-bottom: 0;
-$navbar-border-radius: $border-radius-base;
-$navbar-padding-horizontal: floor(($grid-gutter-width / 2));
-$navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2);
-$navbar-collapse-max-height: 340px;
-
-$navbar-default-color: $gray-light;
-$navbar-default-bg: $brand-bg;
-$navbar-default-border: darken($navbar-default-bg, 6.5%);
-
-// Navbar links
-$navbar-default-link-color: $gray-light;
-$navbar-default-link-hover-color: $gray-dark;
-$navbar-default-link-hover-bg: transparent;
-$navbar-default-link-active-color: $gray;
-$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%);
-$navbar-default-link-disabled-color: #ccc;
-$navbar-default-link-disabled-bg: transparent;
-
-// Navbar brand label
-$navbar-default-brand-color: $navbar-default-link-color;
-$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%);
-$navbar-default-brand-hover-bg: transparent;
-
-// Navbar toggle
-$navbar-default-toggle-hover-bg: #ddd;
-$navbar-default-toggle-icon-bar-bg: #888;
-$navbar-default-toggle-border-color: #ddd;
-
-// Inverted navbar
-// Reset inverted navbar basics
-$navbar-inverse-color: rgba(white, 0.6);
-$navbar-inverse-bg: $gray-dark;
-$navbar-inverse-border: darken($navbar-inverse-bg, 20%);
-
-// Inverted navbar links
-$navbar-inverse-link-color: $navbar-inverse-color;
-$navbar-inverse-link-hover-color: white;
-$navbar-inverse-link-hover-bg: darken($navbar-inverse-bg, 20%);
-$navbar-inverse-link-active-color: $navbar-inverse-link-hover-color;
-$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 20%);
-$navbar-inverse-link-disabled-color: $navbar-inverse-color;
-$navbar-inverse-link-disabled-bg: $gray-dark;
-
-// Inverted navbar brand label
-$navbar-inverse-brand-color: $navbar-inverse-link-color;
-$navbar-inverse-brand-hover-color: #fff;
-$navbar-inverse-brand-hover-bg: transparent;
-
-// Inverted navbar toggle
-$navbar-inverse-toggle-hover-bg: $gray-dark;
-$navbar-inverse-toggle-icon-bar-bg: #fff;
-$navbar-inverse-toggle-border-color: $gray-dark;
-
 // Navs
 
 $nav-link-padding: 10px 15px;
@@ -311,42 +241,6 @@ $nav-tabs-active-link-hover-border-color: $brand-border;
 
 $nav-tabs-justified-link-border-color: #ddd;
 $nav-tabs-justified-active-link-border-color: $body-bg;
-
-// Pills
-$nav-pills-border-radius: $border-radius-base;
-$nav-pills-active-link-hover-bg: $component-active-bg;
-$nav-pills-active-link-hover-color: $component-active-color;
-
-// Pagination
-
-$pagination-color: $link-color;
-$pagination-bg: #fff;
-$pagination-border: #ddd;
-
-$pagination-hover-color: $link-hover-color;
-$pagination-hover-bg: $gray-lighter;
-$pagination-hover-border: #ddd;
-
-$pagination-active-color: #fff;
-$pagination-active-bg: $brand-primary;
-$pagination-active-border: $brand-primary;
-
-$pagination-disabled-color: $gray-light;
-$pagination-disabled-bg: #fff;
-$pagination-disabled-border: #ddd;
-
-// Pager
-
-$pager-bg: $pagination-bg;
-$pager-border: $pagination-border;
-$pager-border-radius: 15px;
-
-$pager-hover-bg: $pagination-hover-bg;
-
-$pager-active-bg: $pagination-active-bg;
-$pager-active-color: $pagination-active-color;
-
-$pager-disabled-color: $pagination-disabled-color;
 
 // Jumbotron
 
@@ -452,26 +346,6 @@ $progress-bar-warning-bg: $brand-warning;
 $progress-bar-danger-bg: $brand-danger;
 $progress-bar-info-bg: $brand-info;
 
-// List group
-
-$list-group-bg: #fff;
-$list-group-border: #ddd;
-$list-group-border-radius: $border-radius-base;
-
-$list-group-hover-bg: #f5f5f5;
-$list-group-active-color: $component-active-color;
-$list-group-active-bg: $component-active-bg;
-$list-group-active-border: $list-group-active-bg;
-$list-group-active-text-color: lighten($list-group-active-bg, 40%);
-
-$list-group-disabled-color: $gray-light;
-$list-group-disabled-bg: $gray-lighter;
-$list-group-disabled-text-color: $list-group-disabled-color;
-
-$list-group-link-color: $gray;
-$list-group-link-hover-color: $list-group-link-color;
-$list-group-link-heading-color: $gray-dark;
-
 // Panels
 
 $panel-bg: #fff;
@@ -519,11 +393,6 @@ $thumbnail-border-radius: $border-radius-base;
 $thumbnail-caption-color: $text-color;
 $thumbnail-caption-padding: 9px;
 
-// Wells
-
-$well-bg: #f5f5f5;
-$well-border: darken($well-bg, 7%);
-
 // Badges
 
 $badge-color: #fff;
@@ -536,30 +405,6 @@ $badge-active-bg: #fff;
 $badge-font-weight: bold;
 $badge-line-height: 1;
 $badge-border-radius: 999px;
-
-// Breadcrumbs
-
-$breadcrumb-padding-vertical: 8px;
-$breadcrumb-padding-horizontal: $padding-large-vertical
-  $padding-large-horizontal;
-$breadcrumb-bg: #f5f5f5;
-$breadcrumb-color: #ccc;
-$breadcrumb-active-color: $gray-light;
-$breadcrumb-separator: '/';
-
-// Carousel
-
-$carousel-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-
-$carousel-control-color: #fff;
-$carousel-control-width: 15%;
-$carousel-control-opacity: 0.5;
-$carousel-control-font-size: 20px;
-
-$carousel-indicator-active-bg: #fff;
-$carousel-indicator-border-color: #fff;
-
-$carousel-caption-color: #fff;
 
 // Close
 
