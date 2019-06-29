@@ -58,7 +58,8 @@ GEM
     addressable (2.3.6)
     analytics-ruby (2.0.12)
     arel (6.0.0)
-    awesome_print (1.2.0)
+    autoprefixer-rails (9.6.0)
+      execjs
     aws-sdk (1.34.1)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
@@ -74,9 +75,6 @@ GEM
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
-    bugsnag (1.8.4)
-      httparty (>= 0.6, < 1.0)
-      multi_json (~> 1.0)
     builder (3.2.2)
     byebug (2.7.0)
       columnize (~> 0.3)
@@ -102,9 +100,6 @@ GEM
     coderay (1.1.0)
     coffee-script-source (1.12.2)
     columnize (0.8.9)
-    confyio (1.2.0)
-      faraday (>= 0.9.0)
-      json (>= 1.7.7)
     connection_pool (2.1.1)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
@@ -153,8 +148,6 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffaker (1.23.0)
-    font-awesome-rails (4.0.3.1)
-      railties (>= 3.2, < 5.0)
     font_assets (0.1.11)
       rack
     friendly_id (5.0.3)
@@ -164,9 +157,6 @@ GEM
     hashie (2.0.5)
     hike (1.2.3)
     htmlentities (4.3.3)
-    httparty (0.13.0)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jasmine-core (2.0.0)
     jquery-rails (3.1.0)
@@ -244,7 +234,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.0)
       sprockets-rails
-    rails-assets-animate.css (3.2.3)
     rails-assets-js-md5 (1.1.0)
     rails-assets-moment (2.9.0)
     rails-assets-showdown (0.4.0)
@@ -378,16 +367,12 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers!
   analytics-ruby (~> 2.0.0)
-  awesome_print
   aws-sdk
   bootstrap-sass (~> 3.3.7)
   bourbon
-  bugsnag
-  bundler (~> 1.17)
   capybara
   carrierwave-aws
   codeclimate-test-reporter
-  confyio
   curb
   database_cleaner
   devise (~> 3.1)
@@ -399,7 +384,6 @@ DEPENDENCIES
   factory_girl_rails (~> 4.2.1)
   faraday (~> 0.9.0)
   ffaker (~> 1.20)
-  font-awesome-rails
   font_assets
   friendly_id (~> 5.0)
   jasmine!
@@ -417,7 +401,6 @@ DEPENDENCIES
   puma
   quiet_assets
   rails (= 4.2.0)
-  rails-assets-animate.css (~> 3.2)!
   rails-assets-js-md5 (~> 1)!
   rails-assets-moment (~> 2.9)!
   rails-assets-showdown (~> 0.3)!
