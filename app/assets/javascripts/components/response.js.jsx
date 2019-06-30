@@ -140,7 +140,7 @@ var Response = React.createClass({
   renderArchiveButton: function() {
     if (!this.props.conversation.archived) {
       return (
-        <button className="btn btn-danger" onClick={this.props.archiveHandler}>
+        <button className="btn btn-default" onClick={this.props.archiveHandler}>
           Archive
         </button>
       )

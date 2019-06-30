@@ -9,7 +9,7 @@ $brand-info: $yellow;
 $brand-warning: $yellow;
 $brand-danger: $red;
 
-$brand-bg: desaturate(lighten($brand-primary, 50%), 40%);
+$brand-bg: saturate(lighten($brand-primary, 38%), 19%);
 $brand-border: #dae8ec;
 $brand-divider: rgba(black, 0.02);
 
@@ -158,7 +158,7 @@ $dropdown-fallback-border: transparent;
 $dropdown-divider-bg: $brand-border;
 
 $dropdown-link-color: $gray-dark;
-$dropdown-link-hover-color: $gray-darker;
+$dropdown-link-hover-color: $gray-dark;
 $dropdown-link-hover-bg: $brand-bg;
 
 $dropdown-link-active-color: $component-active-color;

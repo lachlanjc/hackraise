@@ -39,13 +39,23 @@
   }
 
   .geomicon {
-    font-size: 1.75rem;
+    font-size: 18px;
+  }
+
+  .avatar,
+  .logo {
+    width: 28px;
+    height: 28px;
   }
 
   .count {
     color: $gray-lighter;
     font-size: $font-size-small;
     margin-left: auto;
+  }
+
+  .dropdown-menu {
+    left: 34px;
   }
 }
 
@@ -68,7 +78,7 @@
   &:not(.active) {
     &:hover,
     &:focus {
-      background-color: $gray-lighter;
+      background-color: $brand-bg;
     }
   }
 }
@@ -82,6 +92,11 @@
 
 .heronav-section-top {
   margin-bottom: 2rem;
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .heronav-section-bottom {

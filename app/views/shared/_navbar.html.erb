@@ -13,12 +13,9 @@
 
 <nav class="heronav">
 <div class="heronav-container">
-  <header class="heronav-section heronav-section-top">
-    <a href="<%= root_path %>" class="logo">
-      <%= image_tag 'logo.svg', alt: 'Hackraise logo', width: 28, height: 28 %>
-    </a>
-    <div class="dropdown <%= nav_active_class(:account) %>">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <header class="heronav-section heronav-section-top dropdown">
+      <a href="#" class="dropdown-toggle full-width" data-toggle="dropdown">
+        <span class="logo"></span>
         <strong><%= @account.name %></strong>
         <b class="caret"></b>
       </a>
@@ -46,7 +43,6 @@
           <% end %>
         <% end %>
       </ul>
-    </div>
   </header>
 
   <ul>
@@ -69,9 +65,8 @@
   </ul>
 
   <div class="heronav-section heronav-section-bottom dropdown">
-    <a class="dropdown-toggle mr1" href="#" data-toggle="dropdown">
-      <%= avatar(current_user, 24) %>
-      <%= current_user.name %>
+    <a class="dropdown-toggle full-width" href="#" data-toggle="dropdown">
+      <%= avatar(current_user, 24) %><%= current_user.name %>
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
