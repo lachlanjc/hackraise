@@ -1,18 +1,17 @@
-# [Hackraise](http://hackraise.com)
+# Hackraise
 
-Help shouldn't hurt.
+Hackraise was an app I started but never finished, a CRM for hackathon organizers focused on raising money effectively.
+It was based on the code for [Helpful](https://github.com/asm-helpful/helpful-web), an open source help desk made by the wonderful Assembly community in 2014.
 
-[![Build Status](https://travis-ci.org/asm-helpful/helpful-web.png?branch=master)](https://travis-ci.org/asm-helpful/helpful-web)
-[![Code Climate](https://codeclimate.com/github/support-foo/web.png)](https://codeclimate.com/github/support-foo/web)
-[![Inline docs](http://inch-ci.org/github/asm-helpful/helpful-web.png)](http://inch-ci.org/github/asm-helpful/helpful-web)
+[View branding on Figma](https://www.figma.com/community/file/874008612798410897/Hackraise)
 
-Hackraise is an open product that's being built by a fantastic group of people on [Assembly](https://assemblymade.com/helpful). Anybody can join in building this product and earn a stake of the profit.
+***
 
 ## Getting Started
 
 [Vagrant](http://vagrantup.com) is the recommended way to run Hackraise on your own machine. You need to download and install [Vagrant](http://vagrantup.com/downloads) before you can continue (this will take a while to run so you may want to grab some coffee).
 
-    git clone https://github.com/asm-helpful/helpful-web.git helpful-web
+    git clone https://github.com/lachlanjc/hackraise.git
     cd helpful-web
     vagrant up
 
